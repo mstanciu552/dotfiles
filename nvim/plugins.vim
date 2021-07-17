@@ -5,18 +5,14 @@ call plug#begin('~/.config/nvim/autoload')
     Plug 'tpope/vim-fugitive'
     Plug 'leafgarland/typescript-vim'
     Plug 'mbbill/undotree'
-<<<<<<< HEAD
-    " Plug 'vim-airline/vim-airline'
-    " Plug 'vim-airline/vim-airline-themes'
+    Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+    Plug 'kyazdani42/nvim-tree.lua'
+    Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+    Plug 'liuchengxu/vim-which-key'
+    Plug 'AckslD/nvim-whichkey-setup.lua'
     Plug 'hoob3rt/lualine.nvim'
-    Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+    Plug 'glepnir/dashboard-nvim'
     Plug 'kyazdani42/nvim-tree.lua'
-    " Plug 'preservim/nerdtree'
-=======
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
-    Plug 'kyazdani42/nvim-tree.lua'
->>>>>>> e83cc8f (nvim tree)
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'akinsho/nvim-bufferline.lua'
     Plug 'honza/vim-snippets'
@@ -24,6 +20,7 @@ call plug#begin('~/.config/nvim/autoload')
     Plug 'tpope/vim-surround'
     Plug 'jiangmiao/auto-pairs'
     Plug 'neovim/nvim-lspconfig'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
     Plug 'hrsh7th/nvim-compe'
     Plug 'dense-analysis/ale'
     Plug 'prettier/vim-prettier', { 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue'] }
@@ -35,19 +32,11 @@ call plug#begin('~/.config/nvim/autoload')
     Plug 'junegunn/fzf'
     Plug 'airblade/vim-rooter'
     Plug 'rust-lang/rust.vim'
-<<<<<<< HEAD
-    Plug 'ctrlpvim/ctrlp.vim'
-=======
->>>>>>> e83cc8f (nvim tree)
     Plug 'ap/vim-css-color'
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-fzy-native.nvim'
-<<<<<<< HEAD
-    Plug 'mstanciu552/the_best_theme'
-=======
->>>>>>> e83cc8f (nvim tree)
     Plug 'peitalin/vim-jsx-typescript'
     Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
     Plug 'jparise/vim-graphql'

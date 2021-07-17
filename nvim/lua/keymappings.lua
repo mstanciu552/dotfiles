@@ -13,9 +13,16 @@ vim.api.nvim_set_keymap('n', '<leader><', 'ysiw>', {noremap = false, silent = tr
 
 vim.api.nvim_set_keymap('n', '<leader>/', 'gcc', {noremap = false, silent = false})
 
+-- Telescope keys
+vim.api.nvim_set_keymap('n', '<leader>e',  ":lua require('telescope.builtin').builtin()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>ff', ":lua require('telescope.builtin').find_files()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>fg', ":lua require('telescope.builtin').live_grep()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>fb', ":lua require('telescope.builtin').buffers()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>fh', ":lua require('telescope.builtin').help_tags()<CR>", {noremap = true, silent = true})
+
 vim.api.nvim_set_keymap('n', '<leader>sct', ':nmap<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>vrc', ':tabnew ~/.config/nvim/init.vim<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>sop', ':source %', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>sop', ':source %<CR>', {noremap = true, silent = true})
 
 -- Window Splitting
 vim.api.nvim_set_keymap('n', '<A-RIGHT>',   '<C-w>v', {noremap = true, silent = true})

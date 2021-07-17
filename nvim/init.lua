@@ -2,25 +2,18 @@ vim.g.mapleader = " "
 
 -- Plugins and config files
 require('utils')
-<<<<<<< HEAD
-require('keymappings')
-require('colorscheme')
-=======
->>>>>>> e83cc8f (nvim tree)
 
 source('utils/general')
 source('plugins')
 
-<<<<<<< HEAD
-=======
 require('keymappings')
 require('colorscheme')
 
->>>>>>> e83cc8f (nvim tree)
 -- GalaxyLine and Bufferline Config
 require('galaxyline-conf')
 require('bufferline-conf')
-
+require('dashboard-conf')
+source('plug-conf/which-key')
 -- Ranger config
 -- source('plug-conf/rnvimr')
 
@@ -28,7 +21,10 @@ require('bufferline-conf')
 require('nvimtree-conf')
 
 -- Telescope Config
-source('plug-conf/telescope-conf')
+require('telescope-conf')
+
+--Treesitter config
+require("treesitter-conf")
 
 -- Lsp Config
 source('plug-conf/lsp-config')

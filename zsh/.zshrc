@@ -105,8 +105,10 @@ source $ZSH/oh-my-zsh.sh
 alias n="nvim"
 alias ls="exa"
 alias vim="nvim"
-alias nf="nvim -c 'Telescope find_files'"
 alias ll="ls -la"
+alias cfnv="nvim ~/.config/nvim/init.lua"
+alias se="du -a . | awk '{print $2}' | fzf | xargs -r $EDITOR"
+alias so="source  env/bin/activate"
 
 source /home/sc0p3/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
