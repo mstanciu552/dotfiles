@@ -2,12 +2,13 @@ local lain = require("lain")
 local dpi   = require("beautiful.xresources").apply_dpi
 local wibox = require("wibox")
 local awful = require("awful")
+local logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
 
 local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/powerarrow-dark"
 theme.wallpaper                                 = "~/.config/awesome/themes/copland/wall.png"
-theme.font                                      = "Terminus 9"
-theme.fg_normal                                 = "#DDDDFF"
+theme.font                                      = "Ubuntu Mono 14"
+theme.fg_normal                                 = "#ffffff"
 theme.fg_focus                                  = "#EA6F81"
 theme.fg_urgent                                 = "#CC9393"
 theme.bg_normal                                 = "#1A1A1A"
@@ -22,7 +23,7 @@ theme.tasklist_bg_focus                         = "#1A1A1A"
 theme.titlebar_bg_focus                         = theme.bg_focus
 theme.titlebar_bg_normal                        = theme.bg_normal
 theme.titlebar_fg_focus                         = theme.fg_focus
-theme.menu_height                               = dpi(16)
+theme.menu_height                               = dpi(20)
 theme.menu_width                                = dpi(140)
 theme.menu_submenu_icon                         = theme.dir .. "/icons/submenu.png"
 theme.taglist_squares_sel                       = theme.dir .. "/icons/square_sel.png"
@@ -178,7 +179,10 @@ local net = lain.widget.net({
         widget:set_markup(markup.font(theme.font,
                           markup("#7AC82E", " " .. string.format("%06.1f", net_now.received))
                           .. " " ..
-                          markup("#46A8C3", " " .. string.format("%06.1f", net_now.sent) .. " ")))
+                          markup("#46A8C3", " " .. string.format("%06.1f", net_now.sent) .. " "))
+                          -- .. " " ..
+                          -- markup("#ffffff", " " .. string.format("%06.1f", net_now.ssid))
+                          )
     end,
 })
 
@@ -211,7 +215,7 @@ function set_widget_list(s)
     clock,
     spr,
     arrl_ld,
-    wibox.container.background(s.mylayoutbox, theme.bg_focus),
+    wibox.container.background(logout_menu_widget(), theme.bg_focus),
   }
 end
 

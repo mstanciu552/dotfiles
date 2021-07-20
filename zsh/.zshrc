@@ -7,6 +7,10 @@ export ZSH="/home/sc0p3/.oh-my-zsh"
 # Environment variables
 export EDITOR=nvim
 
+# Bluetooth Config
+export I12=A7:57:18:89:80:31
+export FH016=71:2E:5B:AB:55:41
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -104,7 +108,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias n="nvim"
 alias ls="exa"
-alias vim="nvim"
 alias ll="ls -la"
 alias cfnv="nvim ~/.config/nvim/init.lua"
 alias se="du -a . | awk '{print $2}' | fzf | xargs -r $EDITOR"

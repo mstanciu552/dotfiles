@@ -14,18 +14,29 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+local light = require("light")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
 -- Load Debian menu entries
-local debian = require("debian.menu")
+-- local debian = require("debian.menu")
 local has_fdo, freedesktop = pcall(require, "freedesktop")
 
 -- Additional
 -- local lain = require("lain")
 require("statusbar")
 local dpi   = require("beautiful.xresources").apply_dpi
+local wibar_height = dpi(25)
+
+-- Light control config
+light.exec     = "light"          -- optional, set to abs path
+light.kbd      = ""               -- optional, default: thinkpad ctrl
+light.kbd_step = 1                -- optional, default: 1
+light.dpy_cap  = 2                -- optional, default: 2
+light.dpy_step = 10               -- optional, default: 10
+
+light.init()                      -- sets diplay min cap
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -74,6 +85,7 @@ beautiful.init(theme_path)
 terminal = "kitty"
 editor = os.getenv("nvim") or "editor"
 editor_cmd = terminal .. " -e " .. editor
+launcher = "dmenu_run"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -87,7 +99,7 @@ awful.layout.layouts = {
     -- awful.layout.suit.spiral.dwindle,
     -- awful.layout.suit.spiral,
     awful.layout.suit.tile,
-    awful.layout.suit.floating,
+    -- awful.layout.suit.floating,
     -- awful.layout.suit.tile.left,
     -- awful.layout.suit.tile.bottom,
     -- awful.layout.suit.tile.top,
@@ -234,7 +246,7 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(20) })
+    s.mywibox = awful.wibar({ position = "top", screen = s, height = wibar_height })
     
     
 
@@ -270,8 +282,22 @@ globalkeys = gears.table.join(
     awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -D pulse sset Master 2%-", false) end),
     awful.key({}, "XF86AudioMute", function () awful.util.spawn("amixer -D pulse sset Master toggle", false) end),
 
+    -- Light control
+    awful.key({}, "XF86MonBrightnessUp",   function () light.dpy_inc() end),
+    awful.key({}, "XF86MonBrightnessDown", function () light.dpy_dec() end),
+
+    -- File manager -> PCMANFM
+    awful.key({ modkey, "Shift" }, "e", function() awful.util.spawn("pcmanfm") end),
+
+    -- Wifi connection dmenu
+    awful.key({ modkey, }, "w", function() awful.util.spawn("networkmanager_dmenu") end),
+
+    -- Krunner
+    awful.key({ modkey, }, "Space", function() awful.util.spawn("krunner") end),
+
     -- Brave browser
-    awful.key({ modkey, }, "b", function() awful.util.spawn("brave-browser") end),
+    -- awful.key({ modkey, }, "b", function() awful.util.spawn("brave-browser") end), -- Debian
+    awful.key({ modkey, }, "b", function() awful.util.spawn("brave") end),          -- Arch
 
     -- Bluetooth connection
     awful.key({ modkey, "Shift" }, "b", function() awful.util.spawn("bluetooth_connect") end),
@@ -298,8 +324,8 @@ globalkeys = gears.table.join(
         end,
         {description = "focus previous by index", group = "client"}
     ),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
-              {description = "show main menu", group = "awesome"}),
+    -- awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
+    --           {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
@@ -359,8 +385,8 @@ globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () awful.util.spawn("krunner") end,
-              {description = "run prompt(krunner)", group = "launcher"}),
+    awful.key({ modkey },            "r",     function () awful.util.spawn(launcher) end,
+              {description = "run prompt", group = "launcher"}),
 
     awful.key({ modkey }, "x",
               function ()
@@ -615,7 +641,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Autostart
 awful.spawn.with_shell("picom")
--- awful.spawn.with_shell("nitrogen --restore")
+awful.spawn.with_shell("nitrogen --restore")
+awful.spawn.with_shell("nm-online")
 
 -- Themeing
 beautiful.useless_gap = 5
