@@ -32,9 +32,9 @@ local wibar_height = dpi(25)
 -- Light control config
 light.exec     = "light"          -- optional, set to abs path
 light.kbd      = ""               -- optional, default: thinkpad ctrl
-light.kbd_step = 1                -- optional, default: 1
-light.dpy_cap  = 2                -- optional, default: 2
-light.dpy_step = 10               -- optional, default: 10
+-- light.kbd_step = 1                -- optional, default: 1
+-- light.dpy_cap  = 2                -- optional, default: 2
+-- light.dpy_step = 10               -- optional, default: 10
 
 light.init()                      -- sets diplay min cap
 
@@ -85,7 +85,7 @@ beautiful.init(theme_path)
 terminal = "kitty"
 editor = os.getenv("nvim") or "editor"
 editor_cmd = terminal .. " -e " .. editor
-launcher = "dmenu_run"
+launcher = "krunner"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -324,8 +324,8 @@ globalkeys = gears.table.join(
         end,
         {description = "focus previous by index", group = "client"}
     ),
-    -- awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
-    --           {description = "show main menu", group = "awesome"}),
+    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
+              {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
@@ -646,5 +646,3 @@ awful.spawn.with_shell("nm-online")
 
 -- Themeing
 beautiful.useless_gap = 5
-
--- Custom keymappings

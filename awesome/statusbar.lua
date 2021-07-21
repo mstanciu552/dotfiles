@@ -186,14 +186,16 @@ local net = lain.widget.net({
     end,
 })
 
+local brightness = require("awesome-wm-widgets.brightness-widget.brightness")
+
 -- Separators
-local spr     = wibox.widget.textbox(' ')
+local spr     = wibox.widget.textbox(' | ')
 local arrl_dl = separators.arrow_left(theme.bg_focus, "alpha")
 local arrl_ld = separators.arrow_left("alpha", theme.bg_focus)
 
 -- Function that returns a table with widgets
 function set_widget_list(s)
-  return {
+  local power_bar = {
     layout = wibox.layout.fixed.horizontal,
     wibox.widget.systray(),
     arrl_ld,
@@ -202,12 +204,14 @@ function set_widget_list(s)
     arrl_dl,
     cpuicon,
     cpu.widget,
+    spr,
     arrl_ld,
     wibox.container.background(tempicon, theme.bg_focus),
     wibox.container.background(temp.widget, theme.bg_focus),
     arrl_dl,
     baticon,
     bat.widget,
+    spr,
     arrl_ld,
     wibox.container.background(neticon, theme.bg_focus),
     wibox.container.background(net.widget, theme.bg_focus),
@@ -217,6 +221,39 @@ function set_widget_list(s)
     arrl_ld,
     wibox.container.background(logout_menu_widget(), theme.bg_focus),
   }
+
+  local bar_separated = {
+    layout = wibox.layout.fixed.horizontal,
+    wibox.widget.systray(),
+    spr,
+    volicon,
+    theme.volume.widget,
+    spr,
+    cpuicon,
+    cpu.widget,
+    spr,
+    brightness{
+      type = 'icon_and_text',
+      -- type = 'arc',
+      program = 'light',
+      step = 2,
+      base = 40,
+      tooltip = true,
+      timeout = 1,
+    },
+    spr,
+    baticon,
+    bat.widget,
+    -- spr,
+    -- neticon,
+    -- net.widget,
+    spr,
+    clock,
+    spr,
+    logout_menu_widget()
+  }
+
+  return bar_separated
 end
 
 return { 
