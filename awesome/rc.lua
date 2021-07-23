@@ -85,7 +85,7 @@ beautiful.init(theme_path)
 terminal = "kitty"
 editor = os.getenv("nvim") or "editor"
 editor_cmd = terminal .. " -e " .. editor
-launcher = "krunner"
+launcher = "dmenu_run -p dmenu"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -292,15 +292,15 @@ globalkeys = gears.table.join(
     -- Wifi connection dmenu
     awful.key({ modkey, }, "w", function() awful.util.spawn("networkmanager_dmenu") end),
 
-    -- Krunner
-    awful.key({ modkey, }, "Space", function() awful.util.spawn("krunner") end),
+    -- Bluetooth connection dmenu
+    awful.key({ modkey, }, "d", function() awful.util.spawn(os.getenv("HOME")..'/bin/dmenu-bluetooth') end),
+
+    -- Run dmenu script for the bin folder
+    awful.key({ modkey, }, "y", function() awful.util.spawn(os.getenv("HOME")..'/bin/dmenu_script') end),
 
     -- Brave browser
     -- awful.key({ modkey, }, "b", function() awful.util.spawn("brave-browser") end), -- Debian
     awful.key({ modkey, }, "b", function() awful.util.spawn("brave") end),          -- Arch
-
-    -- Bluetooth connection
-    awful.key({ modkey, "Shift" }, "b", function() awful.util.spawn("bluetooth_connect") end),
 
     -- Defaults
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
@@ -324,8 +324,8 @@ globalkeys = gears.table.join(
         end,
         {description = "focus previous by index", group = "client"}
     ),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
-              {description = "show main menu", group = "awesome"}),
+    -- awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
+    --           {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
@@ -387,6 +387,9 @@ globalkeys = gears.table.join(
     -- Prompt
     awful.key({ modkey },            "r",     function () awful.util.spawn(launcher) end,
               {description = "run prompt", group = "launcher"}),
+
+    awful.key({ modkey, "Shift" },            "r",     function () awful.util.spawn("krunner") end,
+              {description = "run krunner", group = "launcher"}),
 
     awful.key({ modkey }, "x",
               function ()

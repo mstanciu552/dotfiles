@@ -112,6 +112,7 @@ alias ll="ls -la"
 alias cfnv="nvim ~/.config/nvim/init.lua"
 alias se="du -a . | awk '{print $2}' | fzf | xargs -r $EDITOR"
 alias so="source  env/bin/activate"
+alias nv="ls -la | dmenu | awk '{print \$NF}' |xargs -I {} nvim {}"
 
 source /home/sc0p3/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

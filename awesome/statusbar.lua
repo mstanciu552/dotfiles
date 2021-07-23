@@ -188,6 +188,11 @@ local net = lain.widget.net({
 
 local brightness = require("awesome-wm-widgets.brightness-widget.brightness")
 
+-- Microphone control
+local micwidget_builder = require("awmic")
+micobj = micwidget_builder({font="FiraCode Nerd Font" .. " " .. 12})
+
+
 -- Separators
 local spr     = wibox.widget.textbox(' | ')
 local arrl_dl = separators.arrow_left(theme.bg_focus, "alpha")
@@ -229,6 +234,8 @@ function set_widget_list(s)
     volicon,
     theme.volume.widget,
     spr,
+    micobj.widget,
+    spr,
     cpuicon,
     cpu.widget,
     spr,
@@ -244,9 +251,6 @@ function set_widget_list(s)
     spr,
     baticon,
     bat.widget,
-    -- spr,
-    -- neticon,
-    -- net.widget,
     spr,
     clock,
     spr,

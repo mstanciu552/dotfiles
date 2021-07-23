@@ -23,7 +23,7 @@ static int restrict_return = 0;             /* -1 option; if 1, disables shift-r
 #endif // RESTRICT_RETURN_PATCH
 /* -fn option overrides fonts[0]; default X11 font or font set */
 #if PANGO_PATCH
-static char font[] = "monospace 10";
+static char font[] = "Ubuntu Mono 30";
 #else
 #if XRESOURCES_PATCH
 static char *fonts[] =
@@ -31,7 +31,7 @@ static char *fonts[] =
 static const char *fonts[] =
 #endif // XRESOURCES_PATCH
 {
-	"monospace:size=10"
+	"Ubuntu Mono:size=16"
 };
 #endif // PANGO_PATCH
 #if MANAGED_PATCH
@@ -92,7 +92,7 @@ static unsigned int lines      = 20;
 static unsigned int columns    = 0;
 #endif // GRID_PATCH
 #if LINE_HEIGHT_PATCH
-static unsigned int lineheight = 0;         /* -h option; minimum height of a menu line     */
+static unsigned int lineheight = 20;         /* -h option; minimum height of a menu line     */
 static unsigned int min_lineheight = 8;
 #endif // LINE_HEIGHT_PATCH
 #if NAVHISTORY_PATCH

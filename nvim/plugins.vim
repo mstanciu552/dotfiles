@@ -1,6 +1,8 @@
 call plug#begin('~/.config/nvim/autoload')
 
     Plug 'rafi/awesome-vim-colorschemes'
+    Plug 'yong1le/darkplus.nvim'
+    Plug 'lambdalisue/suda.vim'
     Plug 'jremmen/vim-ripgrep'
     Plug 'tpope/vim-fugitive'
     Plug 'leafgarland/typescript-vim'

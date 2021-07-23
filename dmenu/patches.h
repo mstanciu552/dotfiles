@@ -16,7 +16,7 @@
  * case-insensitive -i option with a case sensitive -s option.
  * http://tools.suckless.org/dmenu/patches/case-insensitive/
  */
-#define CASEINSENSITIVE_PATCH 1
+#define CASEINSENSITIVE_PATCH 0
 
 /* This patch centers dmenu in the middle of the screen.
  * https://tools.suckless.org/dmenu/patches/center/
