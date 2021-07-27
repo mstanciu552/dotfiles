@@ -247,6 +247,7 @@ function set_widget_list(s)
       base = 40,
       tooltip = true,
       timeout = 1,
+      font = theme.font,
     },
     spr,
     baticon,

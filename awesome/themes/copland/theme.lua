@@ -28,7 +28,7 @@ theme.border_width                              = dpi(1)
 theme.border_normal                             = "#141414"
 theme.border_focus                              = "#93B6FF"
 theme.taglist_fg_focus                          = "#FFFFFF"
-theme.taglist_bg_focus                          = "#111111"
+theme.taglist_bg_focus                          = "#5352ed"
 theme.taglist_bg_normal                         = "#111111"
 theme.titlebar_bg_normal                        = "#191919"
 theme.titlebar_bg_focus                         = "#262626"
@@ -297,9 +297,9 @@ local orig_filter = awful.widget.taglist.filter.all
 
 -- Taglist label functions
 awful.widget.taglist.filter.all = function (t, args)
-    if t.selected or #t:clients() > 0 then
+    -- if t.selected or #t:clients() > 0 then
         return orig_filter(t, args)
-    end
+    -- end
 end
 
 function theme.at_screen_connect(s)

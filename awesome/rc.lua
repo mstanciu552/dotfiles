@@ -27,7 +27,14 @@ local has_fdo, freedesktop = pcall(require, "freedesktop")
 -- local lain = require("lain")
 require("statusbar")
 local dpi   = require("beautiful.xresources").apply_dpi
-local wibar_height = dpi(25)
+local wibar_height = dpi(28)
+
+require('awesome-wallpaper-changer').start({
+	path = '~/Pictures/wallpapers/',
+	show_notify = false,
+	timeout = 60*30,
+	change_on_click = false
+})
 
 -- Light control config
 light.exec     = "light"          -- optional, set to abs path
@@ -242,11 +249,17 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytasklist = awful.widget.tasklist {
         screen  = s,
         filter  = awful.widget.tasklist.filter.currenttags,
-        buttons = tasklist_buttons
+        buttons = tasklist_buttons,
+        style = {
+          shape_border_width = 1,
+          shape_border_color = '#fff',
+          bg_focus = '#5352ed',
+          fg_focus = '#eeeeee'
+        }
     }
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s, height = wibar_height })
+    s.mywibox = awful.wibar({ position = "top", screen = s, height = wibar_height, bg = '#111111aa' })
     
     
 
@@ -298,9 +311,16 @@ globalkeys = gears.table.join(
     -- Run dmenu script for the bin folder
     awful.key({ modkey, }, "y", function() awful.util.spawn(os.getenv("HOME")..'/bin/dmenu_script') end),
 
+    -- Dmenu shutdown script
+    awful.key({ modkey, "Shift", }, "s", function() awful.util.spawn(os.getenv("HOME")..'/bin/dmenu_power') end),
+
+
     -- Brave browser
     -- awful.key({ modkey, }, "b", function() awful.util.spawn("brave-browser") end), -- Debian
     awful.key({ modkey, }, "b", function() awful.util.spawn("brave") end),          -- Arch
+
+    -- Firefox browser
+    awful.key({ modkey, }, "f", function() awful.util.spawn("firefox") end),
 
     -- Defaults
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
@@ -391,6 +411,9 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift" },            "r",     function () awful.util.spawn("krunner") end,
               {description = "run krunner", group = "launcher"}),
 
+    awful.key({ modkey, }, "p", function() awful.util.spawn("j4-dmenu-desktop --dmenu=\"dmenu -i -p Desktop\"") end,
+              {description = "run dmenu desktop", group = "launcher"}),
+
     awful.key({ modkey }, "x",
               function ()
                   awful.prompt.run {
@@ -400,10 +423,7 @@ globalkeys = gears.table.join(
                     history_path = awful.util.get_cache_dir() .. "/history_eval"
                   }
               end,
-              {description = "lua execute prompt", group = "awesome"}),
-    -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "lua execute prompt", group = "awesome"})
 )
 
 clientkeys = gears.table.join(
@@ -644,7 +664,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Autostart
 awful.spawn.with_shell("picom")
-awful.spawn.with_shell("nitrogen --restore")
+-- awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("nm-online")
 
 -- Themeing
