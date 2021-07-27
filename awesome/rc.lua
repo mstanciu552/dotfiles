@@ -26,6 +26,7 @@ local has_fdo, freedesktop = pcall(require, "freedesktop")
 -- Additional
 -- local lain = require("lain")
 require("statusbar")
+local revelation = require("awesome-revelation")
 local dpi   = require("beautiful.xresources").apply_dpi
 local wibar_height = dpi(28)
 
@@ -83,6 +84,7 @@ local themes = {
 local chosen_theme = themes[2]
 local theme_path = string.format("~/.config/awesome/themes/%s/theme.lua", chosen_theme)
 beautiful.init(theme_path)
+revelation.init()
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
@@ -317,6 +319,8 @@ globalkeys = gears.table.join(
     -- Dmenu shutdown script
     awful.key({ modkey, "Shift", }, "s", function() awful.util.spawn(os.getenv("HOME")..'/bin/dmenu_power') end),
 
+    -- Revelation
+    awful.key({ modkey, }, "z", revelation),
 
     -- Brave browser
     -- awful.key({ modkey, }, "b", function() awful.util.spawn("brave-browser") end), -- Debian
