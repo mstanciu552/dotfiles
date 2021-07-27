@@ -39,10 +39,6 @@ require('awesome-wallpaper-changer').start({
 -- Light control config
 light.exec     = "light"          -- optional, set to abs path
 light.kbd      = ""               -- optional, default: thinkpad ctrl
--- light.kbd_step = 1                -- optional, default: 1
--- light.dpy_cap  = 2                -- optional, default: 2
--- light.dpy_step = 10               -- optional, default: 10
-
 light.init()                      -- sets diplay min cap
 
 -- {{{ Error handling
@@ -314,6 +310,9 @@ globalkeys = gears.table.join(
 
     -- Run dmenu script for the bin folder
     awful.key({ modkey, }, "y", function() awful.util.spawn(os.getenv("HOME")..'/bin/dmenu_script') end),
+
+    -- Run dmenu plans
+    awful.key({ modkey, "Shift" }, "p", function() awful.util.spawn(os.getenv("HOME")..'/bin/dmenu_plans') end),
 
     -- Dmenu shutdown script
     awful.key({ modkey, "Shift", }, "s", function() awful.util.spawn(os.getenv("HOME")..'/bin/dmenu_power') end),
@@ -673,3 +672,4 @@ awful.spawn.with_shell("nm-online")
 
 -- Themeing
 beautiful.useless_gap = 5
+-- beautiful.taglist_fg_occupied = '#00ff00'
