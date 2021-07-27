@@ -242,7 +242,10 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytaglist = awful.widget.taglist {
         screen  = s,
         filter  = awful.widget.taglist.filter.all,
-        buttons = taglist_buttons
+        buttons = taglist_buttons,
+        style = {
+          font = "Ubuntu Mono 12"
+        }
     }
 
     -- Create a tasklist widget
@@ -254,7 +257,8 @@ awful.screen.connect_for_each_screen(function(s)
           shape_border_width = 1,
           shape_border_color = '#fff',
           bg_focus = '#5352ed',
-          fg_focus = '#eeeeee'
+          fg_focus = '#eeeeee',
+          font = 'Ubuntu Mono 12'
         }
     }
 
@@ -299,8 +303,8 @@ globalkeys = gears.table.join(
     awful.key({}, "XF86MonBrightnessUp",   function () light.dpy_inc() end),
     awful.key({}, "XF86MonBrightnessDown", function () light.dpy_dec() end),
 
-    -- File manager -> PCMANFM
-    awful.key({ modkey, "Shift" }, "e", function() awful.util.spawn("pcmanfm") end),
+    -- File manager - Thunar
+    awful.key({ modkey, "Shift" }, "e", function() awful.util.spawn("thunar") end),
 
     -- Wifi connection dmenu
     awful.key({ modkey, }, "w", function() awful.util.spawn("networkmanager_dmenu") end),
