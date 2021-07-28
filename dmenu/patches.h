@@ -159,7 +159,7 @@
 /* This patch provides dmenu the ability for history navigation similar to that of bash.
  * https://tools.suckless.org/dmenu/patches/navhistory/
  */
-#define NAVHISTORY_PATCH 0
+#define NAVHISTORY_PATCH 1
 
 /* Adds the -S option to disable sorting menu items after matching. Useful, for example, when menu
  * items are sorted by their frequency of use (using an external cache) and the most frequently

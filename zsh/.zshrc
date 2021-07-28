@@ -114,7 +114,7 @@ alias se="du -a . | awk '{print $2}' | fzf | xargs -r $EDITOR"
 alias so="source  env/bin/activate"
 alias nv="ls -la | dmenu | awk '{print \$NF}' |xargs -I {} nvim {}"
 
-source /home/sc0p3/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 alias luamake=/home/sc0p3/.config/nvim/lua-language-server/3rd/luamake/luamake

@@ -242,8 +242,8 @@ awful.screen.connect_for_each_screen(function(s)
         filter  = awful.widget.taglist.filter.all,
         buttons = taglist_buttons,
         style = {
-          font = "Ubuntu Mono 12"
-        }
+          font = "Ubuntu Mono 14",
+        },
     }
 
     -- Create a tasklist widget
@@ -320,7 +320,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift", }, "s", function() awful.util.spawn(os.getenv("HOME")..'/bin/dmenu_power') end),
 
     -- Revelation
-    awful.key({ modkey, }, "z", revelation),
+    awful.key({ modkey, }, "Tab", revelation),
 
     -- Brave browser
     -- awful.key({ modkey, }, "b", function() awful.util.spawn("brave-browser") end), -- Debian
@@ -676,4 +676,3 @@ awful.spawn.with_shell("nm-online")
 
 -- Themeing
 beautiful.useless_gap = 5
--- beautiful.taglist_fg_occupied = '#00ff00'
