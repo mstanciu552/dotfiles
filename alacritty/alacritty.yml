@@ -72,7 +72,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  startup_mode: Maximized
+  startup_mode: Windowed
 
   # Window title
   #title: Alacritty
@@ -392,16 +392,16 @@ background_opacity: 0.60
 # When set to `true`, selected text will be copied to the primary clipboard.
 #save_to_clipboard: false
 
-#cursor:
+cursor:
 # Cursor style
-#style:
+  style:
 # Cursor shape
 #
 # Values for `shape`:
 #   - ▇ Block
 #   - _ Underline
 #   - | Beam
-#shape: Block
+    shape: Beam
 
 # Cursor blinking state
 #

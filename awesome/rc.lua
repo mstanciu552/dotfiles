@@ -25,7 +25,7 @@ local has_fdo, freedesktop = pcall(require, "freedesktop")
 
 -- Additional
 -- local lain = require("lain")
-require("statusbar")
+local statusbar = require("statusbar")
 local revelation = require("awesome-revelation")
 local dpi   = require("beautiful.xresources").apply_dpi
 local wibar_height = dpi(28)
@@ -83,7 +83,7 @@ local themes = {
 }
 local chosen_theme = themes[2]
 local theme_path = string.format("~/.config/awesome/themes/%s/theme.lua", chosen_theme)
-beautiful.init(theme_path)
+beautiful.init("~/.config/awesome/statusbar.lua")
 revelation.init()
 
 -- This is used later as the default terminal and editor to run.
