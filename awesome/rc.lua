@@ -98,13 +98,14 @@ launcher = "dmenu_run -p dmenu"
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
 -- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
+altkey = "Mod1"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     -- awful.layout.suit.spiral.dwindle,
-    -- awful.layout.suit.spiral,
     awful.layout.suit.tile,
-    -- awful.layout.suit.floating,
+    awful.layout.suit.spiral,
+    awful.layout.suit.floating,
     -- awful.layout.suit.tile.left,
     -- awful.layout.suit.tile.bottom,
     -- awful.layout.suit.tile.top,
@@ -321,6 +322,10 @@ globalkeys = gears.table.join(
 
     -- Revelation
     awful.key({ modkey, }, "Tab", revelation),
+
+    -- Calendar
+    awful.key({ altkey }, "c", function() beautiful.cal.show(17) end),
+    awful.key({ altkey, "Shift" }, "c", function() beautiful.cal.hide(17) end),
 
     -- Brave browser
     -- awful.key({ modkey, }, "b", function() awful.util.spawn("brave-browser") end), -- Debian

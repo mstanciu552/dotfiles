@@ -87,7 +87,7 @@ local separators = lain.util.separators
 theme.cal = lain.widget.cal({
     attach_to = { clock },
     notification_preset = {
-        font = "Terminus 10",
+        font = "Ubuntu Mono 16",
         fg   = theme.fg_normal,
         bg   = theme.bg_normal
     }
@@ -188,8 +188,9 @@ local net = lain.widget.net({
 local brightness = require("awesome-wm-widgets.brightness-widget.brightness")
 
 -- Microphone control
-local micwidget_builder = require("awmic")
-micobj = micwidget_builder({font="FiraCode Nerd Font" .. " " .. 12})
+-- local micwidget_builder = require("awmic")
+local micwidget_builder = require("pymic")
+micobj = micwidget_builder({})
 
 
 -- Separators
@@ -223,7 +224,7 @@ function set_widget_list(s)
     clock,
     spr,
     arrl_ld,
-    wibox.container.background(logout_menu_widget(), theme.bg_focus),
+    wibox.container.background(s.mylayoutbox, theme.bg_focus),
   }
 
   local bar_separated = {
@@ -254,7 +255,7 @@ function set_widget_list(s)
     spr,
     clock,
     spr,
-    logout_menu_widget()
+    s.mylayoutbox,   
   }
 
   return bar_separated
