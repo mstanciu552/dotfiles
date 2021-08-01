@@ -301,6 +301,8 @@ globalkeys = gears.table.join(
     -- Light control
     awful.key({}, "XF86MonBrightnessUp",   function () light.dpy_inc() end),
     awful.key({}, "XF86MonBrightnessDown", function () light.dpy_dec() end),
+    awful.key({ modkey, }, "i",         function () light.dpy_inc() end),
+    awful.key({ modkey, "Shift" }, "i", function () light.dpy_dec() end),
 
     -- File manager - Thunar
     awful.key({ modkey, "Shift" }, "e", function() awful.util.spawn("thunar") end),

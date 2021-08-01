@@ -42,3 +42,14 @@ vim.api.nvim_set_keymap('n', '<leader>a', ':NvimTreeToggle<CR>', {noremap = true
 vim.api.nvim_set_keymap('n', '<leader>o', ':NvimTreeFind<CR>', {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', '<leader>=', ':vertical resize +5<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>-', ':vertical resize -5<CR>', {noremap = true, silent = true})
+
+-- Moving lines
+vim.api.nvim_set_keymap('n', '<leader>j', ':m .+1<CR>==', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>k', ':m .-2<CR>==', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '<C-j>', ':m .+1<CR>==', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '<C-k>', ':m .-2<CR>==', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', 'J', ':m \'>+1 <CR>gv=gv', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', 'K', ':m \'<-2 <CR>gv=gv', {noremap = true, silent = true})
+
+-- Neovim terminal
+vim.api.nvim_set_keymap('n', '<C-t>', ':ToggleTerminal<CR>', {noremap = true, silent = true})

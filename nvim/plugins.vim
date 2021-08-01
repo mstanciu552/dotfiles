@@ -2,6 +2,7 @@ call plug#begin('~/.config/nvim/autoload')
 
     Plug 'rafi/awesome-vim-colorschemes'
     Plug 'yong1le/darkplus.nvim'
+    Plug 'romgrk/doom-one.vim'
     Plug 'lambdalisue/suda.vim'
     Plug 'jremmen/vim-ripgrep'
     Plug 'tpope/vim-fugitive'
@@ -48,6 +49,7 @@ call plug#begin('~/.config/nvim/autoload')
     Plug 'dunstontc/vim-vscode-theme'
     Plug 'kevinhwang91/rnvimr'
     Plug 'voldikss/vim-floaterm'
+    Plug 'caenrique/nvim-toggle-terminal'
 
 call plug#end()
 
