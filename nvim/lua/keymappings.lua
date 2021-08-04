@@ -51,5 +51,11 @@ vim.api.nvim_set_keymap('i', '<C-k>', ':m .-2<CR>==', {noremap = true, silent = 
 vim.api.nvim_set_keymap('v', 'J', ':m \'>+1 <CR>gv=gv', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('v', 'K', ':m \'<-2 <CR>gv=gv', {noremap = true, silent = true})
 
+-- Tabbing
+vim.api.nvim_set_keymap('n', '<Tab>', '4>>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<S-Tab>', '4<<', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<Tab>', '4>>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<S-Tab>', '4<<', {noremap = true, silent = true})
+
 -- Neovim terminal
 vim.api.nvim_set_keymap('n', '<C-t>', ':ToggleTerminal<CR>', {noremap = true, silent = true})

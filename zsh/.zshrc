@@ -118,3 +118,5 @@ source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 alias luamake=/home/sc0p3/.config/nvim/lua-language-server/3rd/luamake/luamake
+
+echo '\e[5 q'

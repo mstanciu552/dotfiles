@@ -28,6 +28,7 @@ require("treesitter-conf")
 
 -- Lsp Config
 source('plug-conf/lsp-config')
+require('lspinstall-conf')
 
 require('compe-config')
 
@@ -41,4 +42,3 @@ require('tsserver-lsp')
 source('plug-conf/ale-conf')          -- Ale Config
 source('plug-conf/floaterm-conf')     -- Floaterm Config
 source('plug-conf/fzf-conf')          -- FZF Config
-

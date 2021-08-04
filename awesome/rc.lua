@@ -90,7 +90,7 @@ revelation.init()
 terminal = "kitty"
 editor = os.getenv("nvim") or "editor"
 editor_cmd = terminal .. " -e " .. editor
-launcher = "dmenu_run -p dmenu"
+launcher = "rofi -show combi"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -311,16 +311,20 @@ globalkeys = gears.table.join(
     awful.key({ modkey, }, "w", function() awful.util.spawn("networkmanager_dmenu") end),
 
     -- Bluetooth connection dmenu
-    awful.key({ modkey, }, "d", function() awful.util.spawn(os.getenv("HOME")..'/bin/dmenu-bluetooth') end),
+    -- awful.key({ modkey, }, "d", function() awful.util.spawn(os.getenv("HOME")..'/bin/dmenu-bluetooth') end), -- dmenu
+    awful.key({ modkey, }, "d", function() awful.util.spawn(os.getenv("HOME")..'/bin/rofi-bluetooth') end), -- rofi
 
     -- Run dmenu script for the bin folder
-    awful.key({ modkey, }, "y", function() awful.util.spawn(os.getenv("HOME")..'/bin/dmenu_script') end),
+    -- awful.key({ modkey, }, "y", function() awful.util.spawn(os.getenv("HOME")..'/bin/dmenu_script') end), -- dmenu
+    awful.key({ modkey, }, "y", function() awful.util.spawn(os.getenv("HOME")..'/bin/rofi_script') end), -- rofi
 
     -- Run dmenu plans
-    awful.key({ modkey, "Shift" }, "p", function() awful.util.spawn(os.getenv("HOME")..'/bin/dmenu_plans') end),
+    -- awful.key({ modkey, "Shift" }, "p", function() awful.util.spawn(os.getenv("HOME")..'/bin/dmenu_plans') end), -- dmenu
+    awful.key({ modkey, "Shift" }, "p", function() awful.util.spawn(os.getenv("HOME")..'/bin/rofi_plans') end), -- rofi
 
     -- Dmenu shutdown script
-    awful.key({ modkey, "Shift", }, "s", function() awful.util.spawn(os.getenv("HOME")..'/bin/dmenu_power') end),
+    -- awful.key({ modkey, "Shift", }, "s", function() awful.util.spawn(os.getenv("HOME")..'/bin/dmenu_power') end), -- dmenu
+    awful.key({ modkey, "Shift", }, "s", function() awful.util.spawn(os.getenv("HOME")..'/bin/rofi_power') end), -- rofi
 
     -- Revelation
     awful.key({ modkey, }, "Tab", revelation),
@@ -328,6 +332,9 @@ globalkeys = gears.table.join(
     -- Calendar
     awful.key({ altkey }, "c", function() beautiful.cal.show(17) end),
     awful.key({ altkey, "Shift" }, "c", function() beautiful.cal.hide(17) end),
+
+    -- Brightness script fix
+    awful.key({ modkey, "Control" }, "f", function() awfulutil.spawn(os.getenv("HOME")..'/bin/bright_fix') end),
 
     -- Brave browser
     -- awful.key({ modkey, }, "b", function() awful.util.spawn("brave-browser") end), -- Debian
@@ -425,8 +432,11 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift" },            "r",     function () awful.util.spawn("krunner") end,
               {description = "run krunner", group = "launcher"}),
 
-    awful.key({ modkey, }, "p", function() awful.util.spawn("j4-dmenu-desktop --dmenu=\"dmenu -i -p Desktop\"") end,
-              {description = "run dmenu desktop", group = "launcher"}),
+    -- awful.key({ modkey, }, "p", function() awful.util.spawn("j4-dmenu-desktop --dmenu=\"dmenu -i -p Desktop\"") end,
+    --           {description = "run dmenu desktop", group = "launcher"}), -- dmenu
+
+    awful.key({ modkey, }, "p", function() awful.util.spawn("rofi -show drun") end,
+              {description = "run rofi desktop", group = "launcher"}),
 
     awful.key({ modkey }, "x",
               function ()

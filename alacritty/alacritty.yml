@@ -111,13 +111,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    # family: monospace
-    # family: "Inconsolata"
-    # family: "Hack"
-    family: "Ubuntu Mono"
-    # family: "FiraCode Medium"
-    # family: "FiraCode"
-    # family: "SauceCodePro Nerd Font"
+    family: "Iosevka"
 
     # The `style` can be specified to pick a specific face.
     #style: Regular

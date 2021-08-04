@@ -23,6 +23,7 @@ call plug#begin('~/.config/nvim/autoload')
     Plug 'tpope/vim-surround'
     Plug 'jiangmiao/auto-pairs'
     Plug 'neovim/nvim-lspconfig'
+    Plug 'kabouzeid/nvim-lspinstall'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
     Plug 'hrsh7th/nvim-compe'
     Plug 'dense-analysis/ale'
@@ -50,6 +51,7 @@ call plug#begin('~/.config/nvim/autoload')
     Plug 'kevinhwang91/rnvimr'
     Plug 'voldikss/vim-floaterm'
     Plug 'caenrique/nvim-toggle-terminal'
+    Plug 'mfussenegger/nvim-jdtls'
 
 call plug#end()
 

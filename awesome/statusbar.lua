@@ -79,6 +79,10 @@ theme.layout_centerfair                         = theme.dir .. "/icons/centerfai
 theme.layout_termfair                           = theme.dir .. "/icons/termfair.png"
 theme.layout_centerwork                         = theme.dir .. "/icons/centerwork.png"
 
+-- notification related
+theme.notification_width                        = dpi(400)
+theme.notification_height                       = dpi(80)
+
 -- Local theme values
 local markup = lain.util.markup
 local separators = lain.util.separators
@@ -168,6 +172,9 @@ theme.volume.widget:buttons(awful.util.table.join(
                                awful.button({}, 5, function ()
                                      awful.util.spawn("amixer set Master 1%-")
                                      theme.volume.update()
+                               end),
+                               awful.button({}, 1, function()
+                                     awful.util.spawn("amixer set Master toggle")
                                end)
 ))
 
@@ -229,7 +236,7 @@ function set_widget_list(s)
 
   local bar_separated = {
     layout = wibox.layout.fixed.horizontal,
-    wibox.widget.systray(),
+    wibox.widget.systray({ opacity = 0.1 }),
     spr,
     volicon,
     theme.volume.widget,

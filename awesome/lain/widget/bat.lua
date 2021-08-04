@@ -54,24 +54,24 @@ local function factory(args)
         title   = "Battery exhausted",
         text    = "Shutdown imminent",
         timeout = 15,
-        fg      = "#000000",
-        bg      = "#FFFFFF"
+        bg      = "#000000",
+        fg      = "#FFFFFF"
     }
 
     bat_notification_low_preset = {
         title   = "Battery low",
         text    = "Plug the cable!",
         timeout = 15,
-        fg      = "#202020",
-        bg      = "#CDCDCD"
+        bg      = "#202020",
+        fg      = "#CDCDCD"
     }
 
     bat_notification_charged_preset = {
         title   = "Battery full",
         text    = "You can unplug the cable",
         timeout = 15,
-        fg      = "#202020",
-        bg      = "#CDCDCD"
+        bg      = "#202020",
+        fg      = "#CDCDCD"
     }
 
     bat_now = {
