@@ -1,0 +1,18 @@
+configuration {
+  terminal: "kitty";
+  modi: "combi,calc,window,drun,ssh,file-browser";
+  combi-modi: "drun,window";
+  font: "UbuntuMono Nerd Font 16";
+  show-icons: true;
+  icon-theme: "Tela circle dark";
+  combi-hide-mode-prefix: true;
+  drun-show-actions: true;
+  drun-display-format: "{name}";
+  disable-history: false;
+  fullscreen: false;
+  hide-scrollbar: true;
+  sidebar-mode: true;
+  auto-select: false;
+  theme: "~/.config/rofi/themes/Arc-Dark.rasi";
+  /* theme: "/usr/share/rofi/themes/sidebar.rasi"; */
+}
