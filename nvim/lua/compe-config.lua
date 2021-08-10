@@ -27,12 +27,13 @@ require'compe'.setup {
   };
 }
 
+
 local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 _G.s_tab_complete = function()
   if vim.fn.pumvisible() == 1 then
-    return t "<C-p>"
+    return t "<Tab>"
   elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
     return t "<Plug>(vsnip-jump-prev)"
   else
