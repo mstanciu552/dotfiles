@@ -334,7 +334,7 @@ globalkeys = gears.table.join(
     awful.key({ altkey, "Shift" }, "c", function() beautiful.cal.hide(17) end),
 
     -- Brightness script fix
-    awful.key({ modkey, "Control" }, "f", function() awfulutil.spawn(os.getenv("HOME")..'/bin/bright_fix') end),
+    awful.key({ modkey, "Control" }, "f", function() awful.util.spawn(os.getenv("HOME")..'/bin/bright_fix') end),
 
     -- Brave browser
     -- awful.key({ modkey, }, "b", function() awful.util.spawn("brave-browser") end), -- Debian

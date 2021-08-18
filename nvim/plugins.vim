@@ -1,6 +1,7 @@
 call plug#begin('~/.config/nvim/autoload')
 
     Plug 'rafi/awesome-vim-colorschemes'
+    Plug 'EdenEast/nightfox.nvim'
     Plug 'yong1le/darkplus.nvim'
     Plug 'romgrk/doom-one.vim'
     Plug 'lambdalisue/suda.vim'
@@ -10,6 +11,7 @@ call plug#begin('~/.config/nvim/autoload')
     Plug 'mbbill/undotree'
     Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
     Plug 'kyazdani42/nvim-tree.lua'
+    Plug 'folke/todo-comments.nvim'
     Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
     Plug 'liuchengxu/vim-which-key'
     Plug 'AckslD/nvim-whichkey-setup.lua'
@@ -17,6 +19,7 @@ call plug#begin('~/.config/nvim/autoload')
     Plug 'glepnir/dashboard-nvim'
     Plug 'kyazdani42/nvim-tree.lua'
     Plug 'kyazdani42/nvim-web-devicons'
+    Plug 'folke/trouble.nvim'
     Plug 'akinsho/nvim-bufferline.lua'
     Plug 'honza/vim-snippets'
     Plug 'pangloss/vim-javascript'
@@ -49,8 +52,7 @@ call plug#begin('~/.config/nvim/autoload')
     Plug 'tomasiser/vim-code-dark'
     Plug 'dunstontc/vim-vscode-theme'
     Plug 'kevinhwang91/rnvimr'
-    Plug 'voldikss/vim-floaterm'
-    Plug 'caenrique/nvim-toggle-terminal'
+    Plug 'akinsho/nvim-toggleterm.lua'
     Plug 'mfussenegger/nvim-jdtls'
 
 call plug#end()

@@ -1,4 +1,4 @@
-vim.cmd("colorscheme onedark")
+vim.cmd("colorscheme nightfox")
 
 -- vim.cmd('hi Normal ctermbg=NONE guibg=NONE')
 vim.cmd('hi SpellBad guifg=NONE guibg=NONE cterm=NONE ctermfg=NONE ctermbg=NONE')

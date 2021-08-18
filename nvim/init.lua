@@ -23,6 +23,10 @@ require('nvimtree-conf')
 -- Telescope Config
 require('telescope-conf')
 
+-- Todo Config
+require('todo-conf')
+require('trouble-conf')
+
 --Treesitter config
 require("treesitter-conf")
 

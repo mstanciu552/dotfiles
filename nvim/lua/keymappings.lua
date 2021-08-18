@@ -58,4 +58,4 @@ vim.api.nvim_set_keymap('v', '<Tab>', '4>>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('v', '<S-Tab>', '4<<', {noremap = true, silent = true})
 
 -- Neovim terminal
-vim.api.nvim_set_keymap('n', '<C-t>', ':ToggleTerminal<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<C-t>', ':ToggleTerm<CR>', {noremap = true, silent = true})
