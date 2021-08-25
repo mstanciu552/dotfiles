@@ -40,8 +40,9 @@ require('ccls-lsp')
 require('lua-lsp')
 require('golang-lsp')
 require('python-lsp')
-require('rust-lsp')
+-- require('rust-lsp')
 require('tsserver-lsp')
+require('rust_tools')
 
 source('plug-conf/ale-conf')          -- Ale Config
 source('plug-conf/floaterm-conf')     -- Floaterm Config

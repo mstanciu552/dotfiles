@@ -54,7 +54,7 @@ theme.layout_max                                = theme.dir .. "/icons/max.png"
 theme.layout_fullscreen                         = theme.dir .. "/icons/fullscreen.png"
 theme.layout_magnifier                          = theme.dir .. "/icons/magnifier.png"
 theme.layout_floating                           = theme.dir .. "/icons/floating.png"
-theme.useless_gap                               = 0
+theme.useless_gap                               = 5
 theme.titlebar_close_button_focus               = theme.dir .. "/icons/titlebar/close_focus.png"
 theme.titlebar_close_button_normal              = theme.dir .. "/icons/titlebar/close_normal.png"
 theme.titlebar_ontop_button_focus_active        = theme.dir .. "/icons/titlebar/ontop_focus_active.png"
@@ -88,14 +88,13 @@ local markup = lain.util.markup
 local separators = lain.util.separators
 
 -- Calendar
-theme.cal = lain.widget.cal({
-    attach_to = { clock },
-    notification_preset = {
-        font = "Ubuntu Mono 16",
-        fg   = theme.fg_normal,
-        bg   = theme.bg_normal
-    }
+local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
+theme.cal = calendar_widget({
+    theme = 'nord',
+    placement = 'top_right',
+    radius = 8,
 })
+
 -- CPU
 local cpuicon = wibox.widget.imagebox(theme.cpu)
 local cpu = lain.widget.cpu({
@@ -120,6 +119,12 @@ local clock = awful.widget.watch(
         widget:set_markup(" " .. markup.font(theme.font, stdout))
     end
 )
+
+-- Calendar functionality
+clock:connect_signal("button::press", 
+  function(_, _, _, button)
+    if button == 1 then theme.cal.toggle() end
+  end)
 
 -- Battery
 local baticon = wibox.widget.imagebox(theme.bat)

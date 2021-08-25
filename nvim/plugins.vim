@@ -30,7 +30,7 @@ call plug#begin('~/.config/nvim/autoload')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
     Plug 'hrsh7th/nvim-compe'
     Plug 'dense-analysis/ale'
-    Plug 'prettier/vim-prettier', { 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue'] }
+    Plug 'prettier/vim-prettier' ", { 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue'] }
     Plug 'godlygeek/tabular'
     Plug 'turbio/bracey.vim'
     Plug 'mattn/emmet-vim'
@@ -39,6 +39,7 @@ call plug#begin('~/.config/nvim/autoload')
     Plug 'junegunn/fzf'
     Plug 'airblade/vim-rooter'
     Plug 'rust-lang/rust.vim'
+    Plug 'nvim-lua/completion-nvim'
     Plug 'ap/vim-css-color'
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
@@ -54,6 +55,7 @@ call plug#begin('~/.config/nvim/autoload')
     Plug 'kevinhwang91/rnvimr'
     Plug 'akinsho/nvim-toggleterm.lua'
     Plug 'mfussenegger/nvim-jdtls'
+    Plug 'simrat39/rust-tools.nvim'
 
 call plug#end()
 

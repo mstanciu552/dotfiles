@@ -7,8 +7,10 @@ let g:ale_fixers = {
     \   'html': ['prettier'],
     \   'jsx': ['prettier'],
     \   'python': ['prettier'],
-    \   'rust': ['prettier']
+    \   'rust': ['rustfmt']
 \}
 let g:ale_fix_on_save = 1
 
+" let g:ale_javascript_prettier_options = '--single-quote --trailing-comma --use-tabs --tab-width 4 all'
+" let g:ale_typescript_prettier_options = '--single-quote --trailing-comma --use-tabs --tab-width 4 all'
 
