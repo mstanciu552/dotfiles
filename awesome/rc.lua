@@ -30,12 +30,16 @@ local revelation = require("awesome-revelation")
 local dpi   = require("beautiful.xresources").apply_dpi
 local wibar_height = dpi(28)
 
+-- Wallpaper changer
 require('awesome-wallpaper-changer').start({
 	path = '~/Pictures/wallpapers/',
 	show_notify = false,
 	timeout = 60*30,
 	change_on_click = false
 })
+
+-- Autosleep in 15 min
+awful.util.spawn_with_shell("~/config/awesome/autosleep.sh")
 
 -- Light control config
 light.exec     = "light"          -- optional, set to abs path
@@ -299,8 +303,8 @@ globalkeys = gears.table.join(
     awful.key({ modkey, }, "i",         function () light.dpy_inc() end),
     awful.key({ modkey, "Shift" }, "i", function () light.dpy_dec() end),
 
-    -- File manager - Thunar
-    awful.key({ modkey, "Shift" }, "e", function() awful.util.spawn("thunar") end),
+    -- File manager - Dolphin
+    awful.key({ modkey, }, "e", function() awful.util.spawn("dolphin") end),
 
     -- Wifi connection dmenu
     awful.key({ modkey, }, "w", function() awful.util.spawn("networkmanager_dmenu") end),
@@ -323,10 +327,6 @@ globalkeys = gears.table.join(
 
     -- Revelation
     awful.key({ modkey, }, "Tab", revelation),
-
-    -- Calendar
-    awful.key({ altkey }, "c", function() beautiful.cal.show(17) end),
-    awful.key({ altkey, "Shift" }, "c", function() beautiful.cal.hide(17) end),
 
     -- Brightness script fix
     awful.key({ modkey, "Control" }, "f", function() awful.util.spawn(os.getenv("HOME")..'/bin/bright_fix') end),
@@ -673,9 +673,9 @@ client.connect_signal("request::titlebars", function(c)
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
-client.connect_signal("mouse::enter", function(c)
-    c:emit_signal("request::activate", "mouse_enter", {raise = false})
-end)
+-- client.connect_signal("mouse::enter", function(c)
+--     c:emit_signal("request::activate", "mouse_enter", {raise = false})
+-- end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)

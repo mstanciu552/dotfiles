@@ -6,6 +6,7 @@ export ZSH="/home/sc0p3/.oh-my-zsh"
 
 # Environment variables
 export EDITOR=nvim
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 # Bluetooth Config
 export I12=A7:57:18:89:80:31

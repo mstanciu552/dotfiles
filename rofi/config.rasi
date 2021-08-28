@@ -13,6 +13,5 @@ configuration {
   hide-scrollbar: true;
   sidebar-mode: true;
   auto-select: false;
-  theme: "~/.config/rofi/themes/Arc-Dark.rasi";
-  /* theme: "/usr/share/rofi/themes/sidebar.rasi"; */
+  theme: "~/.config/rofi/themes/nord.rasi";
 }
