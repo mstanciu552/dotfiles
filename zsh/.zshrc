@@ -115,8 +115,15 @@ alias se="du -a . | awk '{print $2}' | fzf | xargs -r $EDITOR"
 alias so="source  env/bin/activate"
 alias nv="ls -la | dmenu | awk '{print \$NF}' |xargs -I {} nvim {}"
 alias pr="cat ~/Documents/Projects/Plans/TODO_LIST.md | rg -e '- ' | sed -e 's/- //'"
+alias less="bat"
 
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 alias luamake=/home/sc0p3/.config/nvim/lua-language-server/3rd/luamake/luamake
+
+# Blur testing
+if [[ $(ps --no-header -p $PPID -o comm | grep -Ev '^(yakuake|konsole|kitty)$' ) ]]; then
+        for wid in $(xdotool search --pid $PPID); do
+            xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $wid; done
+fi
