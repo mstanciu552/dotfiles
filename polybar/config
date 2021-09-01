@@ -201,6 +201,7 @@ bar-empty-foreground = ${colors.foreground-alt}
 inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
+enable-scroll = true
 
 [module/cpu]
 type = internal/cpu
@@ -334,10 +335,10 @@ adapter = ACAD
 full-at = 100
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = #55aa55
 
 format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging-underline = #ffb52a
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
