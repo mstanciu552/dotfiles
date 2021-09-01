@@ -57,7 +57,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm i3
 modules-center = xwindow
-modules-right = filesystem backlight-acpi pulseaudio memory wlan battery temperature date powermenu
+modules-right = filesystem mic-volume backlight-acpi pulseaudio memory wlan battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -202,6 +202,16 @@ inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
 enable-scroll = true
+
+[module/mic-volume]
+type = custom/script
+interval = 1
+format = Mic: <label>
+exec = bash ~/.config/polybar/mic-volume.sh show-vol
+
+click-left = bash ~/.config/polybar/mic-volume.sh mute-vol 
+scroll-up = bash ~/.config/polybar/mic-volume.sh inc-vol 
+scroll-down = bash ~/.config/polybar/mic-volume.sh dec-vol
 
 [module/cpu]
 type = internal/cpu
