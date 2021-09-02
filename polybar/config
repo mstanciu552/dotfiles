@@ -54,9 +54,12 @@ module-margin-right = 2
 font-0 = fixed:pixelsize=11;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
+font-3 = Font Awesome 5 Free:pixelsize=10;2
+font-4 = Font Awesome 5 Free Solid:pixelsize=10;2
+font-5 = Font Awesome 5 Brands:pixelsize=10;2
 
 modules-left = bspwm i3
-modules-center = xwindow
+modules-center = weather
 modules-right = filesystem mic-volume backlight-acpi pulseaudio memory wlan battery temperature date powermenu
 
 tray-position = right
@@ -207,11 +210,18 @@ enable-scroll = true
 type = custom/script
 interval = 1
 format = Mic: <label>
-exec = bash ~/.config/polybar/mic-volume.sh show-vol
+exec = bash ~/.config/polybar/scripts/mic-volume.sh show-vol
 
-click-left = bash ~/.config/polybar/mic-volume.sh mute-vol 
-scroll-up = bash ~/.config/polybar/mic-volume.sh inc-vol 
-scroll-down = bash ~/.config/polybar/mic-volume.sh dec-vol
+click-left = bash ~/.config/polybar/scripts/mic-volume.sh mute-vol 
+scroll-up = bash ~/.config/polybar/scripts/mic-volume.sh inc-vol 
+scroll-down = bash ~/.config/polybar/scripts/mic-volume.sh dec-vol
+
+[module/weather]
+type = custom/script
+interval = 600
+cursor-click = python3 ~/.config/polybar/scripts/weather.py
+exec = python3 ~/.config/polybar/scripts/weather.py
+format-underline = #4bffdc
 
 [module/cpu]
 type = internal/cpu
