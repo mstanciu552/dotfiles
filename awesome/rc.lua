@@ -29,6 +29,7 @@ local statusbar = require("statusbar")
 local revelation = require("awesome-revelation")
 local dpi   = require("beautiful.xresources").apply_dpi
 local wibar_height = dpi(28)
+local polybar = true
 
 -- Wallpaper changer
 require('awesome-wallpaper-changer').start({
@@ -46,7 +47,7 @@ light.exec     = "light"          -- optional, set to abs path
 light.kbd      = ""               -- optional, default: thinkpad ctrl
 light.init()                      -- sets diplay min cap
 
--- {{{ Error handling
+-- {{{ Erro/wiandling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
 if awesome.startup_errors then
@@ -262,23 +263,27 @@ awful.screen.connect_for_each_screen(function(s)
         }
     }
 
+  if polybar == false then
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s, height = wibar_height, bg = '#111111aa' })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
-        layout = wibox.layout.align.horizontal,
-        { -- Left widgets
-            layout = wibox.layout.fixed.horizontal,
-            -- mylauncher,
-            s.mytaglist,
-            s.mypromptbox,
-        },
-        s.mytasklist, -- Middle widget
-         -- Right widgets
-        set_widget_list(s)     
-        
+      layout = wibox.layout.align.horizontal,
+      { -- Left widgets
+        layout = wibox.layout.fixed.horizontal,
+        -- mylauncher,
+        s.mytaglist,
+        s.mypromptbox,
+      },
+      s.mytasklist, -- Middle widget
+      -- Right widgets
+      set_widget_list(s)     
     }
+  else
+    awful.wibar({ position = "top", height = 28 })
+    awful.spawn.with_shell("~/.config/polybar/launch.sh")
+  end
 end)
 -- }}}
 
@@ -571,6 +576,11 @@ awful.rules.rules = {
                      screen = awful.screen.preferred,
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen
      }
+    },
+
+    {
+      rule_any = { class = {"Polybar"}},
+      properties = { focusable = false }
     },
 
     -- Floating clients.
