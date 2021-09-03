@@ -3,18 +3,24 @@
 next=$(i3-msg -t get_workspaces | jq -r '.[]| select(.focused).num + 1')
 prev=$(i3-msg -t get_workspaces | jq -r '.[]| select(.focused).num - 1')
 
-if [[ "$next" > 10 ]]
-then
+
 if [[ $1 == "next" ]] 
 then
-  i3-msg workspace number "$next"
-fi
+  if [[ $next -lt 10 ]]
+  then
+    i3-msg workspace number "$next"
+  else
+    i3-msg workspace number "1"
+  fi
 fi
 
-if [[ "$prev" > 0 ]]
-then
+
 if [[ $1 == "prev" ]]
 then
-  i3-msg workspacenumber "$prev"
-fi
+  if [[ $prev -gt 0 ]]
+  then
+    i3-msg workspace number "$prev"
+  else
+    i3-msg workspace number "9"
+  fi
 fi
