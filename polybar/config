@@ -75,7 +75,7 @@ width = 100%
 height = 28
 offset-x = 0
 offset-y = 0
-radius = 1.0
+radius = 0.0
 fixed-center = false
 
 background = ${colors.background}
@@ -114,6 +114,14 @@ cursor-scroll = ns-resize
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
+
+[module/polybar-windows]
+type = custom/script
+exec = bash ~/.config/polybar/scripts/polybar-windows.sh
+format = <label>
+label = %output%
+label-padding = 1
+interval = 0.1
 
 [module/xkeyboard]
 type = internal/xkeyboard

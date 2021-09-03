@@ -281,7 +281,7 @@ awful.screen.connect_for_each_screen(function(s)
       set_widget_list(s)     
     }
   else
-    awful.wibar({ position = "top", height = 28 })
+    awful.wibar({ position = "top", height = 28, bg = '#11111100' })
     awful.spawn.with_shell("~/.config/polybar/launch.sh")
   end
 end)
