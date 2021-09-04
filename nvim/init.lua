@@ -31,7 +31,8 @@ require('trouble-conf')
 require("treesitter-conf")
 
 -- Lsp Config
-source('plug-conf/lsp-config')
+-- source('plug-conf/lsp-config')
+require('lspconfig-conf')
 require('lspinstall-conf')
 
 require('compe-config')
@@ -40,7 +41,7 @@ require('ccls-lsp')
 require('lua-lsp')
 require('golang-lsp')
 require('python-lsp')
--- require('rust-lsp')
+require('rust-lsp')
 require('tsserver-lsp')
 require('rust_tools')
 

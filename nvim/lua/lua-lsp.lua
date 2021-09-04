@@ -1,3 +1,5 @@
+local on_attach = require('lspconfig-conf')
+
 -- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
 USER = vim.fn.expand('$USER')
 
@@ -15,6 +17,7 @@ else
 end
 
 require'lspconfig'.sumneko_lua.setup {
+    on_attach = on_attach,
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
     settings = {
         Lua = {
