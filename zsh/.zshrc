@@ -116,6 +116,7 @@ alias so="source  env/bin/activate"
 alias nv="ls -la | dmenu | awk '{print \$NF}' |xargs -I {} nvim {}"
 alias pr="cat ~/Documents/Projects/Plans/TODO_LIST.md | rg -e '- ' | sed -e 's/- //'"
 alias less="bat"
+alias l="lvim"
 
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

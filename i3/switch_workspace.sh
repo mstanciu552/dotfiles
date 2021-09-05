@@ -1,8 +1,10 @@
 #!/bin/bash
 
-next=$(i3-msg -t get_workspaces | jq -r '.[]| select(.focused).num + 1')
-prev=$(i3-msg -t get_workspaces | jq -r '.[]| select(.focused).num - 1')
+next_aux=$(i3-msg -t get_workspaces | jq -r '.[]| select(.focused).num + 1')
+prev_aux=$(i3-msg -t get_workspaces | jq -r '.[]| select(.focused).num - 1')
 
+next=$(($(wmctrl -d | grep '\*' | awk '{print $NF}') + 1))
+prev=$(($(wmctrl -d | grep '\*' | awk '{print $NF}') - 1))
 
 if [[ $1 == "next" ]] 
 then
