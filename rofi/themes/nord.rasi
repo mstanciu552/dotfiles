@@ -43,7 +43,14 @@ configuration {
     border              : 2;
     border-color        : @nord8;
 }
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
 #mainbox {
+
     spacing             : 0;
 }
 #inputbar {

@@ -58,8 +58,6 @@ lvim.builtin.nvimtree.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
 lvim.builtin.nvimtree.hide_dotfiles = false
 
-lvim.builtin.lualine.active = false;
-
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -135,14 +133,7 @@ lvim.plugins = {
     "folke/todo-comments.nvim",
     event = "BufRead",
   },
-  {
-    "glepnir/galaxyline.nvim",
-    branch = 'main',
-    -- your statusline
-    config = galaxyline_config,
-    -- some optional icons
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
-  },
+  {"ap/vim-css-color"},
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
