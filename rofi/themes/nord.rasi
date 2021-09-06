@@ -106,7 +106,7 @@ configuration {
     size                : 0.8em;
 }
 #mode-switcher {
-    padding             : 0;
+    padding             : 0px;
 }
 button {
   padding               : 6px;

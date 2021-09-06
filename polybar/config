@@ -373,12 +373,13 @@ date = " %Y-%m-%d"
 time = %H:%M:%S
 time-alt = %H:%M
 
+; format = %{A1:bash ~/.config/polybar/scripts/polybar-calendar.sh} <label>
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
 label = %date%  %time%
-
+ 
 [module/pulseaudio]
 type = internal/pulseaudio
 

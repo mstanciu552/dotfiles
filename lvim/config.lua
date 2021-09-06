@@ -13,7 +13,6 @@ lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "nightfox"
 -- lvim.lsp.diagnostics.virtual_text = false
-lvim.builtin.nvimtree.hide_dotfiles = false
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -54,8 +53,12 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
+
 lvim.builtin.nvimtree.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
+lvim.builtin.nvimtree.hide_dotfiles = false
+
+lvim.builtin.lualine.active = false;
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = "maintained"
@@ -103,14 +106,14 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- Additional Plugins
 lvim.plugins = {
-    {"folke/tokyonight.nvim"},
-    {
-      "folke/trouble.nvim",
-      cmd = "TroubleToggle",
-    },
-    {
-      "EdenEast/nightfox.nvim"
-    },
+  {"folke/tokyonight.nvim"},
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  },
+  {
+    "EdenEast/nightfox.nvim"
+  },
   {
     'wfxr/minimap.vim',
     run = "cargo install --locked code-minimap",
@@ -131,6 +134,14 @@ lvim.plugins = {
   {
     "folke/todo-comments.nvim",
     event = "BufRead",
+  },
+  {
+    "glepnir/galaxyline.nvim",
+    branch = 'main',
+    -- your statusline
+    config = galaxyline_config,
+    -- some optional icons
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
   },
 }
 
