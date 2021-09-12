@@ -1,7 +1,10 @@
-vim.cmd("colorscheme nightfox")
+local M = {}
 
--- vim.cmd('hi Normal ctermbg=NONE guibg=NONE')
-vim.cmd('hi SpellBad guifg=NONE guibg=NONE cterm=NONE ctermfg=NONE ctermbg=NONE')
+function M.config()
+  require('nightfox').load('nightfox')
 
-vim.cmd('au ColorScheme * hi SpellBad guifg=NONE guibg=NONE cterm=NONE ctermfg=NONE ctermbg=NONE')
--- vim.cmd('au ColorScheme * hi Normal ctermbg=NONE guibg=NONE')
+  vim.cmd('hi SpellBad guifg=none guibg=none cterm=none ctermfg=none ctermbg=none')
+
+end
+
+return M

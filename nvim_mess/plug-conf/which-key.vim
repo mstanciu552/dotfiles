@@ -1,3 +1,4 @@
+set timeoutlen=10
 call which_key#register('<Space>', "g:which_key_map")
 
 nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
