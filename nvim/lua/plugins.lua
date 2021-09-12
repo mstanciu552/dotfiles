@@ -3,7 +3,7 @@
 local M = {}
 
 function M.config()
-	return require('packer').startup(function() 
+	return require('packer').startup(function(use)
 
 		use 'wbthomason/packer.nvim'
 		use {
@@ -41,6 +41,19 @@ function M.config()
       }
     }
 
+    use { 'ap/vim-css-color' }
+    use { 'windwp/nvim-autopairs' }
+    use { 'folke/which-key.nvim' }
+
+    use {
+      'glepnir/galaxyline.nvim',
+      branch = 'main',
+    }
+
+    use {
+      'terrortylor/nvim-comment',
+      config = function() require('nvim_comment').setup({ comment_empty = false }) end
+    }
 
 	end)
 end

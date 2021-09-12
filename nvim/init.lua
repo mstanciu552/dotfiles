@@ -6,11 +6,12 @@ local config = {
   "keybindings",
   "colorscheme",
   "config.nvimtree",
-  "config.lualine",
+  "config.galaxyline",
   "config.telescope",
   "config.treesitter",
   "config.lspinstall",
   "config.cmp",
+  "config.which-key",
 }
 
 
