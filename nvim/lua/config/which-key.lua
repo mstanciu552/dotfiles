@@ -1,3 +1,5 @@
+vim.cmd[[ set timeoutlen=1 ]]
+
 local M = {}
 
 function M.config()

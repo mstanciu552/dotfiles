@@ -5,6 +5,7 @@ local config = {
   "general",
   "keybindings",
   "colorscheme",
+  "config.barbar",
   "config.nvimtree",
   "config.galaxyline",
   "config.telescope",

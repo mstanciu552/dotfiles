@@ -1,5 +1,24 @@
 local M = {}
 
+function M.emmet()
+
+  vim.g.user_emmet_leader_key = '<C-y>'
+
+end
+
+function M.ale()
+  vim.cmd[[ 
+  let g:ale_fixers = {
+    \   'javascript': ['prettier'],
+    \   'css': ['prettier'],
+    \   'html': ['prettier'],
+    \   'python': ['black'],
+    \}  
+
+  ]]
+  vim.g.ale_fix_on_save = 1
+end
+
 function M.config()
 
   vim.cmd[[
@@ -36,6 +55,7 @@ function M.config()
   au InsertEnter * silent execute "!echo -en \<esc>[5 q"
   au InsertLeave * silent execute "!echo -en \<esc>[2 q"
   autocmd BufNew,BufRead *.asm set ft=nasm
+
 
   ]]
 

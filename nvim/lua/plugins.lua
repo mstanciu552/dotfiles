@@ -55,6 +55,20 @@ function M.config()
       config = function() require('nvim_comment').setup({ comment_empty = false }) end
     }
 
+    use {
+      'romgrk/barbar.nvim',
+      requires = {'kyazdani42/nvim-web-devicons'}
+    }
+
+    use { 'mattn/emmet-vim' }
+
+    use {
+      'dense-analysis/ale',
+      ft = {'sh', 'zsh', 'bash', 'c', 'cpp', 'cmake', 'html', 'markdown', 'racket', 'vim', 'tex'},
+      cmd = 'ALEEnable',
+      config = 'vim.cmd[[ALEEnable]]'
+    }
+
 	end)
 end
 
