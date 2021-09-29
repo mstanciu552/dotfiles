@@ -33,6 +33,9 @@ exec --no-startup-id nm-applet
 # Autostart
 exec_always --no-startup-id ~/.config/i3/autorun.sh
 
+# Floating windows
+for_window [class="feh"] floating enable
+
 # Personal config
 # Browser
 bindsym $mod+b exec brave
