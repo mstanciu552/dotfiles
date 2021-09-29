@@ -68,6 +68,7 @@ function M.config()
       cmd = 'ALEEnable',
       config = 'vim.cmd[[ALEEnable]]'
     }
+    use { 'christianchiarulli/nvcode-color-schemes.vim' }
 
 	end)
 end

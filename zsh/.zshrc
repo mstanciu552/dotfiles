@@ -108,6 +108,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias n="nvim"
+alias v="nvim"
 alias ls="exa"
 alias ll="ls -la"
 alias cfnv="nvim ~/.config/nvim/init.lua"

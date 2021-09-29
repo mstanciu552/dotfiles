@@ -1,0 +1,8 @@
+#!/bin/bash
+
+state=$(upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep state | awk '{print $NF}')
+
+if [[ "$state" == "fully-charged" ]]
+then
+  notify-send "Battery fully charged"
+fi
