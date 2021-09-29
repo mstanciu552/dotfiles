@@ -1,0 +1,1 @@
+/home/sc0p3/.local/share/omf/themes/one/fish_prompt.fish
