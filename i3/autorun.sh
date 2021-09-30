@@ -1,6 +1,6 @@
 #!/bin/bash
 
-killall -q polybar
+killall -q polybar 
 polybar sc0p3 &
 dunst &
 picom --experimental-backends &

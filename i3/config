@@ -31,7 +31,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Autostart
-exec_always --no-startup-id ~/.config/i3/autorun.sh
+exec_always ~/.config/i3/autorun.sh
 
 # Floating windows
 for_window [class="feh"] floating enable
