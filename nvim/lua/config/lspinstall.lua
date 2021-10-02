@@ -1,5 +1,4 @@
 local M = {}
-
 function M.config()
   require'lspinstall'.setup() -- important
 

@@ -8,13 +8,13 @@ function M.config()
     -- hijack netrw window on startup
     hijack_netrw        = true,
     -- open the tree when running this setup function
-    open_on_setup       = false,
+    open_on_setup       = true,
     -- will not open on setup if the filetype is in this list
     ignore_ft_on_setup  = {},
     -- closes neovim automatically when the tree is the last **WINDOW** in the view
     auto_close          = true,
     -- opens the tree when changing/opening a new tab if the tree wasn't previously opened
-    open_on_tab         = true,
+    open_on_tab         = false,
     -- hijacks new directory buffers when they are opened.
     update_to_buf_dir   = true,
     -- hijack the cursor in the tree to put it at the start of the filename
@@ -56,36 +56,36 @@ function M.config()
         -- list of mappings to set on the tree manually
         list = {}
       }
-    }
+    },
   }
 
---   vim.g.nvim_tree_show_icons = {
---     git = 1,
---     folders = 1,
---     files = 1,
---     folder_arrows = 1,
---   }
+  vim.g.nvim_tree_show_icons = {
+    git = 1,
+    folders = 1,
+    files = 1,
+    folder_arrows = 1,
+  }
 
---   vim.g.nvim_tree_icons = {
---     default = "",
---     symlink = "",
---     git = {
---       unstaged = "",
---       staged = "S",
---       unmerged = "",
---       renamed = "➜",
---       deleted = "",
---       untracked = "U",
---       ignored = "◌",
---     },
---     folder = {
---       default = "",
---       open = "",
---       empty = "",
---       empty_open = "",
---       symlink = "",
---     },
---   }
+  vim.g.nvim_tree_icons = {
+    default = "",
+    symlink = "",
+    git = {
+      unstaged = "",
+      staged = "S",
+      unmerged = "",
+      renamed = "➜",
+      deleted = "",
+      untracked = "U",
+      ignored = "◌",
+    },
+    folder = {
+      default = "",
+      open = "",
+      empty = "",
+      empty_open = "",
+      symlink = "",
+    },
+  }
 
 end
 

@@ -2,7 +2,16 @@ local M = {}
 
 function M.config()
   require('telescope').setup{
+    
     defaults = {
+      mappings =  {
+        n = {
+          ["<CR>"] = require('telescope.actions').select_tab
+        },
+        i = {
+          ["<CR>"] = require('telescope.actions').select_tab
+        },
+      },
       vimgrep_arguments = {
         'rg',
         '--color=never',

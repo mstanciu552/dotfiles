@@ -12,6 +12,7 @@ function M.config()
 		}
 
 		use 'EdenEast/nightfox.nvim'
+    use 'sbdchd/neoformat'
 
     use {
       'hoob3rt/lualine.nvim',
@@ -30,6 +31,7 @@ function M.config()
 
     use { 'neovim/nvim-lspconfig', }
     use { 'kabouzeid/nvim-lspinstall', }
+    use { 'glepnir/lspsaga.nvim', }
 
     use {
       "hrsh7th/nvim-cmp",
@@ -42,7 +44,12 @@ function M.config()
     }
 
     use { 'ap/vim-css-color' }
-    use { 'windwp/nvim-autopairs' }
+    use { 
+      'windwp/nvim-autopairs',
+      config = function() require('nvim-autopairs').setup{} end
+    }
+
+
     use { 'folke/which-key.nvim' }
 
     use {

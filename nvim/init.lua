@@ -11,6 +11,7 @@ local config = {
   "config.telescope",
   "config.treesitter",
   "config.lspinstall",
+  "config.lspsaga",
   "config.cmp",
   "config.which-key",
 }

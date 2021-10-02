@@ -2,7 +2,7 @@ configuration {
   terminal: "kitty";
   modi: "combi,calc,window,drun,filebrowser";
   combi-modi: "drun,window";
-  font: "UbuntuMono Nerd Font 16";
+  font: "UbuntuMono Nerd Font 14";
   show-icons: true;
   icon-theme: "Tela circle dark";
   combi-hide-mode-prefix: true;

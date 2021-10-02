@@ -44,8 +44,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/root/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?.lua;/root/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?/init.lua;/root/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?.lua;/root/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/root/.cache/nvim/packer_hererocks/2.0.5/lib/lua/5.1/?.so"
+local package_path_str = "/home/sc0p3/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?.lua;/home/sc0p3/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?/init.lua;/home/sc0p3/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?.lua;/home/sc0p3/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/sc0p3/.cache/nvim/packer_hererocks/2.0.5/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -74,104 +74,117 @@ _G.packer_plugins = {
     config = { "vim.cmd[[ALEEnable]]" },
     loaded = false,
     needs_bufread = true,
-    path = "/root/.local/share/nvim/site/pack/packer/opt/ale"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/opt/ale"
   },
   ["barbar.nvim"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/barbar.nvim"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/barbar.nvim"
   },
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/cmp-buffer"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
   },
   ["cmp-path"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/cmp-path"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/cmp-path"
   },
   ["emmet-vim"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/emmet-vim"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/emmet-vim"
   },
   ["galaxyline.nvim"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
+  },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+  },
+  neoformat = {
+    loaded = true,
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/neoformat"
   },
   ["nightfox.nvim"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/nightfox.nvim"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/nightfox.nvim"
   },
   ["nvcode-color-schemes.vim"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/nvcode-color-schemes.vim"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/nvcode-color-schemes.vim"
   },
   ["nvim-autopairs"] = {
+    config = { "\27LJ\1\2@\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/nvim-cmp"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/nvim-cmp"
   },
   ["nvim-comment"] = {
     config = { "\27LJ\1\2P\0\0\2\0\4\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0>\0\2\1G\0\1\0\1\0\1\18comment_empty\1\nsetup\17nvim_comment\frequire\0" },
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/nvim-comment"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/nvim-comment"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
   ["nvim-lspinstall"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/plenary.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
   ["vim-css-color"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/vim-css-color"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/vim-css-color"
   },
   ["vim-vsnip"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/vim-vsnip"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/vim-vsnip"
   },
   ["which-key.nvim"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/which-key.nvim"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+try_loadstring("\27LJ\1\2@\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
+time([[Config for nvim-autopairs]], false)
 -- Config for: nvim-comment
 time([[Config for nvim-comment]], true)
 try_loadstring("\27LJ\1\2P\0\0\2\0\4\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0>\0\2\1G\0\1\0\1\0\1\18comment_empty\1\nsetup\17nvim_comment\frequire\0", "config", "nvim-comment")
