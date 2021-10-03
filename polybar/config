@@ -59,7 +59,7 @@ font-4 = Font Awesome 5 Free Solid:pixelsize=10;2
 font-5 = Font Awesome 5 Brands:pixelsize=10;2
 
 modules-left = bspwm i3
-modules-center = weather
+modules-center = weather spotify
 modules-right = filesystem mic-volume backlight-acpi pulseaudio memory wlan battery temperature date powermenu
 
 tray-position = right
@@ -114,6 +114,19 @@ cursor-scroll = ns-resize
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = python ~/.config/polybar/scripts/spotify.py -f '{artist}: {song}'
+format-underline = #1db954
+
+;control players (optional)
+click-left = playerctl --player=spotify play-pause 
+click-right = playerctl --player=spotify next 
+click-middle = playerctl --player=spotify previous 
 
 [module/polybar-windows]
 type = custom/script
