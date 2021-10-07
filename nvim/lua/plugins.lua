@@ -2,6 +2,8 @@
 
 local M = {}
 
+-- TODO Add null-ls
+-- TODO Add comment.nvim
 function M.config()
 	return require('packer').startup(function(use)
 
@@ -76,6 +78,12 @@ function M.config()
       config = 'vim.cmd[[ALEEnable]]'
     }
     use { 'christianchiarulli/nvcode-color-schemes.vim' }
+
+    use {
+      "ahmedkhalf/jupyter-nvim",
+      run = ":UpdateRemotePlugins",
+    }
+    use 'jose-elias-alvarez/null-ls.nvim'
 
 	end)
 end

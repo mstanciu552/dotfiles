@@ -62,12 +62,11 @@ function M.config()
   augroup END
 
 
-  augroup fmt
-    autocmd!
-    autocmd BufWritePre * undojoin | Neoformat
-  augroup END
-
   ]]
+--   augroup fmt
+--     autocmd!
+--     autocmd BufWritePre * undojoin | Neoformat
+--   augroup END
 
 end
 

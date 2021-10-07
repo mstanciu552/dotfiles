@@ -36,9 +36,13 @@ exec_always ~/.config/i3/autorun.sh
 # Floating windows
 for_window [class="feh"] floating enable
 
+
 # Personal config
 # Browser
 bindsym $mod+b exec brave
+
+# Calendar
+bindsym $mod+x exec kitty -e calcurse
 
 # Disable titlebars
 gaps outer 5
