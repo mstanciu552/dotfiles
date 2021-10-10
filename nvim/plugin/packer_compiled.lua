@@ -80,9 +80,9 @@ _G.packer_plugins = {
     needs_bufread = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/opt/ale"
   },
-  ["barbar.nvim"] = {
+  ["bufferline.nvim"] = {
     loaded = true,
-    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/barbar.nvim"
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/bufferline.nvim"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -104,9 +104,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/emmet-vim"
   },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/friendly-snippets"
+  },
   ["galaxyline.nvim"] = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
+  },
+  ["lspkind-nvim"] = {
+    loaded = true,
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
   },
   ["lspsaga.nvim"] = {
     loaded = true,

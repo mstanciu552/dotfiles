@@ -66,10 +66,7 @@ function M.config()
 			end,
 		})
 
-		use({
-			"romgrk/barbar.nvim",
-			requires = { "kyazdani42/nvim-web-devicons" },
-		})
+		use({ "akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons" })
 
 		use({ "mattn/emmet-vim" })
 
@@ -89,6 +86,8 @@ function M.config()
 		use("jose-elias-alvarez/null-ls.nvim")
 		use("L3MON4D3/LuaSnip")
 		use("saadparwaiz1/cmp_luasnip")
+		use("rafamadriz/friendly-snippets")
+		use("onsails/lspkind-nvim")
 	end)
 end
 
