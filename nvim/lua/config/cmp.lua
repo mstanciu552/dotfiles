@@ -28,16 +28,15 @@ function M.config()
 					buffer = "(Buffer)",
 				})[entry.source.name]
 
-				vim_item.dup = ({
-					buffer = 1,
-					path = 1,
-					nvim_lsp = 1,
-				})[entry.source.name] or 0
+				-- 				vim_item.dup = ({
+				-- 					buffer = 1,
+				-- 					path = 1,
+				-- 					nvim_lsp = 1,
+				-- 				})[entry.source.name] or 0
 
 				return vim_item
 			end,
 		},
-
 		mapping = {
 			["<CR>"] = cmp.mapping.confirm({
 				behavior = cmp.ConfirmBehavior.Insert,

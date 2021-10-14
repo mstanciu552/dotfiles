@@ -5,6 +5,7 @@ M.sources = {
 	require("null-ls").builtins.formatting.prettier,
 	require("null-ls").builtins.formatting.autopep8,
 	require("null-ls").builtins.formatting.shellcheck,
+	require("null-ls").builtins.formatting.shfmt,
 	require("null-ls").builtins.formatting.clang_format,
 	require("null-ls").builtins.formatting.gofmt,
 	require("null-ls").builtins.formatting.json_tool,
@@ -21,6 +22,7 @@ end
 function M.config()
 	require("null-ls").config({
 		sources = M.sources,
+		debug = true,
 	})
 	require("lspconfig")["null-ls"].setup({
 		on_attach = M.on_attach,

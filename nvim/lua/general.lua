@@ -1,27 +1,24 @@
 local M = {}
 
 function M.emmet()
-
-  vim.g.user_emmet_leader_key = '<C-y>'
-
+	vim.g.user_emmet_leader_key = "<C-y>"
 end
 
 function M.ale()
-  vim.cmd[[ 
+	vim.cmd([[ 
   let g:ale_fixers = {
     \   'javascript': ['prettier'],
     \   'css': ['prettier'],
-    \   'html': ['prettier'],
     \   'python': ['black'],
+    \   'html': ['prettier'],
     \}  
 
-  ]]
-  vim.g.ale_fix_on_save = 1
+  ]])
+	vim.g.ale_fix_on_save = 1
 end
 
 function M.config()
-
-  vim.cmd[[
+	vim.cmd([[
   syntax on
   filetype plugin indent on
 
@@ -62,12 +59,8 @@ function M.config()
   augroup END
 
 
-  ]]
---   augroup fmt
---     autocmd!
---     autocmd BufWritePre * undojoin | Neoformat
---   augroup END
-
+  ]])
+	vim.o.signcolumn = "yes"
 end
 
 return M

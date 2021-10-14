@@ -65,9 +65,11 @@ modules-right = filesystem mic-volume backlight-acpi pulseaudio memory wlan batt
 tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
+; tray-output = none
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+wm-restack = i3
 
 [bar/awesome]
 ;monitor = ${env:MONITOR:HDMI-1}
