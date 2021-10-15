@@ -36,7 +36,6 @@ exec_always ~/.config/i3/autorun.sh
 # Floating windows
 for_window [class="feh"] floating enable
 
-
 # Personal config
 # Browser
 bindsym $mod+b exec brave

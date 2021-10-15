@@ -38,8 +38,6 @@ function M.config()
   set vb t_vb=
   set termguicolors
   set encoding=utf-8
-  set noshowmode
-  set hidden
   set shortmess+=c
   set formatoptions-=cro
   set modifiable
@@ -57,7 +55,6 @@ function M.config()
     autocmd!
     au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=500}
   augroup END
-
 
   ]])
 	vim.o.signcolumn = "yes"

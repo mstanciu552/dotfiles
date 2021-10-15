@@ -1,4 +1,15 @@
-local M = {}
+local M = {
+	source_menu = {
+		nvim_lsp = "(LSP)",
+		emoji = "(Emoji)",
+		path = "(Path)",
+		calc = "(Calc)",
+		cmp_tabnine = "(Tabnine)",
+		vsnip = "(Snippet)",
+		luasnip = "(Snippet)",
+		buffer = "(Buffer)",
+	},
+}
 
 function M.config()
 	local cmp = require("cmp")
@@ -8,32 +19,27 @@ function M.config()
 	cmp.setup({
 		snippet = {
 			expand = function(args)
-				-- For `luasnip` user.
 				require("luasnip").lsp_expand(args.body)
 			end,
 		},
 		formatting = {
+			-- 			format = function(entry, vim_item)
+			-- 				local icons = lspkind.presets.default
+			-- 				vim_item.kind = icons[vim_item.kind]
+
+			-- 				vim_item.menu = M.source_menu[entry.source.name]
+			-- 				return vim_item
+			-- 			end,
 			format = function(entry, vim_item)
-				local icons = lspkind.presets.default
-				vim_item.kind = icons[vim_item.kind]
-
-				vim_item.menu = ({
-					nvim_lsp = "(LSP)",
-					emoji = "(Emoji)",
-					path = "(Path)",
-					calc = "(Calc)",
-					cmp_tabnine = "(Tabnine)",
-					vsnip = "(Snippet)",
-					luasnip = "(Snippet)",
-					buffer = "(Buffer)",
-				})[entry.source.name]
-
-				-- 				vim_item.dup = ({
-				-- 					buffer = 1,
-				-- 					path = 1,
-				-- 					nvim_lsp = 1,
-				-- 				})[entry.source.name] or 0
-
+				vim_item.kind = lspkind.presets.default[vim_item.kind]
+				local menu = M.source_menu[entry.source.name]
+				if entry.source.name == "cmp_tabnine" then
+					if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+						menu = entry.completion_item.data.detail .. " " .. menu
+					end
+					vim_item.kind = ""
+				end
+				vim_item.menu = menu
 				return vim_item
 			end,
 		},
@@ -54,6 +60,7 @@ function M.config()
 			{ name = "nvim_lsp" },
 			{ name = "path" },
 			{ name = "luasnip" },
+			{ name = "cmp_tabnine" },
 		},
 	})
 end

@@ -101,6 +101,7 @@ function M.config()
 				"hrsh7th/cmp-path",
 			},
 		})
+		use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
 
 		use({ "ap/vim-css-color" })
 		use({
@@ -136,11 +137,6 @@ function M.config()
 		})
 		use({ "christianchiarulli/nvcode-color-schemes.vim" })
 
-		-- use({
-		-- 	"ahmedkhalf/jupyter-nvim",
-		-- 	run = ":UpdateRemotePlugins",
-		-- })
-		use("bfredl/nvim-ipy")
 		use("jose-elias-alvarez/null-ls.nvim")
 		use("L3MON4D3/LuaSnip")
 		use("saadparwaiz1/cmp_luasnip")

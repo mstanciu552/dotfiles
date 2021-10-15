@@ -6,16 +6,16 @@ local config = {
 	"keybindings",
 	"colorscheme",
 	"config.bufferline",
+	"config.cmp",
 	"config.nvimtree",
 	"config.null-ls",
 	"config.galaxyline",
-	-- "config.jupyter",
 	"config.luasnip",
 	"config.telescope",
 	"config.treesitter",
 	"config.lspinstall",
 	"config.lspsaga",
-	"config.cmp",
+	"config.tabnine",
 	"config.which-key",
 }
 

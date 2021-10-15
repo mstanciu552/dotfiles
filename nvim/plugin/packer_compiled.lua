@@ -96,6 +96,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/cmp-path"
   },
+  ["cmp-tabnine"] = {
+    loaded = true,
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/cmp-tabnine"
+  },
   cmp_luasnip = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/cmp_luasnip"
@@ -149,10 +153,6 @@ _G.packer_plugins = {
     config = { "\27LJ\1\2P\0\0\2\0\4\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0>\0\2\1G\0\1\0\1\0\1\18comment_empty\1\nsetup\17nvim_comment\frequire\0" },
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/nvim-comment"
-  },
-  ["nvim-ipy"] = {
-    loaded = true,
-    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/nvim-ipy"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
