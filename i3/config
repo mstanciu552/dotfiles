@@ -10,6 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -71,6 +72,9 @@ bindsym $mod+e exec dolphin
 
 # kill focused window
 bindsym $mod+c kill
+
+# Switch back and forth
+bindsym $alt+Tab workspace back_and_forth
 
 # start dmenu (a program launcher)
 bindsym $mod+r exec --no-startup-id rofi -show combi

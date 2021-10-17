@@ -2,8 +2,8 @@
 
 local M = {}
 
--- TODO Add null-ls
--- TODO Add comment.nvim
+-- TODO Check out nvim-comment
+-- TODO Replace nvim-lspinstall with nvim-lsp-installer
 function M.config()
 	require("packer").init({
 
@@ -59,7 +59,7 @@ function M.config()
 		},
 		log = { level = "warn" }, -- The default print log level. One of: "trace", "debug", "info", "warn", "error", "fatal".
 		profile = {
-			enable = false,
+			enable = true,
 			threshold = 1, -- integer in milliseconds, plugins which load faster than this won't be shown in profile output
 		},
 	})
@@ -129,12 +129,6 @@ function M.config()
 
 		use({ "mattn/emmet-vim" })
 
-		use({
-			"dense-analysis/ale",
-			ft = { "sh", "zsh", "bash", "c", "cpp", "cmake", "html", "markdown", "racket", "vim", "tex" },
-			cmd = "ALEEnable",
-			config = "vim.cmd[[ALEEnable]]",
-		})
 		use({ "christianchiarulli/nvcode-color-schemes.vim" })
 
 		use("jose-elias-alvarez/null-ls.nvim")
@@ -142,6 +136,9 @@ function M.config()
 		use("saadparwaiz1/cmp_luasnip")
 		use("rafamadriz/friendly-snippets")
 		use("onsails/lspkind-nvim")
+		use("tanvirtin/monokai.nvim")
+
+		use("tpope/vim-surround")
 	end)
 end
 

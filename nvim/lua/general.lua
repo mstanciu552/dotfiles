@@ -46,6 +46,8 @@ function M.config()
   set mouse=a
   set inccommand=nosplit
   set cursorline
+  set hidden
+  set noshowmode
 
   au InsertEnter * silent execute "!echo -en \<esc>[5 q"
   au InsertLeave * silent execute "!echo -en \<esc>[2 q"
@@ -57,6 +59,7 @@ function M.config()
   augroup END
 
   ]])
+
 	vim.o.signcolumn = "yes"
 end
 

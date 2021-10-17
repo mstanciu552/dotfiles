@@ -1,19 +1,18 @@
 local M = {
 	source_menu = {
-		nvim_lsp = "(LSP)",
-		emoji = "(Emoji)",
-		path = "(Path)",
-		calc = "(Calc)",
-		cmp_tabnine = "(Tabnine)",
-		vsnip = "(Snippet)",
-		luasnip = "(Snippet)",
-		buffer = "(Buffer)",
+		nvim_lsp = " (LSP)",
+		emoji = " (Emoji)",
+		path = " (Path)",
+		calc = " (Calc)",
+		cmp_tabnine = " (Tabnine)",
+		vsnip = " (Snippet)",
+		luasnip = " (Snippet)",
+		buffer = " (Buffer)",
 	},
 }
 
 function M.config()
 	local cmp = require("cmp")
-	local vim = vim
 	local lspkind = require("lspkind")
 
 	cmp.setup({
@@ -23,13 +22,6 @@ function M.config()
 			end,
 		},
 		formatting = {
-			-- 			format = function(entry, vim_item)
-			-- 				local icons = lspkind.presets.default
-			-- 				vim_item.kind = icons[vim_item.kind]
-
-			-- 				vim_item.menu = M.source_menu[entry.source.name]
-			-- 				return vim_item
-			-- 			end,
 			format = function(entry, vim_item)
 				vim_item.kind = lspkind.presets.default[vim_item.kind]
 				local menu = M.source_menu[entry.source.name]
@@ -42,6 +34,12 @@ function M.config()
 				vim_item.menu = menu
 				return vim_item
 			end,
+		},
+		experimental = {
+			ghost_text = true,
+		},
+		documentation = {
+			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 		},
 		mapping = {
 			["<CR>"] = cmp.mapping.confirm({
@@ -56,11 +54,11 @@ function M.config()
 			["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
 		},
 		sources = {
+			{ name = "cmp_tabnine" },
 			{ name = "buffers" },
 			{ name = "nvim_lsp" },
 			{ name = "path" },
 			{ name = "luasnip" },
-			{ name = "cmp_tabnine" },
 		},
 	})
 end
