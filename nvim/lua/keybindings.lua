@@ -38,7 +38,7 @@ function M.config()
 	-- LSP
 	key("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 	key("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-	key("n", "K", "<cmd>lua require'lspsaga.provider'.render_hover_doc()<CR>", opts)
+	key("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	key("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 	key("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	key("n", "<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
@@ -55,8 +55,8 @@ function M.config()
 	key("n", "<leader>wf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
 	-- Lspsaga
-	key("n", "<leader>lf", "<cmd>lua require'lspsaga.provider'.lsp_finder()<CR>", opts)
-	key("n", "<leader>lc", "<cmd>lua require'lspsaga.codeaction'.code_action()<CR>", opts)
+	key("n", "<leader>lf", ":lua require'lspsaga.provider'.lsp_finder()<CR>", opts)
+	key("n", "<leader>lc", ":lua require'lspsaga.codeaction'.code_action()<CR>", opts)
 end
 
 return M

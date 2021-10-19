@@ -16,6 +16,7 @@ local config = {
 	"config.lspinstall",
 	"config.lspsaga",
 	"config.tabnine",
+	"config.trouble",
 	"config.which-key",
 }
 

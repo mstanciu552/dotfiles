@@ -58,6 +58,8 @@ function M.config()
     au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=500}
   augroup END
 
+  let g:cursorhold_updatetime = 100
+
   ]])
 
 	vim.o.signcolumn = "yes"

@@ -90,7 +90,7 @@ function M.config()
 
 		use({ "neovim/nvim-lspconfig" })
 		use({ "kabouzeid/nvim-lspinstall" })
-		use({ "glepnir/lspsaga.nvim" })
+		use({ "tami5/lspsaga.nvim" })
 
 		use({
 			"hrsh7th/nvim-cmp",
@@ -126,19 +126,29 @@ function M.config()
 		})
 
 		use({ "akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons" })
-
 		use({ "mattn/emmet-vim" })
-
 		use({ "christianchiarulli/nvcode-color-schemes.vim" })
-
 		use("jose-elias-alvarez/null-ls.nvim")
 		use("L3MON4D3/LuaSnip")
 		use("saadparwaiz1/cmp_luasnip")
 		use("rafamadriz/friendly-snippets")
 		use("onsails/lspkind-nvim")
 		use("tanvirtin/monokai.nvim")
+		use("antoinemadec/FixCursorHold.nvim") -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
 
 		use("tpope/vim-surround")
+
+		use({
+			"luukvbaal/stabilize.nvim",
+			config = function()
+				require("stabilize").setup()
+			end,
+		})
+
+		use({
+			"folke/trouble.nvim",
+			requires = "kyazdani42/nvim-web-devicons",
+		})
 	end)
 end
 
