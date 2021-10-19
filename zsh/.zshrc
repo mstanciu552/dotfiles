@@ -120,7 +120,9 @@ alias pr="cat ~/Documents/Projects/Plans/TODO_LIST.md | rg -e '- ' | sed -e 's/-
 alias less="bat"
 alias l="lvim"
 
-source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source ~/.config/zsh/dracula.sh
+# source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 alias luamake=/home/sc0p3/.config/nvim/lua-language-server/3rd/luamake/luamake

@@ -2,11 +2,10 @@
 
 local M = {}
 
--- TODO Check out nvim-comment
+-- Check out nvim-comment
 -- TODO Replace nvim-lspinstall with nvim-lsp-installer
 function M.config()
 	require("packer").init({
-
 		ensure_dependencies = true, -- Should packer install plugin dependencies?
 		max_jobs = nil, -- Limit the number of simultaneous jobs. nil means no limit
 		auto_clean = true, -- During sync(), remove unused plugins
