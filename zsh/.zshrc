@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/opt/texlive/2021/bin/x86_64-linux:$PATH
+export GOPATH=$HOME/go
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/opt/texlive/2021/bin/x86_64-linux:$GOPATH/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/sc0p3/.oh-my-zsh"
@@ -119,6 +120,7 @@ alias nv="ls -la | dmenu | awk '{print \$NF}' |xargs -I {} nvim {}"
 alias pr="cat ~/Documents/Projects/Plans/TODO_LIST.md | rg -e '- ' | sed -e 's/- //'"
 alias less="bat"
 alias l="lvim"
+alias lg="lazygit"
 
 # source ~/.config/zsh/dracula.sh
 # source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -48,17 +48,13 @@ function M.config()
 	key("n", "<leader>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", opts)
 	key("n", "<leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
 	key("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-	key("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+	key("n", "<leader>ca", "<cmd>lua require'lspsaga.codeaction'.code_action()<CR>", opts)
 	key("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 	key("n", "<leader>a", "<cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>", opts)
 	key("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
 	key("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
 	key("n", "<leader>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
 	key("n", "<leader>wf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-
-	-- Lspsaga
-	key("n", "<leader>lf", ":lua require'lspsaga.provider'.lsp_finder()<CR>", opts)
-	key("n", "<leader>lc", ":lua require'lspsaga.codeaction'.code_action()<CR>", opts)
 end
 
 return M

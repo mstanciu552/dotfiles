@@ -10,6 +10,7 @@ local config = {
 	"config.nvimtree",
 	"config.null-ls",
 	"config.galaxyline",
+	"config.gitsigns",
 	"config.luasnip",
 	"config.telescope",
 	"config.treesitter",

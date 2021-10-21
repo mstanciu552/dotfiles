@@ -89,7 +89,8 @@ function M.config()
 
 		use({ "neovim/nvim-lspconfig" })
 		use({ "kabouzeid/nvim-lspinstall" })
-		use({ "tami5/lspsaga.nvim" })
+		-- use({ "tami5/lspsaga.nvim" }) -- For neovim 0.6
+		use({ "rinx/lspsaga.nvim" }) -- For neovim 0.5
 
 		use({
 			"hrsh7th/nvim-cmp",
@@ -147,6 +148,13 @@ function M.config()
 		use({
 			"folke/trouble.nvim",
 			requires = "kyazdani42/nvim-web-devicons",
+		})
+
+		use({
+			"lewis6991/gitsigns.nvim",
+			requires = {
+				"nvim-lua/plenary.nvim",
+			},
 		})
 	end)
 end
