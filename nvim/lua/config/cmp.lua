@@ -1,13 +1,14 @@
 local M = {
 	source_menu = {
-		nvim_lsp = " (LSP)",
-		emoji = " (Emoji)",
-		path = " (Path)",
-		calc = " (Calc)",
-		cmp_tabnine = " (Tabnine)",
-		vsnip = " (Snippet)",
-		luasnip = " (Snippet)",
-		buffer = " (Buffer)",
+		nvim_lsp = "[LSP]",
+		nvim_lua = "[API]",
+		emoji = "[Emoji]",
+		path = "[Path]",
+		calc = "[Calc]",
+		cmp_tabnine = "[Tabnine]",
+		vsnip = "[Snippet]",
+		luasnip = "[Snippet]",
+		buffer = "[Buffer]",
 	},
 }
 
@@ -50,15 +51,30 @@ function M.config()
 			["<C-f>"] = cmp.mapping.scroll_docs(4),
 			["<C-Space>"] = cmp.mapping.complete(),
 			["<C-e>"] = cmp.mapping.close(),
-			["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
-			["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
+			-- ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
+			-- ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
+			["<Tab>"] = function(fallback)
+				if cmp.visible() then
+					cmp.select_next_item()
+				else
+					fallback()
+				end
+			end,
+			["<S-Tab>"] = function(fallback)
+				if cmp.visible() then
+					cmp.select_prev_item()
+				else
+					fallback()
+				end
+			end,
 		},
 		sources = {
 			{ name = "cmp_tabnine" },
-			{ name = "buffers" },
 			{ name = "nvim_lsp" },
-			{ name = "path" },
+			{ name = "nvim_lua" },
 			{ name = "luasnip" },
+			{ name = "path" },
+			{ name = "buffers" },
 		},
 	})
 end
