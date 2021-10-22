@@ -1,10 +1,10 @@
 local M = {
 	menu_colors = {
 		CmpItemAbbr = "grey",
-		CmpItemAbbrDeprecated = "red",
-		CmpItemAbbrMatchFuzzy = "blue",
-		CmpItemKind = nil,
-		CmpItemMenu = "blue",
+		CmpItemAbbrDeprecated = "#f1c40f",
+		CmpItemAbbrMatchFuzzy = "#2980b9",
+		CmpItemKind = "#3498db",
+		CmpItemMenu = "#7f8fa6",
 	},
 }
 
