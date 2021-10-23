@@ -1,3 +1,6 @@
+local fn = vim.fn
+local execute = vim.api.nvim_command
+
 vim.g.mapleader = " "
 
 local config = {
@@ -20,6 +23,11 @@ local config = {
 	"config.trouble",
 	"config.which-key",
 }
+
+local install_path = fn.stdpath("data") .. "site/pack/packer/opt/packer.nvim"
+if fn.empty(fn.glob(install_path)) > 0 then
+	execute("!git clone --depth 1 https://github.com/wbthomason/packer.nvim " .. install_path)
+end
 
 for _, config_path in ipairs(config) do
 	local cf = require(config_path)
