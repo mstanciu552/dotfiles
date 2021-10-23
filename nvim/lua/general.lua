@@ -1,20 +1,6 @@
 local M = {}
-
 function M.emmet()
 	vim.g.user_emmet_leader_key = "<C-y>"
-end
-
-function M.ale()
-	vim.cmd([[ 
-  let g:ale_fixers = {
-    \   'javascript': ['prettier'],
-    \   'css': ['prettier'],
-    \   'python': ['black'],
-    \   'html': ['prettier'],
-    \}  
-
-  ]])
-	vim.g.ale_fix_on_save = 1
 end
 
 function M.config()
@@ -22,32 +8,10 @@ function M.config()
   syntax on
   filetype plugin indent on
 
-  set exrc
-  set nohlsearch
-  set noerrorbells
-  set tabstop=2 softtabstop=2
-  set shiftwidth=2
-  set expandtab
-  set smartindent
-  set nu rnu
-  set nowrap
-  set smartcase
-  set noswapfile
-  set nobackup
-  set incsearch
   set vb t_vb=
-  set termguicolors
-  set encoding=utf-8
   set shortmess+=c
   set formatoptions-=cro
-  set modifiable
   set clipboard+=unnamedplus
-  set colorcolumn=120
-  set mouse=a
-  set inccommand=nosplit
-  set cursorline
-  set hidden
-  set noshowmode
 
   au InsertEnter * silent execute "!echo -en \<esc>[5 q"
   au InsertLeave * silent execute "!echo -en \<esc>[2 q"
@@ -58,11 +22,35 @@ function M.config()
     au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=500}
   augroup END
 
-  let g:cursorhold_updatetime = 100
-
   ]])
 
 	vim.o.signcolumn = "yes"
+	vim.opt.termguicolors = true
+	vim.opt.colorcolumn = "120"
+	vim.opt.showmode = false
+	vim.opt.hidden = true
+	vim.opt.modifiable = true
+	vim.opt.cursorline = true
+	vim.opt.encoding = "utf8"
+	vim.opt.exrc = true
+	vim.opt.errorbells = false
+	vim.opt.hlsearch = false
+	vim.opt.incsearch = true
+	vim.opt.expandtab = true
+	vim.opt.smartindent = true
+	vim.opt.wrap = false
+	vim.opt.smartcase = true
+	vim.opt.swapfile = false
+	vim.opt.backup = false
+	vim.opt.number = true
+	vim.opt.relativenumber = true
+	vim.opt.mouse = "a"
+	vim.opt.tabstop = 2
+	vim.opt.softtabstop = 2
+	vim.opt.shiftwidth = 2
+	vim.opt.inccommand = "nosplit"
+
+	vim.g.cursorhold_updatetime = "100"
 end
 
 return M

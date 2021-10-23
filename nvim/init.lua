@@ -30,6 +30,10 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 for _, config_path in ipairs(config) do
-	local cf = require(config_path)
-	cf.config()
+	local ok, cf = pcall(require, config_path)
+	if ok then
+		cf.config()
+	else
+		execute("lua print( " .. config_path .. ")")
+	end
 end
