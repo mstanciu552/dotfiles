@@ -8,6 +8,7 @@ local config = {
 	"general",
 	"keybindings",
 	"colorscheme",
+	"config.autopairs",
 	"config.bufferline",
 	"config.cmp",
 	"config.nvimtree",

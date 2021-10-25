@@ -25,7 +25,7 @@ function M.config()
 			entry_prefix = "  ",
 			initial_mode = "insert",
 			selection_strategy = "reset",
-			sorting_strategy = "descending",
+			sorting_strategy = "ascending",
 			layout_strategy = "horizontal",
 			layout_config = {
 				horizontal = {

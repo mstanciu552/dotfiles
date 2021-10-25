@@ -95,22 +95,17 @@ function M.config()
 		use({
 			"hrsh7th/nvim-cmp",
 			requires = {
-				"hrsh7th/vim-vsnip",
 				"hrsh7th/cmp-buffer",
 				"hrsh7th/cmp-nvim-lsp",
 				"hrsh7th/cmp-nvim-lua",
 				"hrsh7th/cmp-path",
 			},
 		})
+
 		use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
 
 		use({ "ap/vim-css-color" })
-		use({
-			"windwp/nvim-autopairs",
-			config = function()
-				require("nvim-autopairs").setup({})
-			end,
-		})
+		use("windwp/nvim-autopairs")
 
 		use({ "folke/which-key.nvim" })
 
@@ -127,8 +122,8 @@ function M.config()
 		})
 
 		use({ "akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons" })
-		use({ "mattn/emmet-vim" })
-		use({ "christianchiarulli/nvcode-color-schemes.vim" })
+		use("mattn/emmet-vim")
+		use("christianchiarulli/nvcode-color-schemes.vim")
 		use("jose-elias-alvarez/null-ls.nvim")
 		use("L3MON4D3/LuaSnip")
 		use("saadparwaiz1/cmp_luasnip")

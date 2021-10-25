@@ -6,7 +6,6 @@ local M = {
 		path = "[Path]",
 		calc = "[Calc]",
 		cmp_tabnine = "[Tabnine]",
-		vsnip = "[Snippet]",
 		luasnip = "[Snippet]",
 		buffer = "[Buffer]",
 	},

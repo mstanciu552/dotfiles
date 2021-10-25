@@ -7,11 +7,14 @@ function M.config()
 	vim.cmd([[
   syntax on
   filetype plugin indent on
+  filetype indent on
+  filetype plugin on
 
   set vb t_vb=
+  set smartindent
+  set autoindent
+  set smarttab
   set formatoptions-=cro
-
-  autocmd BufNew,BufRead *.asm set ft=nasm
 
   augroup highlight_yank
     autocmd!
@@ -21,7 +24,7 @@ function M.config()
   ]])
 
 	vim.o.signcolumn = "yes"
-	vim.o.clipboard = "unnamedplus"
+	vim.o.clipboard = "unnamed,unnamedplus"
 	vim.o.shortmess = vim.o.shortmess .. "c"
 	vim.opt.termguicolors = true
 	vim.opt.colorcolumn = "120"
