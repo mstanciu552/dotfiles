@@ -11,8 +11,6 @@ function M.config()
   set vb t_vb=
   set formatoptions-=cro
 
-  au InsertEnter * silent execute "!echo -en \<esc>[5 q"
-  au InsertLeave * silent execute "!echo -en \<esc>[2 q"
   autocmd BufNew,BufRead *.asm set ft=nasm
 
   augroup highlight_yank
@@ -49,6 +47,7 @@ function M.config()
 	vim.opt.softtabstop = 2
 	vim.opt.shiftwidth = 2
 	vim.opt.inccommand = "nosplit"
+	vim.opt.autoindent = true
 
 	vim.g.cursorhold_updatetime = "100"
 end

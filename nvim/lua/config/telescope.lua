@@ -34,6 +34,7 @@ function M.config()
 				vertical = {
 					mirror = false,
 				},
+				prompt_position = "top",
 			},
 			file_sorter = require("telescope.sorters").get_fuzzy_file,
 			file_ignore_patterns = {},
