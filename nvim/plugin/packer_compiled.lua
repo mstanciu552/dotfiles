@@ -105,6 +105,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/cmp_luasnip"
   },
+  ["darkplus.nvim"] = {
+    loaded = true,
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/darkplus.nvim"
+  },
   ["emmet-vim"] = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/emmet-vim"

@@ -136,6 +136,7 @@ function M.config()
 		use("onsails/lspkind-nvim")
 		use("tanvirtin/monokai.nvim")
 		use("antoinemadec/FixCursorHold.nvim") -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
+		use("martinsione/darkplus.nvim")
 
 		use("tpope/vim-surround")
 

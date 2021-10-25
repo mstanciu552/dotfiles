@@ -19,7 +19,8 @@ end
 function M.config()
 	M.menu_highlight()
 
-	require("nightfox").load("nightfox")
+	-- require("nightfox").load("nightfox")
+	require("darkplus")
 
 	vim.cmd("hi SpellBad guifg=none guibg=none cterm=none ctermfg=none ctermbg=none") -- SpellBad
 	vim.cmd("hi IncSearch guibg='#5e81ac' guifg='#abb2bf'") -- Yank highlight

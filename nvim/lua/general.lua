@@ -9,9 +9,7 @@ function M.config()
   filetype plugin indent on
 
   set vb t_vb=
-  set shortmess+=c
   set formatoptions-=cro
-  set clipboard+=unnamedplus
 
   au InsertEnter * silent execute "!echo -en \<esc>[5 q"
   au InsertLeave * silent execute "!echo -en \<esc>[2 q"
@@ -25,10 +23,12 @@ function M.config()
   ]])
 
 	vim.o.signcolumn = "yes"
+	vim.o.clipboard = "unnamedplus"
+	vim.o.shortmess = vim.o.shortmess .. "c"
 	vim.opt.termguicolors = true
 	vim.opt.colorcolumn = "120"
 	vim.opt.showmode = false
-	vim.opt.hidden = true
+	vim.o.hidden = true
 	vim.opt.modifiable = true
 	vim.opt.cursorline = true
 	vim.opt.encoding = "utf8"
