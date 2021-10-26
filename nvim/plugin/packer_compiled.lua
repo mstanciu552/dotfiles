@@ -97,6 +97,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/cmp-path"
   },
+  ["cmp-rg"] = {
+    loaded = true,
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/cmp-rg"
+  },
   ["cmp-tabnine"] = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/cmp-tabnine"
@@ -182,6 +186,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
+  ["nvim-ts-rainbow"] = {
+    loaded = true,
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
@@ -189,6 +197,10 @@ _G.packer_plugins = {
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  },
+  playground = {
+    loaded = true,
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/playground"
   },
   ["plenary.nvim"] = {
     loaded = true,

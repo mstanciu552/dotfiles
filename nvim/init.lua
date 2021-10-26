@@ -3,6 +3,9 @@ local execute = vim.api.nvim_command
 
 vim.g.mapleader = " "
 
+-- TODO check out https://github.com/nvim-treesitter/module-template/tree/master/queries
+-- for Matlab
+
 local config = {
 	"plugins",
 	"general",

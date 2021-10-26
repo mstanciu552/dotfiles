@@ -86,6 +86,8 @@ function M.config()
 			"nvim-treesitter/nvim-treesitter",
 			run = ":TSUpdate",
 		})
+		use("p00f/nvim-ts-rainbow")
+		use("nvim-treesitter/playground")
 
 		use({ "neovim/nvim-lspconfig" })
 		use({ "kabouzeid/nvim-lspinstall" })
@@ -99,6 +101,7 @@ function M.config()
 				"hrsh7th/cmp-nvim-lsp",
 				"hrsh7th/cmp-nvim-lua",
 				"hrsh7th/cmp-path",
+				"lukas-reineke/cmp-rg",
 			},
 		})
 

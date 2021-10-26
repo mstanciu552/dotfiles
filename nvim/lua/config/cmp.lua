@@ -3,6 +3,7 @@ local M = {
 		nvim_lsp = "[LSP]",
 		nvim_lua = "[API]",
 		emoji = "[Emoji]",
+		rg = "[RG]",
 		path = "[Path]",
 		calc = "[Calc]",
 		cmp_tabnine = "[Tabnine]",
@@ -73,6 +74,7 @@ function M.config()
 			{ name = "nvim_lua" },
 			{ name = "luasnip" },
 			{ name = "path" },
+			{ name = "rg" },
 			{ name = "buffers" },
 		},
 	})
