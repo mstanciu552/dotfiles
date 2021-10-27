@@ -2,6 +2,8 @@ local M = {
 	source_menu = {
 		nvim_lsp = "[LSP]",
 		nvim_lua = "[API]",
+		cmp_octave = "[OCTAVE]",
+		cmp_matlab = "[MATLAB]",
 		emoji = "[Emoji]",
 		rg = "[RG]",
 		path = "[Path]",
@@ -51,8 +53,6 @@ function M.config()
 			["<C-f>"] = cmp.mapping.scroll_docs(4),
 			["<C-Space>"] = cmp.mapping.complete(),
 			["<C-e>"] = cmp.mapping.close(),
-			-- ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
-			-- ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
 			["<Tab>"] = function(fallback)
 				if cmp.visible() then
 					cmp.select_next_item()
@@ -70,6 +70,8 @@ function M.config()
 		},
 		sources = {
 			{ name = "cmp_tabnine" },
+			{ name = "cmp_octave" },
+			{ name = "cmp_matlab" },
 			{ name = "nvim_lsp" },
 			{ name = "nvim_lua" },
 			{ name = "luasnip" },

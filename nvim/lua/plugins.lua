@@ -102,6 +102,8 @@ function M.config()
 				"hrsh7th/cmp-nvim-lua",
 				"hrsh7th/cmp-path",
 				"lukas-reineke/cmp-rg",
+				"mstanciu552/cmp-octave",
+				"mstanciu552/cmp-matlab",
 			},
 		})
 

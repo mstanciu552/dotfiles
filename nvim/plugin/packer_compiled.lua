@@ -85,6 +85,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/cmp-buffer"
   },
+  ["cmp-matlab"] = {
+    loaded = true,
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/cmp-matlab"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
@@ -92,6 +96,10 @@ _G.packer_plugins = {
   ["cmp-nvim-lua"] = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua"
+  },
+  ["cmp-octave"] = {
+    loaded = true,
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/cmp-octave"
   },
   ["cmp-path"] = {
     loaded = true,
