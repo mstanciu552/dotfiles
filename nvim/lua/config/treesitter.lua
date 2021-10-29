@@ -1,5 +1,16 @@
 local M = {}
 
+local add_parser = function(path_or_repo)
+	local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+	parser_config.zimbu = {
+		install_info = {
+			url = path_or_repo,
+			files = { "src/parser.c" },
+		},
+		filetype = "matlab", -- if filetype does not agrees with parser name
+	}
+end
+
 function M.config()
 	require("nvim-treesitter.configs").setup({
 		ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
@@ -31,6 +42,8 @@ function M.config()
 			},
 		},
 	})
+
+	add_parser("~/Documents/Projects/Neovim/tree-sitter-matlab")
 end
 
 return M

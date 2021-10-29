@@ -38,6 +38,6 @@ for _, config_path in ipairs(config) do
 	if ok then
 		cf.config()
 	else
-		execute("lua print( " .. config_path .. ")")
+		print(config_path)
 	end
 end
