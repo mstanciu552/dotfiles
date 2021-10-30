@@ -1,11 +1,5 @@
 local M = {}
 
-function M.config()
-  require('lualine').setup {
-    options = {
-      theme = 'nightfox'
-    }
-  }
-end
+function M.config() end
 
 return M

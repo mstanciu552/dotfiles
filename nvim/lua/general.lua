@@ -7,8 +7,6 @@ function M.config()
 	vim.cmd([[
   syntax on
   filetype plugin indent on
-  filetype indent on
-  filetype plugin on
 
   set vb t_vb=
   set smartindent
@@ -29,7 +27,7 @@ function M.config()
 	vim.opt.termguicolors = true
 	vim.opt.colorcolumn = "120"
 	vim.opt.showmode = false
-	vim.o.hidden = true
+	vim.o.hidden = false
 	vim.opt.modifiable = true
 	vim.opt.cursorline = true
 	vim.opt.encoding = "utf8"

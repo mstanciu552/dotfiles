@@ -2,7 +2,7 @@ local M = {}
 
 local add_parser = function(path_or_repo)
 	local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-	parser_config.zimbu = {
+	parser_config.matlab = {
 		install_info = {
 			url = path_or_repo,
 			files = { "src/parser.c" },
@@ -12,8 +12,9 @@ local add_parser = function(path_or_repo)
 end
 
 function M.config()
+	add_parser("~/Documents/Projects/Neovim/tree-sitter-matlab")
 	require("nvim-treesitter.configs").setup({
-		ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+		ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
 		highlight = {
 			enable = true, -- false will disable the whole extension
 			additional_vim_regex_highlighting = true,
@@ -42,8 +43,6 @@ function M.config()
 			},
 		},
 	})
-
-	add_parser("~/Documents/Projects/Neovim/tree-sitter-matlab")
 end
 
 return M

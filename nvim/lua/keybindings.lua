@@ -56,6 +56,11 @@ function M.config()
 	key("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
 	key("n", "<leader>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
 	key("n", "<leader>wf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+
+	-- Glow
+	if vim.bo.filetype == "markdown" then
+		key("n", "<leader>m", "<cmd>Glow<CR>", { noremap = true, silent = true })
+	end
 end
 
 return M
