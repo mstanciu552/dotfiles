@@ -1,6 +1,9 @@
 local M = {}
 local loop = vim.loop
 
+M.colorscheme = "tokyonight"
+M.ekaput = true
+
 M.split = function(str, delimiter)
 	local split = {}
 	for match in (str .. delimiter):gmatch("(.-)" .. delimiter) do

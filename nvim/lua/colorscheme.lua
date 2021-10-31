@@ -7,6 +7,7 @@ local M = {
 		CmpItemMenu = "#7f8fa6",
 	},
 }
+local globals = require("globals")
 
 M.menu_highlight = function()
 	for group, color in pairs(M.menu_colors) do
@@ -19,11 +20,11 @@ end
 function M.config()
 	M.menu_highlight()
 
-	-- require("nightfox").load("nightfox")
-	require("darkplus")
-
 	vim.cmd("hi SpellBad guifg=none guibg=none cterm=none ctermfg=none ctermbg=none") -- SpellBad
 	vim.cmd("hi IncSearch guibg='#5e81ac' guifg='#abb2bf'") -- Yank highlight
+
+	require(globals.colorscheme)
+	vim.cmd("colorscheme " .. globals.colorscheme)
 end
 
 return M

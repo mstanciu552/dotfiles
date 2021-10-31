@@ -121,6 +121,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/darkplus.nvim"
   },
+  ["e-kaput.nvim"] = {
+    loaded = true,
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/e-kaput.nvim"
+  },
   ["emmet-vim"] = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/emmet-vim"

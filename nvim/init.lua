@@ -14,6 +14,7 @@ local config = {
 	"config.autopairs",
 	"config.bufferline",
 	"config.cmp",
+	"config.ekaput",
 	"config.nvimtree",
 	"config.null-ls",
 	"config.galaxyline",

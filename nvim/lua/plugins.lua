@@ -62,7 +62,6 @@ function M.config()
 		use({
 			"glepnir/galaxyline.nvim",
 			branch = "main",
-			disable = not globals.galaxyline,
 		})
 
 		use({
@@ -106,6 +105,10 @@ function M.config()
 		})
 
 		use("ellisonleao/glow.nvim")
+		use({
+			"kaputi/e-kaput.nvim",
+			disable = not globals.ekaput,
+		})
 	end)
 end
 
