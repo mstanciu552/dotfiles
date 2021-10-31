@@ -50,4 +50,18 @@ M.new_file = function()
 	end
 end
 
+M.rename_file = function()
+	local fname = vim.api.nvim_buf_get_name(0)
+	local new_name = vim.fn.input("New File: ", fname, "file")
+
+	local ok, err, code = os.rename(fname, new_name)
+
+	if not err then
+		if code == 13 then
+			vim.api.nvim_err_writeln("Permissions issue")
+		end
+	end
+	print(ok)
+end
+
 return M

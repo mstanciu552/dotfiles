@@ -61,6 +61,9 @@ function M.config()
 	if vim.bo.filetype == "markdown" then
 		key("n", "<leader>m", "<cmd>Glow<CR>", { noremap = true, silent = true })
 	end
+
+	-- New file
+	key("n", "<leader>n", "<cmd>lua require('globals').new_file()<CR>", opts)
 end
 
 return M
