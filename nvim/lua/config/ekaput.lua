@@ -4,7 +4,7 @@ local globals = require("globals")
 M.config = function()
 	vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 		underline = true,
-		virtual_text = false,
+		virtual_text = not globals.ekaput,
 	})
 	require("e-kaput").setup({
 		-- defaults
