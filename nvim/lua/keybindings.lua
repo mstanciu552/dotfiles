@@ -64,6 +64,9 @@ function M.config()
 
 	-- New file
 	key("n", "<leader>n", "<cmd>lua require('globals').new_file()<CR>", opts)
+
+	-- Toggle virtual text LSP
+	key("n", "<leader>x", "<cmd>lua require('globals').toggle_virtual()<CR>", { noremap = true, silent = true })
 end
 
 return M

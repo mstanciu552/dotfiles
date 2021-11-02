@@ -2,6 +2,7 @@ local M = {}
 
 M.colorscheme = "tokyonight"
 M.ekaput = false
+M.virtual_text = true
 
 local write_file = function(fpath)
 	local loop = vim.loop
@@ -62,6 +63,23 @@ M.rename_file = function()
 		end
 	end
 	print(ok)
+end
+
+-- TODO Fix this
+M.toggle_virtual_text = function()
+	vim.api.nvim_buf_attach(0, false, {
+		on_lines = function()
+			M.virtual_text = not M.virtual_text
+			vim.lsp.handlers["textDocument/publishDiagnostics"] =
+				vim.lsp.with(
+					vim.lsp.diagnostic.on_publish_diagnostics,
+					{
+						underline = true,
+						virtual_text = M.virtual_text,
+					}
+				)
+		end,
+	})
 end
 
 return M
