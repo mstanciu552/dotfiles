@@ -11,7 +11,7 @@ local write_file = function(fpath)
 	loop.fs_open(
 		fpath,
 		"w",
-		755,
+		644,
 		vim.schedule_wrap(function(err, fd)
 			if err then
 				vim.api.nvim_err_writeln(err)
