@@ -1,4 +1,5 @@
 local M = {}
+
 function M.emmet()
 	vim.g.user_emmet_leader_key = "<C-y>"
 end

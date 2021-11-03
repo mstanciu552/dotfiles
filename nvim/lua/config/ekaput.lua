@@ -6,6 +6,7 @@ M.config = function()
 		underline = true,
 		virtual_text = not globals.ekaput,
 	})
+  if globals.ekaput then
 	require("e-kaput").setup({
 		-- defaults
 		enabled = globals.ekaput, -- true | false,  Enable EKaput.
@@ -16,6 +17,7 @@ M.config = function()
 		information_sign = "", -- Information sign.
 		hint_sign = "", -- Hint sign.
 	})
+end
 end
 
 return M

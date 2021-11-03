@@ -13,6 +13,7 @@ end
 
 function M.config()
 	add_parser("~/Documents/Projects/Neovim/tree-sitter-matlab")
+
 	require("nvim-treesitter.configs").setup({
 		ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
 		highlight = {
@@ -40,6 +41,11 @@ function M.config()
 				update = "R",
 				goto_node = "<cr>",
 				show_help = "?",
+			},
+			query_linter = {
+				enable = true,
+				use_virtual_text = true,
+				lint_events = { "BufWrite", "CursorHold" },
 			},
 		},
 	})
