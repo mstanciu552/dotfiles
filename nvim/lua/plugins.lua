@@ -35,7 +35,7 @@ function M.config()
 		use("nvim-treesitter/playground")
 
 		use({ "neovim/nvim-lspconfig" })
-		use({ "kabouzeid/nvim-lspinstall" })
+		use("williamboman/nvim-lsp-installer")
 		-- use({ "tami5/lspsaga.nvim" }) -- For neovim 0.6
 		use({ "rinx/lspsaga.nvim" }) -- For neovim 0.5
 

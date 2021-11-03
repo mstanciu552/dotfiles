@@ -22,7 +22,7 @@ local config = {
 	"config.luasnip",
 	"config.telescope",
 	"config.treesitter",
-	"config.lspinstall",
+	"config.lspinstaller",
 	"config.lspsaga",
 	"config.tabnine",
 	"config.trouble",
