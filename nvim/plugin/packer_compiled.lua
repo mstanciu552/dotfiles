@@ -220,11 +220,6 @@ _G.packer_plugins = {
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["nvim-lspinstall"] = {
-    loaded = true,
-    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/nvim-lspinstall",
-    url = "https://github.com/kabouzeid/nvim-lspinstall"
-  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
