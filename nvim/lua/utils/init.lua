@@ -41,16 +41,4 @@ utils.is_dir = function(path)
 	return utils.check_path_exists(path .. "/")
 end
 
-utils.mkdir = function(fdir, write_file, fpath)
-	local loop = vim.loop
-	loop.fs_mkdir(
-		fdir,
-		755,
-		vim.schedule_wrap(function(err, status)
-			vim.api.nvim_command("!chmod -R 755 " .. fdir)
-			write_file(fpath)
-		end)
-	)
-end
-
 return utils
