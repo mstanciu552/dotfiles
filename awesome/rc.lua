@@ -42,11 +42,6 @@ require("awesome-wallpaper-changer").start({
 -- Autosleep in 15 min
 awful.util.spawn_with_shell("~/config/awesome/autosleep.sh")
 
--- Light control config
-light.exec = "light" -- optional, set to abs path
-light.kbd = "" -- optional, default: thinkpad ctrl
-light.init() -- sets diplay min cap
-
 -- {{{ Erro/wiandling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -92,32 +87,30 @@ local themes = {
 	"steamburn",
 	"vertex",
 }
-local chosen_theme = themes[2]
-local theme_path = string.format("~/.config/awesome/themes/%s/theme.lua", chosen_theme)
 beautiful.init("~/.config/awesome/statusbar.lua")
 revelation.init()
 
 -- This is used later as the default terminal and editor to run.
-terminal = "kitty"
-editor = os.getenv("nvim") or "editor"
-editor_cmd = terminal .. " -e " .. editor
-launcher = "rofi -show combi"
+local terminal = "kitty"
+local editor = os.getenv("nvim") or "editor"
+local editor_cmd = terminal .. " -e " .. editor
+local launcher = "rofi -show combi"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
 -- If you do not like this or do not have such a key,
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
 -- However, you can use another modifier like Mod1, but it may interact with others.
-modkey = "Mod4"
-altkey = "Mod1"
+local modkey = "Mod4"
+local altkey = "Mod1"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-	-- awful.layout.suit.spiral.dwindle,
+	awful.layout.suit.tile.left,
 	awful.layout.suit.tile,
-	awful.layout.suit.spiral,
 	awful.layout.suit.floating,
-	-- awful.layout.suit.tile.left,
+	-- awful.layout.suit.spiral.dwindle,
+	-- awful.layout.suit.spiral,
 	-- awful.layout.suit.tile.bottom,
 	-- awful.layout.suit.tile.top,
 	-- awful.layout.suit.fair,
@@ -170,14 +163,14 @@ else
 	})
 end
 
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon, menu = mymainmenu })
+local mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon, menu = mymainmenu })
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
 
 -- Keyboard map indicator and switcher
-mykeyboardlayout = awful.widget.keyboardlayout()
+local mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a wibox for each screen and add it
@@ -271,7 +264,7 @@ awful.screen.connect_for_each_screen(function(s)
 		filter = awful.widget.taglist.filter.all,
 		buttons = taglist_buttons,
 		style = {
-			font = "Ubuntu Mono 14",
+			font = "Ubuntu Mono 12",
 		},
 	})
 
@@ -467,7 +460,7 @@ globalkeys = gears.table.join(
 		description = "open a terminal",
 		group = "launcher",
 	}),
-	awful.key({ modkey, "Control" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
+	awful.key({ modkey, "Shift" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
 	awful.key({ modkey, "Shift" }, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
 
 	awful.key({ modkey }, "l", function()
@@ -538,13 +531,6 @@ globalkeys = gears.table.join(
 		group = "launcher",
 	}),
 
-	awful.key({ modkey, "Shift" }, "r", function()
-		awful.util.spawn("krunner")
-	end, {
-		description = "run krunner",
-		group = "launcher",
-	}),
-
 	-- awful.key({ modkey, }, "p", function() awful.util.spawn("j4-dmenu-desktop --dmenu=\"dmenu -i -p Desktop\"") end,
 	--           {description = "run dmenu desktop", group = "launcher"}), -- dmenu
 
@@ -555,7 +541,7 @@ globalkeys = gears.table.join(
 		group = "launcher",
 	}),
 
-	awful.key({ modkey }, "x", function()
+	awful.key({ modkey }, "z", function()
 		awful.prompt.run({
 			prompt = "Run Lua code: ",
 			textbox = awful.screen.focused().mypromptbox.widget,
@@ -843,5 +829,4 @@ end)
 
 -- Autostart
 awful.spawn.with_shell("picom --experimental-backends")
--- awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("nm-online")

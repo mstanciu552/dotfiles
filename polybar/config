@@ -53,13 +53,14 @@ module-margin-right = 2
 
 font-0 = fixed:pixelsize=11;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = Siji:pixelsize=10;1
-font-3 = Font Awesome 5 Free:pixelsize=10;2
-font-4 = Font Awesome 5 Free Solid:pixelsize=10;2
-font-5 = Font Awesome 5 Brands:pixelsize=10;2
+font-2 = NotoSans Nerd Font:size=16;4
+font-3 = Siji:pixelsize=10;1
+font-4 = Font Awesome 5 Free:pixelsize=10;2
+font-5 = Font Awesome 5 Free Solid:pixelsize=10;2
+font-6 = Font Awesome 5 Brands:pixelsize=10;2
 
 modules-left = bspwm i3
-modules-center = weather spotify
+modules-center = i3-windows weather spotify
 modules-right = filesystem mic-volume backlight-acpi pulseaudio memory wlan battery temperature date powermenu
 
 tray-position = right
@@ -137,6 +138,12 @@ format = <label>
 label = %output%
 label-padding = 1
 interval = 0.1
+
+[module/i3-windows]
+type = custom/script
+exec = ~/.config/i3/polybar-i3-windows/module.py
+tail = true
+format-underline = #ffffff
 
 [module/xkeyboard]
 type = internal/xkeyboard
