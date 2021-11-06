@@ -53,14 +53,13 @@ module-margin-right = 2
 
 font-0 = fixed:pixelsize=11;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = NotoSans Nerd Font:size=16;4
-font-3 = Siji:pixelsize=10;1
-font-4 = Font Awesome 5 Free:pixelsize=10;2
-font-5 = Font Awesome 5 Free Solid:pixelsize=10;2
-font-6 = Font Awesome 5 Brands:pixelsize=10;2
+font-2 = Siji:pixelsize=10;1
+font-3 = Font Awesome 5 Free:pixelsize=10;2
+font-4 = Font Awesome 5 Free Solid:pixelsize=10;2
+font-5 = Font Awesome 5 Brands:pixelsize=10;2
 
 modules-left = bspwm i3
-modules-center = i3-windows weather spotify
+modules-center = i3-windows spotify
 modules-right = filesystem mic-volume backlight-acpi pulseaudio memory wlan battery temperature date powermenu
 
 tray-position = right
@@ -317,7 +316,7 @@ enable-scroll = true
 [module/mic-volume]
 type = custom/script
 interval = 1
-format = Mic: <label>
+format =  Mic: <label>
 exec = bash ~/.config/polybar/scripts/mic-volume.sh show-vol
 
 click-left = bash ~/.config/polybar/scripts/mic-volume.sh mute-vol 
@@ -334,7 +333,7 @@ format-underline = #4bffdc
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = ""
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
@@ -342,7 +341,7 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = ""
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
@@ -363,11 +362,11 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
@@ -376,7 +375,7 @@ interface = enp2s0
 interval = 3.0
 
 format-connected-underline = #55aa55
-format-connected-prefix = " "
+format-connected-prefix = ""
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
@@ -410,7 +409,7 @@ format-volume = <label-volume> <bar-volume>
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
+label-muted =   muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
@@ -470,7 +469,7 @@ format-charging-underline = #55aa55
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = #ffb52a
 
-format-full-prefix = " "
+format-full-prefix = ""
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
@@ -479,15 +478,16 @@ ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
+# 
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
@@ -505,9 +505,9 @@ label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
@@ -517,7 +517,7 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
+label-open = 
 label-open-foreground = ${colors.secondary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}

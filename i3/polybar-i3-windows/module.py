@@ -12,7 +12,7 @@ from icon_resolver import IconResolver
 #: Max length of single window title
 MAX_LENGTH = 26
 #: Base 1 index of the font that should be used for icons
-ICON_FONT = 3
+ICON_FONT = 4
 
 HOSTNAME = platform.node()
 USER = getpass.getuser()
@@ -20,15 +20,17 @@ USER = getpass.getuser()
 ICONS = [
     ('class=*.slack.com', '\uf3ef'),
 
-    ('class=Chromium', '\ue743'),
-    ('class=Firefox', '\uf738'),
-    ('class=URxvt', '\ue795'),
-    ('class=Code', '\ue70c'),
-    ('class=code-oss-dev', '\ue70c'),
+    ('class=Chromium', '\uf268 '),
+    ('class=Brave-browser', '\uf268 '),
+    ('class=Firefox', '\uf269 '),
+    ('class=kitty', '\uf120 '),
+    ('class=Code', '\ue70c '),
+    ('class=discord', '\uf392 '),
+    ('class=code-oss-dev', '\ue70c '),
 
     ('name=mutt', '\uf199'),
 
-    ('*', '\ufaae'),
+    ('*', ''),
 ]
 
 FORMATERS = {
@@ -98,6 +100,7 @@ def get_prefix(app):
     })
 
     return ('%%{T%s}%s%%{T-}' % (ICON_FONT, icon))
+    # return ''  # No icons
 
 
 def format_title(app):
@@ -110,5 +113,6 @@ def format_title(app):
         title = title[:MAX_LENGTH - 3] + '...'
 
     return title
+
 
 main()
