@@ -341,7 +341,7 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = ""
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
@@ -396,7 +396,7 @@ time = %H:%M:%S
 time-alt = %H:%M
  
 format = %{A1:polybar-calendar.sh --popup:} 🕓 <label> %{A}
-format-prefix = 
+format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
@@ -469,7 +469,7 @@ format-charging-underline = #55aa55
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = #ffb52a
 
-format-full-prefix = ""
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 

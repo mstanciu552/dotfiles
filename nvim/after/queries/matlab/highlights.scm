@@ -7,5 +7,4 @@ structure_keyword: (_) @keyword
 "true" @constant.builtin
 "false" @constant.builtin
 
-(identifier) @string
-(function_definition return_variable: (identifier)) @type.builtin
+return_variable: (return_value) @type.builtin

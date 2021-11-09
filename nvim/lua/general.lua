@@ -52,6 +52,8 @@ function M.config()
 	vim.opt.inccommand = "nosplit"
 	vim.opt.autoindent = true
 
+	vim.o.guifont = vim.o.guifont .. "UbuntuMono Nerd Font:h24"
+
 	vim.g.cursorhold_updatetime = "100"
 end
 
