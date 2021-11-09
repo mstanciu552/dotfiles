@@ -15,7 +15,6 @@ local M = {
 		},
 		require("null-ls").builtins.formatting.prettier,
 		require("null-ls").builtins.formatting.autopep8,
-		require("null-ls").builtins.formatting.shellcheck,
 		require("null-ls").builtins.formatting.shfmt,
 		require("null-ls").builtins.formatting.clang_format,
 		require("null-ls").builtins.formatting.gofmt,

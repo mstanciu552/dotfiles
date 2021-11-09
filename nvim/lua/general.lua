@@ -1,11 +1,20 @@
+local signs = require("utils.icons").signs
+
 local M = {}
+
+M.define_signs = function()
+	for t, icon in pairs(signs) do
+		local hl = "LspDiagnosticSign" .. t
+		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+	end
+end
 
 function M.emmet()
 	vim.g.user_emmet_leader_key = "<C-y>"
 end
 
 function M.config()
-	vim.cmd([[
+	vim.cmd [[
   syntax on
   filetype plugin indent on
 
@@ -15,13 +24,17 @@ function M.config()
   set smarttab
   set formatoptions-=cro
 
+  sign define LspDiagnosticsSignError       text= ● texthl=DiagnosticError   linehl= numhl=
+  sign define LspDiagnosticsSignWarning     text= ● texthl=DiagnosticWarn    linehl= numhl=
+  sign define LspDiagnosticsSignInformation text= ● texthl=DiagnosticInfo    linehl= numhl=
+  sign define LspDiagnosticsSignHint        text= ● texthl=DiagnosticHint    linehl= numhl=
 
   augroup highlight_yank
     autocmd!
     au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=500}
   augroup END
 
-  ]])
+  ]]
 
 	vim.o.signcolumn = "yes"
 	vim.o.clipboard = "unnamed,unnamedplus"
@@ -52,9 +65,10 @@ function M.config()
 	vim.opt.inccommand = "nosplit"
 	vim.opt.autoindent = true
 
-	vim.o.guifont = vim.o.guifont .. "UbuntuMono Nerd Font:h24"
+	vim.o.guifont = "UbuntuMono Nerd Font:h24"
 
 	vim.g.cursorhold_updatetime = "100"
+	M.define_signs()
 end
 
 return M

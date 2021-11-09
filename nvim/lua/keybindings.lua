@@ -32,7 +32,7 @@ function M.config()
 	key("n", "<leader>o", ":NvimTreeFind<CR>", { noremap = true, silent = true })
 
 	-- Telescope
-	key("n", "<leader>f", ":lua require('telescope.builtin').git_files()<cr>", { noremap = true, silent = true })
+	key("n", "<leader>f", ":lua require('telescope.builtin').find_files()<cr>", { noremap = true, silent = true })
 	key("n", "<leader>g", ":lua require('telescope.builtin').live_grep()<cr>", { noremap = true, silent = true })
 	key("n", "<leader>s", ":lua require('telescope.builtin').help_tags()<cr>", { noremap = true, silent = true })
 

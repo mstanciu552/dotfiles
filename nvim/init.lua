@@ -15,6 +15,7 @@ local config = {
 	"config.bufferline",
 	"config.cmp",
 	"config.ekaput",
+	"config.matlab",
 	"config.nvimtree",
 	"config.null-ls",
 	"config.galaxyline",
@@ -29,7 +30,7 @@ local config = {
 	"config.which-key",
 }
 
-local install_path = fn.stdpath("data") .. "site/pack/packer/opt/packer.nvim"
+local install_path = fn.stdpath "data" .. "site/pack/packer/opt/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
 	execute("!git clone --depth 1 https://github.com/wbthomason/packer.nvim " .. install_path)
 end

@@ -1,7 +1,7 @@
 local M = {}
 
 M.config = function()
-	local lsp_installer = require("nvim-lsp-installer")
+	local lsp_installer = require "nvim-lsp-installer"
 
 	lsp_installer.on_server_ready(function(server)
 		local opts = {
@@ -14,7 +14,7 @@ M.config = function()
 			settings = {
 				Lua = {
 					diagnostics = {
-						globals = { "vim", "awesome" },
+						globals = { "vim", "awesome", "describe", "it" },
 					},
 				},
 			},

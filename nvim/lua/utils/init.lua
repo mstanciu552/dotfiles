@@ -23,7 +23,7 @@ utils.get_user_input_char = function()
 end
 
 utils.clear_prompt = function()
-	vim.api.nvim_command("redraw") -- Refresh the prompt
+	vim.api.nvim_command "redraw"
 end
 
 utils.check_path_exists = function(path)
@@ -41,4 +41,9 @@ utils.is_dir = function(path)
 	return utils.check_path_exists(path .. "/")
 end
 
+utils.get_input = function(params)
+	local input = vim.fn.input(params.prompt, params.default, "file")
+	utils.clear_prompt()
+	return input
+end
 return utils

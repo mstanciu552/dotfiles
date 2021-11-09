@@ -159,6 +159,11 @@ _G.packer_plugins = {
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/glow.nvim",
     url = "https://github.com/ellisonleao/glow.nvim"
   },
+  lsp_matlab = {
+    loaded = true,
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/lsp_matlab",
+    url = "https://github.com/mstanciu552/lsp_matlab"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
