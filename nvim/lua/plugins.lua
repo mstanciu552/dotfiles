@@ -60,7 +60,7 @@ function M.config()
 		use { "folke/which-key.nvim" }
 
 		use {
-			"glepnir/galaxyline.nvim",
+			"NTBBloodbath/galaxyline.nvim",
 			branch = "main",
 		}
 
@@ -110,8 +110,7 @@ function M.config()
 			disable = not globals.ekaput,
 		}
 
-		use "mstanciu552/lsp_matlab"
+		use { "mstanciu552/lsp_matlab", disable = false }
 	end)
 end
-
 return M
