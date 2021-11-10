@@ -62,7 +62,10 @@ function M.config()
 		use {
 			"NTBBloodbath/galaxyline.nvim",
 			branch = "main",
+			disable = true,
 		}
+
+		use { "nvim-lualine/lualine.nvim", disable = false }
 
 		use {
 			"terrortylor/nvim-comment",

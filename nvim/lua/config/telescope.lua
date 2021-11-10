@@ -1,7 +1,7 @@
 local M = {}
 
 function M.config()
-	require("telescope").setup({
+	require("telescope").setup {
 		defaults = {
 			mappings = {
 				n = {
@@ -34,7 +34,7 @@ function M.config()
 				vertical = {
 					mirror = false,
 				},
-				prompt_position = "top",
+				-- prompt_position = "top",
 			},
 			file_sorter = require("telescope.sorters").get_fuzzy_file,
 			file_ignore_patterns = {},
@@ -53,7 +53,7 @@ function M.config()
 			-- Developer configurations: Not meant for general override
 			buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
 		},
-	})
+	}
 end
 
 return M
