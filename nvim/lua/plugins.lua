@@ -1,7 +1,7 @@
 -- @Packer: git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+local globals = require "globals"
 
 local M = {}
-local globals = require "globals"
 
 -- Check out nvim-comment
 -- TODO Replace nvim-lspinstall with nvim-lsp-installer
@@ -113,7 +113,12 @@ function M.config()
 			disable = not globals.ekaput,
 		}
 
-		use { "mstanciu552/lsp_matlab", disable = false }
+		use { "mstanciu552/lsp_matlab", disable = not globals.lsp_matlab }
+
+		use "mfussenegger/nvim-dap"
+		use "Pocco81/DAPInstall.nvim"
+
+		use "ggandor/lightspeed.nvim"
 	end)
 end
 return M

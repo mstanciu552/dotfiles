@@ -16,6 +16,9 @@ set $alt Mod1
 # is used in the bar {} block below.
 font pango:monospace 10
 
+# Disable borders
+for_window [class="^.*"] border pixel 0
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -48,6 +51,8 @@ bindsym $mod+x exec kitty -e calcurse
 gaps outer 5
 gaps inner 5
 smart_borders on
+smart_borders no_gaps
+border_radius 5
 focus_follows_mouse no
 
 # Use pactl to adjust volume in PulseAudio.

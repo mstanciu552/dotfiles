@@ -17,6 +17,7 @@ local function eviline()
 		magenta = "#c678dd",
 		blue = "#51afef",
 		red = "#ec5f67",
+		bg_dark = "#1f2335",
 	}
 
 	local conditions = {
@@ -114,7 +115,7 @@ local function eviline()
 				t = colors.red,
 			}
 
-			vim.api.nvim_command("hi! LualineMode guifg=" .. mode_color[vim.fn.mode()] .. " guibg=" .. colors.bg)
+			vim.api.nvim_command("hi! LualineMode guifg=" .. mode_color[vim.fn.mode()] .. " guibg=" .. colors.bg_dark)
 			return "  " .. modes[vim.fn.mode()][1]
 		end,
 		color = "LualineMode",

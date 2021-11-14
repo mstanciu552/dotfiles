@@ -1,5 +1,6 @@
 local fn = vim.fn
 local execute = vim.api.nvim_command
+local globals = require "globals"
 
 vim.g.mapleader = " "
 
@@ -15,21 +16,24 @@ local config = {
 	"config.bufferline",
 	"config.cmp",
 	"config.ekaput",
-	"config.matlab",
 	"config.nvimtree",
 	"config.null-ls",
-	-- "config.galaxyline",
 	"config.lualine",
 	"config.gitsigns",
 	"config.luasnip",
 	"config.telescope",
 	"config.treesitter",
 	"config.lspinstaller",
+	"config.dapinstall",
 	"config.lspsaga",
 	"config.tabnine",
 	"config.trouble",
 	"config.which-key",
 }
+
+if globals.lsp_matlab then
+	table.insert(config, "config.matlab")
+end
 
 local install_path = fn.stdpath "data" .. "site/pack/packer/opt/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then

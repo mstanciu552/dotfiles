@@ -11,6 +11,8 @@ local statusline_options = {
 }
 M.statusline = statusline_options[1]
 
+M.lsp_matlab = true
+
 M.rename_file = function()
 	local fname = vim.api.nvim_buf_get_name(0)
 	local new_name = vim.fn.input("New File: ", fname, "file")

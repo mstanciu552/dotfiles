@@ -58,7 +58,7 @@ font-3 = Font Awesome 5 Free:pixelsize=10;2
 font-4 = Font Awesome 5 Free Solid:pixelsize=10;2
 font-5 = Font Awesome 5 Brands:pixelsize=10;2
 
-modules-left = bspwm i3
+modules-left = i3
 modules-center = i3-windows spotify
 modules-right = filesystem mic-volume backlight-acpi pulseaudio memory wlan battery temperature date powermenu
 
@@ -144,6 +144,8 @@ exec = ~/.config/i3/polybar-i3-windows/module.py
 tail = true
 format-underline = #ffffff
 
+
+
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
@@ -196,7 +198,7 @@ label-empty-padding = 2
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
-wrapping-scroll = false
+wrapping-scroll = true
 
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true

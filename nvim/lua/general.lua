@@ -9,11 +9,11 @@ M.define_signs = function()
 	end
 end
 
-function M.emmet()
+M.emmet = function()
 	vim.g.user_emmet_leader_key = "<C-y>"
 end
 
-function M.config()
+M.config = function()
 	vim.cmd [[
   syntax on
   filetype plugin indent on
@@ -64,11 +64,11 @@ function M.config()
 	vim.opt.shiftwidth = 2
 	vim.opt.inccommand = "nosplit"
 	vim.opt.autoindent = true
+	vim.o.wrap = true
 
 	vim.o.guifont = "UbuntuMono Nerd Font:h24"
 
 	vim.g.cursorhold_updatetime = "100"
-	M.define_signs()
 end
 
 return M
