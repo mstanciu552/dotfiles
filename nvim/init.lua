@@ -18,6 +18,7 @@ local config = {
 	"config.ekaput",
 	"config.nvimtree",
 	"config.null-ls",
+	"config.neorg",
 	"config.lualine",
 	"config.gitsigns",
 	"config.luasnip",

@@ -119,6 +119,7 @@ function M.config()
 		use "Pocco81/DAPInstall.nvim"
 
 		use "ggandor/lightspeed.nvim"
+		use "nvim-neorg/neorg"
 	end)
 end
 return M

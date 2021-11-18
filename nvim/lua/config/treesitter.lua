@@ -8,12 +8,12 @@ local add_parser = function(path_or_repo)
 			files = { "src/parser.c" },
 			branch = "main",
 		},
-		filetype = "matlab", -- if filetype does not agrees with parser name
 	}
 end
 
 function M.config()
 	add_parser "https://github.com/mstanciu552/tree-sitter-matlab.git"
+	add_parser "https://github.com/nvim-neorg/tree-sitter-norg"
 
 	require("nvim-treesitter.configs").setup {
 		ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages

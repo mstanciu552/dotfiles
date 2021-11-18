@@ -19,7 +19,7 @@ export FH016=71:2E:5B:AB:55:41
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="nanotech"
 # ZSH_THEME="eastwood"
-ZSH_THEME="suvash"
+ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load

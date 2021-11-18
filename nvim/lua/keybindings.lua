@@ -67,6 +67,11 @@ function M.config()
 
 	-- Toggle virtual text LSP
 	key("n", "<leader>x", "<cmd>lua require('globals').toggle_virtual()<CR>", { noremap = true, silent = true })
+
+	-- Window splitting
+	key("n", "<leader>=", "<cmd>vertical resize +2<CR>", { noremap = true, silent = true })
+	key("n", "<leader>-", "<cmd>vertical resize -2<CR>", { noremap = true, silent = true })
+	key("n", "<leader><Tab>", "<C-w>w", { noremap = true, silent = true })
 end
 
 return M
