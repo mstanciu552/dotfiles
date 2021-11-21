@@ -1,8 +1,10 @@
 local M = {}
 
-M.colorscheme = "tokyonight"
+M.colorscheme = "monokai"
 M.ekaput = false
 M.virtual_text = true
+M.bufferline = false
+M.format_on_save = true
 
 local statusline_options = {
 	"eviline",

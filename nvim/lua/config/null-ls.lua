@@ -1,3 +1,5 @@
+local globals = require "globals"
+
 local M = {
 	border = {
 		{ "🭽", "FloatBorder" },
@@ -28,7 +30,7 @@ local M = {
 
 function M.on_attach(client)
 	-- Format on save
-	if client.resolved_capabilities.document_formatting then
+	if client.resolved_capabilities.document_formatting and globals.format_on_save then
 		vim.cmd "autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()"
 	end
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = M.border })

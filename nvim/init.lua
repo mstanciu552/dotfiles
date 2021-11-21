@@ -13,13 +13,12 @@ local config = {
 	"keybindings",
 	"colorscheme",
 	"config.autopairs",
-	"config.bufferline",
 	"config.cmp",
 	"config.ekaput",
 	"config.nvimtree",
 	"config.null-ls",
 	"config.neorg",
-	"config.lualine",
+	"config.lua_line",
 	"config.gitsigns",
 	"config.luasnip",
 	"config.telescope",
@@ -34,6 +33,10 @@ local config = {
 
 if globals.lsp_matlab then
 	table.insert(config, "config.matlab")
+end
+
+if globals.bufferline then
+	table.insert(config, "config.bufferline")
 end
 
 local install_path = fn.stdpath "data" .. "site/pack/packer/opt/packer.nvim"
