@@ -52,7 +52,7 @@ function M.config()
 		use { "ap/vim-css-color" }
 		use "windwp/nvim-autopairs"
 
-		use { "folke/which-key.nvim" }
+		use { "mstanciu552/which-key.nvim" }
 
 		use {
 			"NTBBloodbath/galaxyline.nvim",
@@ -60,7 +60,7 @@ function M.config()
 			disable = true,
 		}
 
-		use { "nvim-lualine/lualine.nvim", disable = false }
+		use { "nvim-lualine/lualine.nvim" }
 
 		use {
 			"terrortylor/nvim-comment",

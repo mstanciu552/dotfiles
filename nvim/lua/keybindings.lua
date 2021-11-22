@@ -1,3 +1,5 @@
+local utils = require "utils"
+
 local M = {}
 local key = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = false }
@@ -23,9 +25,10 @@ function M.config()
 	key("v", "<S-Up>", ":'<,'>m -2<CR>gv", { noremap = true })
 	key("v", "<S-Down>", ":'<,'>m +1<CR>gv", { noremap = true })
 
-	key("i", "jk", "<ESC>", { noremap = true, expr = true })
-	key("i", "kj", "<ESC>", { noremap = true, expr = true })
-	key("i", "jj", "<ESC>", { noremap = true, expr = true })
+	-- No idea why it's not working
+	key("i", "jk", utils.t "<esc>l", { noremap = true, silent = false })
+	key("i", "kj", utils.t "<esc>l", { noremap = true, silent = true })
+	key("i", "jj", utils.t "<esc>l", { noremap = true, silent = true })
 
 	-- NvimTree
 	key("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })

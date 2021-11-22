@@ -46,4 +46,9 @@ utils.get_input = function(params)
 	utils.clear_prompt()
 	return input
 end
+
+utils.t = function(str)
+	return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
 return utils
