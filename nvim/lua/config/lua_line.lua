@@ -19,6 +19,7 @@ local function eviline()
 		red = "#ec5f67",
 		bg_dark_tokyonight = "#1f2335",
 		bg_dark_monokai = "#333842",
+		bg_dark_nightfox = "#131A24",
 	}
 
 	local conditions = {
@@ -116,7 +117,7 @@ local function eviline()
 				t = colors.red,
 			}
 
-			vim.api.nvim_command("hi! LualineMode guifg=" .. mode_color[vim.fn.mode()] .. " guibg=" .. colors.bg_dark_monokai)
+			vim.api.nvim_command("hi! LualineMode guifg=" .. mode_color[vim.fn.mode()] .. " guibg=" .. colors.bg_dark_tokyonight)
 			return "  " .. modes[vim.fn.mode()][1]
 		end,
 		color = "LualineMode",
@@ -143,7 +144,7 @@ local function eviline()
 
 	ins_left {
 		"diagnostics",
-		sources = { "nvim_lsp" },
+		sources = { "nvim_diagnostic" },
 		symbols = { error = " ", warn = " ", info = " " },
 		diagnostics_color = {
 			color_error = { fg = colors.red },

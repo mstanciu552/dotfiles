@@ -42,7 +42,7 @@ function M.config()
 		sources = M.sources,
 		debug = true,
 	}
-	require("lspconfig")["null-ls"].setup {
+	require("lspconfig.configs")["null-ls"].setup {
 		on_attach = M.on_attach,
 	}
 end

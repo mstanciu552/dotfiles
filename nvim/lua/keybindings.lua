@@ -27,7 +27,6 @@ function M.config()
 
 	-- No idea why it's not working
 	key("i", "jk", utils.t "<esc>l", { noremap = true, silent = false })
-	key("i", "kj", utils.t "<esc>l", { noremap = true, silent = true })
 	key("i", "jj", utils.t "<esc>l", { noremap = true, silent = true })
 
 	-- NvimTree

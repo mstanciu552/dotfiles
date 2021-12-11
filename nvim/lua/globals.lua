@@ -1,6 +1,5 @@
 local M = {}
 
-M.colorscheme = "monokai"
 M.ekaput = false
 M.virtual_text = true
 M.bufferline = false
@@ -12,6 +11,15 @@ local statusline_options = {
 	"spaceline",
 }
 M.statusline = statusline_options[1]
+
+local themes = {
+	"tokyonight",
+	"nightfox",
+	"monokai",
+}
+
+-- M.colorscheme = themes[math.random(1, #themes)]
+M.colorscheme = themes[1]
 
 M.lsp_matlab = true
 

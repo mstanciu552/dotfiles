@@ -39,10 +39,11 @@ exec_always ~/.config/i3/autorun.sh
 
 # Floating windows
 for_window [class="feh"] floating enable
+for_window [class="PacketTracer"] floating enable
 
 # Personal config
 # Browser
-bindsym $mod+b exec brave
+bindsym $mod+b exec opera
 
 # Calendar
 bindsym $mod+x exec kitty -e calcurse
@@ -74,6 +75,9 @@ bindsym $mod+Return exec kitty
 
 # start dolphin (file manager)
 bindsym $mod+e exec dolphin
+
+# start spectacle (snipping tool)
+bindsym $mod+s exec spectacle
 
 # kill focused window
 bindsym $mod+c kill

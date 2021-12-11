@@ -15,10 +15,10 @@ local M = {
 }
 
 function M.config()
-	local cmp = require("cmp")
-	local lspkind = require("lspkind")
+	local cmp = require "cmp"
+	local lspkind = require "lspkind"
 
-	cmp.setup({
+	cmp.setup {
 		snippet = {
 			expand = function(args)
 				require("luasnip").lsp_expand(args.body)
@@ -45,10 +45,10 @@ function M.config()
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 		},
 		mapping = {
-			["<CR>"] = cmp.mapping.confirm({
+			["<CR>"] = cmp.mapping.confirm {
 				behavior = cmp.ConfirmBehavior.Insert,
 				select = true,
-			}),
+			},
 			["<C-d>"] = cmp.mapping.scroll_docs(-4),
 			["<C-f>"] = cmp.mapping.scroll_docs(4),
 			["<C-Space>"] = cmp.mapping.complete(),
@@ -72,14 +72,14 @@ function M.config()
 			{ name = "cmp_tabnine" },
 			{ name = "cmp_octave" },
 			{ name = "cmp_matlab" },
-			{ name = "nvim_lsp" },
+			{ name = "nvim_diagnostics" },
 			{ name = "nvim_lua" },
 			{ name = "luasnip" },
 			{ name = "path" },
 			{ name = "rg" },
 			{ name = "buffers" },
 		},
-	})
+	}
 end
 
 return M

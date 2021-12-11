@@ -11,7 +11,7 @@ configuration {
   disable-history: false;
   sidebar-mode: true;
   auto-select: false;
-  theme: "~/.config/rofi/themes/nord.rasi";
-  /* theme: "~/.config/rofi/themes/Arc-Dark.rasi"; */
-  /* theme: "~/.config/rofi/themes_default/Indego.rasi"; */
 }
+
+@theme "~/.config/rofi/themes/nord.rasi"
+/* @theme "~/.config/rofi/themes_default/Indego.rasi" */

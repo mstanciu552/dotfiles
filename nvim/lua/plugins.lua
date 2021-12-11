@@ -115,6 +115,7 @@ function M.config()
 
 		use "ggandor/lightspeed.nvim"
 		use "nvim-neorg/neorg"
+		use "tpope/vim-fugitive"
 	end)
 end
 return M
