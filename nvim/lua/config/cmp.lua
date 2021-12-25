@@ -69,10 +69,10 @@ function M.config()
 			end,
 		},
 		sources = {
+			{ name = "nvim_lsp" },
 			{ name = "cmp_tabnine" },
 			{ name = "cmp_octave" },
 			{ name = "cmp_matlab" },
-			{ name = "nvim_diagnostics" },
 			{ name = "nvim_lua" },
 			{ name = "luasnip" },
 			{ name = "path" },

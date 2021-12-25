@@ -77,7 +77,7 @@ def render_apps(i3):
 
 def format_entry(app):
     title = make_title(app)
-    u_color = '#b4619a' if app.focused else\
+    u_color = '#0a6cf5' if app.focused else\
         '#e84f4f' if app.urgent else\
         '#404040'
 

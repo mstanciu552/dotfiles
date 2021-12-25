@@ -16,15 +16,22 @@ local M = {
 			extra_args = { "--config-path", vim.fn.expand "~/.config/stylua/stylua.toml" },
 		},
 		require("null-ls").builtins.formatting.prettier,
-		require("null-ls").builtins.formatting.autopep8,
+		require("null-ls").builtins.formatting.black,
 		require("null-ls").builtins.formatting.shfmt,
 		require("null-ls").builtins.formatting.clang_format,
 		require("null-ls").builtins.formatting.gofmt,
 		require("null-ls").builtins.formatting.goimports,
 		require("null-ls").builtins.formatting.json_tool,
 		require("null-ls").builtins.formatting.rustfmt,
+		-- require("null-ls").builtins.formatting.latexindent.with {
+		-- 	filetypes = { "tex", "plaintex" },
+		-- },
 
 		require("null-ls").builtins.code_actions.gitsigns,
+
+		-- require("null-ls").builtins.diagnostics.chktex.with {
+		-- 	filetypes = { "tex", "plaintex" },
+		-- },
 	},
 }
 
@@ -38,11 +45,9 @@ function M.on_attach(client)
 end
 
 function M.config()
-	require("null-ls").config {
+	require("null-ls").setup {
 		sources = M.sources,
 		debug = true,
-	}
-	require("lspconfig.configs")["null-ls"].setup {
 		on_attach = M.on_attach,
 	}
 end

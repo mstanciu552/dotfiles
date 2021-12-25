@@ -16,10 +16,11 @@ local themes = {
 	"tokyonight",
 	"nightfox",
 	"monokai",
+	"kanagawa",
 }
 
 -- M.colorscheme = themes[math.random(1, #themes)]
-M.colorscheme = themes[1]
+M.colorscheme = themes[4]
 
 M.lsp_matlab = true
 

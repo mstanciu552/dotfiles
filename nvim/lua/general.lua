@@ -4,7 +4,7 @@ local M = {}
 
 M.define_signs = function()
 	for t, icon in pairs(signs) do
-		local hl = "LspDiagnosticSign" .. t
+		local hl = "DiagnosticSign" .. t
 		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 	end
 end
@@ -24,10 +24,10 @@ M.config = function()
   set smarttab
   set formatoptions-=cro
 
-  sign define LspDiagnosticsSignError       text= ● texthl=DiagnosticError   linehl= numhl=
-  sign define LspDiagnosticsSignWarning     text= ● texthl=DiagnosticWarn    linehl= numhl=
-  sign define LspDiagnosticsSignInformation text= ● texthl=DiagnosticInfo    linehl= numhl=
-  sign define LspDiagnosticsSignHint        text= ● texthl=DiagnosticHint    linehl= numhl=
+  sign define DiagnosticsSignError       text= ● texthl=DiagnosticError   linehl= numhl=
+  sign define DiagnosticsSignWarning     text= ● texthl=DiagnosticWarn    linehl= numhl=
+  sign define DiagnosticsSignInformation text= ● texthl=DiagnosticInfo    linehl= numhl=
+  sign define DiagnosticsSignHint        text= ● texthl=DiagnosticHint    linehl= numhl=
 
   augroup highlight_yank
     autocmd!

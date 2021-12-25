@@ -1,6 +1,5 @@
 -- @Packer: git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 local globals = require "globals"
-
 local M = {}
 
 -- Check out nvim-comment
@@ -16,6 +15,7 @@ function M.config()
 
 		use "EdenEast/nightfox.nvim"
 		use "folke/tokyonight.nvim"
+		use "rebelot/kanagawa.nvim"
 
 		use {
 			"nvim-telescope/telescope.nvim",
@@ -31,8 +31,8 @@ function M.config()
 
 		use { "neovim/nvim-lspconfig" }
 		use "williamboman/nvim-lsp-installer"
-		-- use({ "tami5/lspsaga.nvim" }) -- For neovim 0.6
-		use { "rinx/lspsaga.nvim" }
+		use { "tami5/lspsaga.nvim" }
+		-- use { "rinx/lspsaga.nvim" }
 
 		use {
 			"hrsh7th/nvim-cmp",
@@ -116,6 +116,8 @@ function M.config()
 		use "ggandor/lightspeed.nvim"
 		use "nvim-neorg/neorg"
 		use "tpope/vim-fugitive"
+		use "lukas-reineke/indent-blankline.nvim"
+		use "lervag/vimtex"
 	end)
 end
 return M
