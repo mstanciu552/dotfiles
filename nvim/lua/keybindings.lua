@@ -1,4 +1,5 @@
 local utils = require "utils"
+local globals = require "globals"
 
 local M = {}
 local key = vim.api.nvim_set_keymap
@@ -34,9 +35,30 @@ function M.config()
 	key("n", "<leader>o", ":NvimTreeFind<CR>", { noremap = true, silent = true })
 
 	-- Telescope
-	key("n", "<leader>f", ":lua require('telescope.builtin').find_files()<cr>", { noremap = true, silent = true })
-	key("n", "<leader>g", ":lua require('telescope.builtin').live_grep()<cr>", { noremap = true, silent = true })
-	key("n", "<leader>s", ":lua require('telescope.builtin').help_tags()<cr>", { noremap = true, silent = true })
+	if globals.telescope_theme == "normal" then
+		key("n", "<leader>f", ":lua require('telescope.builtin').find_files()<cr>", { noremap = true, silent = true })
+		key("n", "<leader>g", ":lua require('telescope.builtin').live_grep()<cr>", { noremap = true, silent = true })
+		key("n", "<leader>s", ":lua require('telescope.builtin').help_tags()<cr>", { noremap = true, silent = true })
+	elseif globals.telescope_theme == "dropdown" then
+		key(
+			"n",
+			"<leader>f",
+			":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown())<cr>",
+			{ noremap = true, silent = true }
+		)
+		key(
+			"n",
+			"<leader>g",
+			":lua require('telescope.builtin').live_grep(require('telescope.themes').get_dropdown({}))<cr>",
+			{ noremap = true, silent = true }
+		)
+		key(
+			"n",
+			"<leader>s",
+			":lua require('telescope.builtin').help_tags(require('telescope.themes').get_dropdown({}))<cr>",
+			{ noremap = true, silent = true }
+		)
+	end
 
 	-- LSP
 	key("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)

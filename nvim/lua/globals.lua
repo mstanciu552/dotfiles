@@ -24,6 +24,14 @@ M.colorscheme = themes[4]
 
 M.lsp_matlab = true
 
+local telescope_themes = {
+	"dropdown",
+	"normal",
+	"ivy",
+}
+
+M.telescope_theme = telescope_themes[1]
+
 M.rename_file = function()
 	local fname = vim.api.nvim_buf_get_name(0)
 	local new_name = vim.fn.input("New File: ", fname, "file")

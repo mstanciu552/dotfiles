@@ -4,9 +4,6 @@ local globals = require "globals"
 
 vim.g.mapleader = " "
 
--- TODO check out https://github.com/nvim-treesitter/module-template/tree/master/queries
--- for Matlab
-
 local config = {
 	"plugins",
 	"general",
@@ -37,11 +34,6 @@ end
 
 if globals.bufferline then
 	table.insert(config, "config.bufferline")
-end
-
-local install_path = fn.stdpath "data" .. "site/pack/packer/opt/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-	execute("!git clone --depth 1 https://github.com/wbthomason/packer.nvim " .. install_path)
 end
 
 for _, config_path in ipairs(config) do
