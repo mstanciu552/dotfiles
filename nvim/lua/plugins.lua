@@ -39,6 +39,7 @@ function M.config()
 		use "EdenEast/nightfox.nvim"
 		use "folke/tokyonight.nvim"
 		use "rebelot/kanagawa.nvim"
+		use "andersevenrud/nordic.nvim"
 
 		use {
 			"nvim-telescope/telescope.nvim",

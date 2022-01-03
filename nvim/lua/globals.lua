@@ -17,10 +17,11 @@ local themes = {
 	"nightfox",
 	"monokai",
 	"kanagawa",
+	"onedark",
 }
 
 -- M.colorscheme = themes[math.random(1, #themes)]
-M.colorscheme = themes[4]
+M.colorscheme = themes[5]
 
 M.lsp_matlab = true
 
@@ -30,7 +31,7 @@ local telescope_themes = {
 	"ivy",
 }
 
-M.telescope_theme = telescope_themes[1]
+M.telescope_theme = telescope_themes[2]
 
 M.rename_file = function()
 	local fname = vim.api.nvim_buf_get_name(0)

@@ -23,7 +23,7 @@ function M.config()
 	vim.cmd "hi SpellBad guifg=none guibg=none cterm=none ctermfg=none ctermbg=none"
 	vim.cmd "hi IncSearch guibg='#5e81ac' guifg='#abb2bf'"
 
-	require(globals.colorscheme)
+	pcall(require, globals.colorscheme)
 	vim.cmd("colorscheme " .. globals.colorscheme)
 end
 
