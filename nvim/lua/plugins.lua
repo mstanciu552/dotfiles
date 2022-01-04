@@ -114,10 +114,11 @@ function M.config()
 			end,
 		}
 
-		use {
-			"folke/trouble.nvim",
-			requires = "kyazdani42/nvim-web-devicons",
-		}
+		-- use {
+		-- 	"folke/trouble.nvim",
+		-- 	requires = "kyazdani42/nvim-web-devicons",
+		-- 	disable = true,
+		-- }
 
 		use {
 			"lewis6991/gitsigns.nvim",

@@ -24,7 +24,7 @@ local config = {
 	"config.dapinstall",
 	"config.lspsaga",
 	"config.tabnine",
-	"config.trouble",
+	-- "config.trouble",
 	"config.which-key",
 }
 

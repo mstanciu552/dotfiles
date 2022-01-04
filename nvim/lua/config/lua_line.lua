@@ -23,6 +23,7 @@ local function eviline()
 			monokai = "#333842",
 			nightfox = "#131A24",
 			kanagawa = "#2A2A37",
+			onedark = "#2C323D",
 		},
 	}
 

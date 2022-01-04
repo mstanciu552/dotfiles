@@ -400,14 +400,14 @@ date = " %Y-%m-%d"
 
 time = %H:%M:%S
 time-alt = %H:%M
- 
-format = %{A1:polybar-calendar.sh --popup:} 🕓 <label> %{A}
+# 🕓 
+format = %{A1:polybar-calendar.sh --popup:}  <label> %{A}
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
 label = %date%  %time%
- 
+
 [module/pulseaudio]
 type = internal/pulseaudio
 
@@ -417,6 +417,8 @@ label-volume-foreground = ${root.foreground}
 
 label-muted =   muted
 label-muted-foreground = #666
+
+click-right = "kitty --class audio -e pulsemixer"
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55

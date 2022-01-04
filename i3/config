@@ -39,6 +39,8 @@ exec_always ~/.config/i3/autorun.sh
 
 # Floating windows
 for_window [class="feh"] floating enable
+for_window [class="audio"] floating enable
+for_window [class="audio"] resize set 1200 640
 for_window [class="PacketTracer"] floating enable
 
 # Personal config
