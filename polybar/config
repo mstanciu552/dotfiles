@@ -58,8 +58,8 @@ font-3 = Font Awesome 5 Free:pixelsize=10;2
 font-4 = Font Awesome 5 Free Solid:pixelsize=10;2
 font-5 = Font Awesome 5 Brands:pixelsize=10;2
 
-modules-left = i3
-modules-center = i3-windows spotify
+modules-left = i3 bspwm
+modules-center = bspwm-windows spotify
 modules-right = filesystem mic-volume backlight-acpi pulseaudio memory wlan battery temperature date powermenu
 
 tray-position = right
@@ -69,7 +69,7 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
-wm-restack = i3
+wm-restack = bspwm
 
 [bar/awesome]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -116,6 +116,7 @@ cursor-scroll = ns-resize
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
+format-underline = #0a6cf5
 
 [module/spotify]
 type = custom/script
@@ -144,7 +145,10 @@ exec = ~/.config/i3/polybar-i3-windows/module.py
 tail = true
 format-underline = #ffffff
 
-
+[module/bspwm-windows]
+type = custom/script
+exec = ~/.config/bspwm/scripts/polybar-bspwm-windows/main.py
+interval = 0.1
 
 [module/xkeyboard]
 type = internal/xkeyboard
