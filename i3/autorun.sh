@@ -1,7 +1,7 @@
 #!/bin/bash
 
-killall -q polybar 
-polybar sc0p3 &
+killall -q polybar
+polybar i3 &
 dunst &
 picom --experimental-backends &
 ~/.config/i3/wallpaper.sh

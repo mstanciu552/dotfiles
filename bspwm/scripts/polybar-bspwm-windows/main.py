@@ -74,7 +74,8 @@ def main():
             out += format_underline(restrict(win, 20)) + "   "
         else:
             out += set_action(restrict(win, 20)) + "   "
-    print(out)
+    if out != "":
+        print(out)
 
 
 if __name__ == "__main__":
