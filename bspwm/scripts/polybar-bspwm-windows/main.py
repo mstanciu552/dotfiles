@@ -37,7 +37,7 @@ def get_focused_window() -> str:
 def set_action(window: str) -> str:
     id = -1
     for data in DATA:
-        if window == data[1]:
+        if window in data[1]:
             id = data[0]
             break
     if id == -1:
@@ -65,13 +65,15 @@ def restrict(string: str, idx: int) -> str:
 # TODO Add icons
 def main():
     output = get_windows().split("\n")[:-1]
+    if len(output) < 1:
+        return
     focus = get_focused_window().split("\n")[0]
     out = ""
     for win in output:
         if win == focus:
-            out += format_underline(win) + "   "
+            out += format_underline(restrict(win, 20)) + "   "
         else:
-            out += set_action(win) + "   "
+            out += set_action(restrict(win, 20)) + "   "
     print(out)
 
 
