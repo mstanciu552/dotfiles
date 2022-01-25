@@ -11,6 +11,8 @@ configuration {
   disable-history: false;
   sidebar-mode: true;
   auto-select: false;
+
 }
 
+@import "~/.cache/wal/colors-rofi-dark.rasi"
 @theme "~/.config/rofi/themes/nord.rasi"

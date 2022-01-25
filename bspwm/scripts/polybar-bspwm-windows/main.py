@@ -19,6 +19,7 @@ def get_win_id():
     proc = subprocess.Popen(
         "wmctrl -lx | awk '{$2=$3=$4=\" \";print}'", shell=True, stdout=subprocess.PIPE
     )
+    assert proc.stdout
     data = str(proc.stdout.read().decode("utf-8")).split("\n")[:-1]
     data = [(d.split("       ")[0], d.split("       ")[1]) for d in data]
     return data
@@ -31,6 +32,7 @@ def get_focused_window() -> str:
     proc = subprocess.Popen(
         "xtitle $(bspc query -N -n)", shell=True, stdout=subprocess.PIPE
     )
+    assert proc.stdout
     return str(proc.stdout.read().decode("utf-8"))
 
 
@@ -51,6 +53,7 @@ def get_windows() -> str:
     proc = subprocess.Popen(
         "xtitle $(bspc query -N -n .window)", shell=True, stdout=subprocess.PIPE
     )
+    assert proc.stdout
     return str(proc.stdout.read().decode("utf-8"))
 
 

@@ -143,6 +143,8 @@ function M.config()
 		use "tpope/vim-fugitive"
 		use "lukas-reineke/indent-blankline.nvim"
 		use "lervag/vimtex"
+		use "petertriho/nvim-scrollbar"
+		use { "sidebar-nvim/sidebar.nvim", disable = true }
 
 		if PACKER_BOOTSTRAP then
 			require("packer").sync()

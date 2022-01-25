@@ -12,6 +12,7 @@ local config = {
 	"config.autopairs",
 	"config.cmp",
 	"config.ekaput",
+	"config.scrollbar",
 	"config.nvimtree",
 	"config.null-ls",
 	"config.neorg",

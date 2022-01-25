@@ -18,7 +18,10 @@ super + b
   opera
 
 super + s
-  spectacle
+  flameshot gui
+
+super + e
+  dolphin
 
 #
 # rofi utils
@@ -60,6 +63,10 @@ super + alt + {q,r}
 # close and kill
 super + {_,shift + }c
 	bspc node -{c,k}
+
+# fullscreen
+super + m
+  bspc node -t \~fullscreen
 
 # alternate between the tiled and monocle layout
 super + space

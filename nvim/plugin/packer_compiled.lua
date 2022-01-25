@@ -255,6 +255,11 @@ _G.packer_plugins = {
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-scrollbar"] = {
+    loaded = true,
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/nvim-scrollbar",
+    url = "https://github.com/petertriho/nvim-scrollbar"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -289,6 +294,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["sidebar.nvim"] = {
+    loaded = true,
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/sidebar.nvim",
+    url = "https://github.com/sidebar-nvim/sidebar.nvim"
   },
   ["stabilize.nvim"] = {
     config = { "\27LJ\1\0027\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\14stabilize\frequire\0" },
