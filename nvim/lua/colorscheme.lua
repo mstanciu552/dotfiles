@@ -25,6 +25,11 @@ function M.config()
 
 	pcall(require, globals.colorscheme)
 	vim.cmd("colorscheme " .. globals.colorscheme)
+
+	if globals.transparent then
+		vim.cmd "hi Normal guibg=None ctermbg=None"
+		vim.cmd "hi CursorLine guibg=#2c323c"
+	end
 end
 
 return M

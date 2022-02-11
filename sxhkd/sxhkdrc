@@ -23,6 +23,9 @@ super + s
 super + e
   dolphin
 
+super + q
+  ~/.config/bspwm/scripts/polybar-bspwm-windows/main.sh > ~/.config/bspwm/scripts/polybar-bspwm-windows/log.txt
+
 #
 # rofi utils
 #

@@ -16,6 +16,7 @@ local M = {
 			extra_args = { "--config-path", vim.fn.expand "~/.config/stylua/stylua.toml" },
 		},
 		require("null-ls").builtins.formatting.prettier,
+		require("null-ls").builtins.formatting.phpcsfixer,
 		require("null-ls").builtins.formatting.black,
 		require("null-ls").builtins.formatting.shfmt,
 		require("null-ls").builtins.formatting.clang_format,

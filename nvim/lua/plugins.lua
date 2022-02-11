@@ -138,13 +138,12 @@ function M.config()
 		use "mfussenegger/nvim-dap"
 		use "Pocco81/DAPInstall.nvim"
 
-		use "ggandor/lightspeed.nvim"
-		use "nvim-neorg/neorg"
 		use "tpope/vim-fugitive"
-		use "lukas-reineke/indent-blankline.nvim"
+		-- use "lukas-reineke/indent-blankline.nvim"
 		use "lervag/vimtex"
 		use "petertriho/nvim-scrollbar"
 		use { "sidebar-nvim/sidebar.nvim", disable = true }
+		use "echasnovski/mini.nvim"
 
 		if PACKER_BOOTSTRAP then
 			require("packer").sync()

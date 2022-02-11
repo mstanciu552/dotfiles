@@ -16,7 +16,6 @@ bspc config pointer_action3 resize_corner
 
 bspc config border_width 2
 bspc config focused_border_color \#0A6CF5
-# bspc config focused_border_color \#D23D3D
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2'

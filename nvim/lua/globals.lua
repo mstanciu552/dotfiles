@@ -4,6 +4,7 @@ M.ekaput = false
 M.virtual_text = true
 M.bufferline = false
 M.format_on_save = true
+M.transparent = false
 
 local statusline_options = {
 	"eviline",

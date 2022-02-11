@@ -159,20 +159,10 @@ _G.packer_plugins = {
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/glow.nvim",
     url = "https://github.com/ellisonleao/glow.nvim"
   },
-  ["indent-blankline.nvim"] = {
-    loaded = true,
-    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
-    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
-  },
   ["kanagawa.nvim"] = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
     url = "https://github.com/rebelot/kanagawa.nvim"
-  },
-  ["lightspeed.nvim"] = {
-    loaded = true,
-    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/lightspeed.nvim",
-    url = "https://github.com/ggandor/lightspeed.nvim"
   },
   lsp_matlab = {
     loaded = true,
@@ -194,15 +184,15 @@ _G.packer_plugins = {
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["mini.nvim"] = {
+    loaded = true,
+    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/mini.nvim",
+    url = "https://github.com/echasnovski/mini.nvim"
+  },
   ["monokai.nvim"] = {
     loaded = true,
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/monokai.nvim",
     url = "https://github.com/tanvirtin/monokai.nvim"
-  },
-  neorg = {
-    loaded = true,
-    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/neorg",
-    url = "https://github.com/nvim-neorg/neorg"
   },
   ["nightfox.nvim"] = {
     loaded = true,
@@ -295,11 +285,6 @@ _G.packer_plugins = {
     path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["sidebar.nvim"] = {
-    loaded = true,
-    path = "/home/sc0p3/.local/share/nvim/site/pack/packer/start/sidebar.nvim",
-    url = "https://github.com/sidebar-nvim/sidebar.nvim"
-  },
   ["stabilize.nvim"] = {
     config = { "\27LJ\1\0027\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\14stabilize\frequire\0" },
     loaded = true,
@@ -357,5 +342,6 @@ if should_profile then save_profiles(1) end
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end
