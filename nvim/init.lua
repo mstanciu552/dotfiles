@@ -4,6 +4,7 @@ local globals = require "globals"
 
 vim.g.mapleader = " "
 
+-- TODO Fix mini.nvim
 local config = {
 	"plugins",
 	"general",
@@ -13,6 +14,7 @@ local config = {
 	"config.cmp",
 	"config.ekaput",
 	"config.scrollbar",
+	"config.hlargs",
 	"config.mini",
 	"config.nvimtree",
 	"config.null-ls",

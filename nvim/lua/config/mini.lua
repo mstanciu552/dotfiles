@@ -1,7 +1,7 @@
 local M = {}
 
 M.plugins = {
-	p_indentscope = true,
+	p_indentscope = false,
 }
 
 M.p_indentscope = function()

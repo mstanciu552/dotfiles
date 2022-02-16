@@ -143,7 +143,8 @@ function M.config()
 		use "lervag/vimtex"
 		use "petertriho/nvim-scrollbar"
 		use { "sidebar-nvim/sidebar.nvim", disable = true }
-		use "echasnovski/mini.nvim"
+		use { "echasnovski/mini.nvim", branch = "stable" }
+		use "m-demare/hlargs.nvim"
 
 		if PACKER_BOOTSTRAP then
 			require("packer").sync()
