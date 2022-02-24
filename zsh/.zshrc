@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 export GOPATH=$HOME/go
-export PATH=$HOME/Documents/Projects/Python/todo_py:$HOME/bin:$HOME/.local/bin:/usr/local/bin:/opt/texlive/2021/bin/x86_64-linux:$GOPATH/bin:$PATH
+export PATH=~/.local/share/gem/ruby/3.0.0/bin:$HOME/Documents/Projects/Python/todo_py:$HOME/bin:$HOME/.local/bin:/usr/local/bin:/opt/texlive/2021/bin/x86_64-linux:$GOPATH/bin:$PATH
 
 # For MAtlab to work right
 export _JAVA_AWT_WM_NONREPARENTING=1 
@@ -154,7 +154,7 @@ if [ -f /home/placeDirectoryorUserNameHere/.oh-my-zsh/custom/plugins/zsh-syntax-
   ZSH_HIGHLIGHT_STYLES[bracket-level-3]=fg=magenta,bold
   ZSH_HIGHLIGHT_STYLES[bracket-level-4]=fg=yellow,bold
   ZSH_HIGHLIGHT_STYLES[bracket-level-5]=fg=cyan,bold
-  ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=standout
+  # ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=standout
 fi
 
 # enable color support of ls, less and man, and also add handy aliases
@@ -170,7 +170,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias diff='diff --color=auto'
     alias ip='ip --color=auto'
 
-    export LESS_TERMCAP_mb=$'\E[1;31m'     # begin blink
+    # export LESS_TERMCAP_mb=$'\E[1;31m'     # begin blink
     export LESS_TERMCAP_md=$'\E[1;36m'     # begin bold
     export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
     export LESS_TERMCAP_so=$'\E[01;33m'    # begin reverse video
@@ -205,6 +205,7 @@ alias pr="cat ~/Documents/Projects/Plans/TODO_LIST.md | rg -e '- ' | sed -e 's/-
 alias less="bat"
 alias l="lvim"
 alias lg="lazygit"
+alias quit="exit"
 
 # source ~/.config/zsh/dracula.sh
 # source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -218,3 +219,10 @@ if [[ $(ps --no-header -p $PPID -o comm | grep -Ev '^(yakuake|konsole|kitty)$' )
         for wid in $(xdotool search --pid $PPID); do
             xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $wid; done
 fi
+
+# Cursor correction
+_fix_cursor() {
+   echo -ne '\e[5 q'
+}
+
+precmd_functions+=(_fix_cursor)
