@@ -1,10 +1,10 @@
 local modes = require("utils.modes").modes
-local globals = require "globals"
+local globals = require("globals")
 
 local M = {}
 
 local function eviline()
-	local lualine = require "lualine"
+	local lualine = require("lualine")
 
 	local colors = {
 		bg = "#202328",
@@ -29,13 +29,13 @@ local function eviline()
 
 	local conditions = {
 		buffer_not_empty = function()
-			return vim.fn.empty(vim.fn.expand "%:t") ~= 1
+			return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
 		end,
 		hide_in_width = function()
 			return vim.fn.winwidth(0) > 80
 		end,
 		check_git_workspace = function()
-			local filepath = vim.fn.expand "%:p:h"
+			local filepath = vim.fn.expand("%:p:h")
 			local gitdir = vim.fn.finddir(".git", filepath .. ";")
 			return gitdir and #gitdir > 0 and #gitdir < #filepath
 		end,
@@ -87,15 +87,15 @@ local function eviline()
 		table.insert(config.sections.lualine_x, component)
 	end
 
-	ins_left {
+	ins_left({
 		function()
 			return "▊"
 		end,
 		color = { fg = colors.blue }, -- Sets highlighting of component
 		padding = { left = 0, right = 1 }, -- We don't need space before this
-	}
+	})
 
-	ins_left {
+	ins_left({
 		-- mode component
 		function()
 			-- auto change color according to neovims mode
@@ -123,13 +123,16 @@ local function eviline()
 			}
 
 			vim.api.nvim_command(
-				"hi! LualineMode guifg=" .. mode_color[vim.fn.mode()] .. " guibg=" .. colors.bg_dark_colors[globals.colorscheme]
+				"hi! LualineMode guifg="
+					.. mode_color[vim.fn.mode()]
+					.. " guibg="
+					.. colors.bg_dark_colors[globals.colorscheme]
 			)
 			return "  " .. modes[vim.fn.mode()][1]
 		end,
 		color = "LualineMode",
 		padding = { right = 1 },
-	}
+	})
 
 	-- @INFO Keyword Mode
 	-- ins_left {
@@ -138,18 +141,18 @@ local function eviline()
 	-- 	padding = { left = 1 },
 	-- }
 
-	ins_left {
+	ins_left({
 		"filename",
 		cond = conditions.buffer_not_empty,
 		path = 1,
 		color = { fg = colors.magenta, gui = "bold" },
-	}
+	})
 
-	ins_left { "location" }
+	ins_left({ "location" })
 
-	ins_left { "progress", color = { fg = colors.fg, gui = "bold" } }
+	ins_left({ "progress", color = { fg = colors.fg, gui = "bold" } })
 
-	ins_left {
+	ins_left({
 		"diagnostics",
 		sources = { "nvim_diagnostic" },
 		symbols = { error = " ", warn = " ", info = " " },
@@ -158,17 +161,17 @@ local function eviline()
 			color_warn = { fg = colors.yellow },
 			color_info = { fg = colors.cyan },
 		},
-	}
+	})
 
 	-- Insert mid section. You can make any number of sections in neovim :)
 	-- for lualine it's any number greater then 2
-	ins_left {
+	ins_left({
 		function()
 			return "%="
 		end,
-	}
+	})
 
-	ins_left {
+	ins_left({
 		-- Lsp server name .
 		function()
 			local msg = "No Active Lsp"
@@ -187,30 +190,30 @@ local function eviline()
 		end,
 		icon = " LSP:",
 		color = { fg = "#ffffff", gui = "bold" },
-	}
+	})
 
 	-- Add components to right sections
-	ins_right {
+	ins_right({
 		"o:encoding", -- option component same as &encoding in viml
 		fmt = string.upper, -- I'm not sure why it's upper case either ;)
 		cond = conditions.hide_in_width,
 		color = { fg = colors.green, gui = "bold" },
-	}
+	})
 
-	ins_right {
+	ins_right({
 		"fileformat",
 		fmt = string.upper,
 		icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
 		color = { fg = colors.green, gui = "bold" },
-	}
+	})
 
-	ins_right {
+	ins_right({
 		"branch",
 		icon = "",
 		color = { fg = colors.violet, gui = "bold" },
-	}
+	})
 
-	ins_right {
+	ins_right({
 		"diff",
 		-- Is it me or the symbol for modified us really weird
 		symbols = { added = " ", modified = "柳 ", removed = " " },
@@ -220,15 +223,15 @@ local function eviline()
 			removed = { fg = colors.red },
 		},
 		cond = conditions.hide_in_width,
-	}
+	})
 
-	ins_right {
+	ins_right({
 		function()
 			return "▊"
 		end,
 		color = { fg = colors.blue },
 		padding = { left = 1 },
-	}
+	})
 
 	lualine.setup(config)
 end
@@ -262,7 +265,7 @@ local function bubbles()
 		},
 	}
 
-	require("lualine").setup {
+	require("lualine").setup({
 		options = {
 			theme = bubbles_theme,
 			component_separators = "|",
@@ -290,7 +293,7 @@ local function bubbles()
 		},
 		tabline = {},
 		extensions = {},
-	}
+	})
 end
 
 function M.config()

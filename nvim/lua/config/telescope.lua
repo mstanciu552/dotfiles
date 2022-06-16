@@ -1,9 +1,9 @@
-local actions = require "telescope.actions"
+local actions = require("telescope.actions")
 
 local M = {}
 
 function M.config()
-	require("telescope").setup {
+	require("telescope").setup({
 		defaults = {
 			mappings = {
 				i = {
@@ -109,7 +109,7 @@ function M.config()
 			-- Developer configurations: Not meant for general override
 			buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
 		},
-	}
+	})
 end
 
 return M

@@ -1,18 +1,20 @@
-local ls = require("luasnip")
-local s = ls.snippet
-local sn = ls.snippet_node
-local isn = ls.indent_snippet_node
-local t = ls.text_node
-local i = ls.insert_node
-local f = ls.function_node
-local c = ls.choice_node
-local d = ls.dynamic_node
-local events = require("luasnip.util.events")
-
 local M = {}
+local ls = require("luasnip")
+local types = require("luasnip.util.types")
 
 function M.config()
-	s("cll", t("console.log()"))
+	ls.config.set_config({
+		history = true,
+		updateevents = "TextChanged,TextChangedI",
+		enable_autosnippets = true,
+		ext_opts = {
+			[types.choiceNode] = {
+				active = {
+					virt_text = { { "<-", "Error" } },
+				},
+			},
+		},
+	})
 	require("luasnip.loaders.from_vscode").lazy_load()
 end
 

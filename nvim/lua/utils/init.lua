@@ -1,3 +1,4 @@
+local globals = require("globals")
 local utils = {}
 
 utils.source = function(path)
@@ -23,7 +24,7 @@ utils.get_user_input_char = function()
 end
 
 utils.clear_prompt = function()
-	vim.api.nvim_command "redraw"
+	vim.api.nvim_command("redraw")
 end
 
 utils.check_path_exists = function(path)
@@ -49,6 +50,10 @@ end
 
 utils.t = function(str)
 	return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
+_G.toggle_format_on_save = function()
+	globals.format_on_save = not globals.format_on_save
 end
 
 return utils
