@@ -53,9 +53,9 @@ font-3 = "Iosevka Nerd Font:size=18;4"
 font-4 = "Source Code Pro Bold:size=13;3"
 
 # Default
-modules-left = spacing BLD launcher BRD sep bspwm sep spacing GLD network GRD
-modules-center = spotify
-modules-right = BLD battery CBL mic-volume MCL volume RPL brightness RRD sep GLD cpu YPL memory CPL filesystem CRD sep BLD time BRD spacing
+modules-left = spacing BLD launcher BRD sep bspwm sep spacing 
+modules-center = 
+modules-right = volume sep GLD cpu YPL memory CPL filesystem CRD sep BLD time BRD spacing
 
 spacing = 0
 dim-value = 1.0
