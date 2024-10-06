@@ -54,7 +54,7 @@ local function eviline()
 			-- 	normal = { c = { fg = colors.fg, bg = colors.bg } },
 			-- 	inactive = { c = { fg = colors.fg, bg = colors.bg } },
 			-- },
-			theme = "auto",
+			theme = "onedark",
 		},
 		sections = {
 			-- these are to remove the defaults
@@ -267,7 +267,7 @@ local function bubbles()
 
 	require("lualine").setup({
 		options = {
-			theme = bubbles_theme,
+			theme = 'auto',
 			component_separators = "|",
 			section_separators = { left = "", right = "" },
 		},

@@ -13,7 +13,7 @@ local statusline_options = {
 	"neonline",
 	"spaceline",
 }
-M.statusline = statusline_options[1]
+M.statusline = statusline_options[2]
 
 local themes = {
 	"tokyonight", -- 1
@@ -29,7 +29,7 @@ local themes = {
 }
 
 -- M.colorscheme = themes[math.random(1, #themes)]
-M.colorscheme = themes[2]
+M.colorscheme = themes[5]
 
 M.lsp_matlab = false
 
