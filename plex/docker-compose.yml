@@ -1,0 +1,8 @@
+services:
+  plex:
+    container_name: plex
+    image: linuxserver/plex:latest
+    volumes:
+      - /mnt/Data3:/mnt/Data3
+      - /mnt/Data2:/mnt/Data2
+    restart: unless-stopped
