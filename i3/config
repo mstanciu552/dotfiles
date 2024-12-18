@@ -17,7 +17,7 @@ set $alt Mod1
 font pango:monospace 10
 
 # Disable borders
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -29,6 +29,7 @@ for_window [class="^.*"] border pixel 0
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id compton -b -f
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -45,7 +46,10 @@ for_window [class="PacketTracer"] floating enable
 
 # Personal config
 # Browser
-bindsym $mod+b exec opera
+bindsym $mod+b exec firefox
+
+# Emacs
+bindsym $mod+e exec emacs
 
 # Calendar
 bindsym $mod+x exec kitty -e calcurse
@@ -55,7 +59,7 @@ gaps outer 5
 gaps inner 5
 smart_borders on
 smart_borders no_gaps
-border_radius 5
+# border_radius 5
 focus_follows_mouse no
 
 # Use pactl to adjust volume in PulseAudio.
@@ -76,10 +80,10 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty
 
 # start dolphin (file manager)
-bindsym $mod+e exec dolphin
+# bindsym $mod+e exec dolphin
 
 # start spectacle (snipping tool)
-bindsym $mod+s exec spectacle
+bindsym $mod+s exec flameshot gui
 
 # kill focused window
 bindsym $mod+c kill
@@ -229,8 +233,8 @@ bindsym $mod+p mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-# bar {
-#         position top
-#         height 25
-#         status_command i3status
-# }
+bar {
+        position top
+        height 25
+        status_command i3status
+}
