@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xrandr --output eDP1 --auto --output DP1 --auto --panning 1920x1080+3200+0 --scale 2x2 --right-of eDP1

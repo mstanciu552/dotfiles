@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo timedatectl set-local-rtc 0 
+sudo systemctl enable --now systemd-timesyncd

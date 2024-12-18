@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ls ~/bin | dmenu | xargs -I {} bash -c {} 

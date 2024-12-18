@@ -1,0 +1,13 @@
+#!/bin/bash
+
+mute() {
+  pacmd set-source-mute 1 1 
+}
+
+unmute() {
+  pacmd set-source-mute 1 0 
+}
+
+set_volume() {
+  pacmd set-source-volume 1 200 # value
+}

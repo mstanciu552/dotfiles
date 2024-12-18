@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ls ~/bin | rofi -dmenu | xargs -I {} bash -c {} 

@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+from pyautogui import moveRel, position
+
+
+def main():
+    pos = position()
+    x, y = 50, 50
+    if pos[0] >= 1900:
+        x = -x
+    if pos[1] >= 1000:
+        y = -y
+    moveRel(x, y, duration=1)
+
+
+if __name__ == "__main__":
+    main()

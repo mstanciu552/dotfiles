@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xrandr --output "HDMI-1" --set audio force-dvi --mode 1360x768 --dpi 20 && xrandr --output "eDP-1" --auto --output "HDMI-1" --left-of "eDP-1"

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+sudo pacman -Syyu
+
+sudo pacman -S optimus-manager optimus-manager-qt 
+sudo pacman -S bootsplash-systemd bootsplash-manager bootsplash-theme-arch
+
+sudo pacman -S base-devel git
+
+cd $HOME
+git clone https://aur.archlinux.org/yay-git.git
+cd yay-git
+makepkg -si
+yay -Syu --devel --timeupdate
+
+

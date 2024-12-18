@@ -1,0 +1,3 @@
+#!/bin/bash
+cd ~/Documents/Projects/Plans
+ls -la ~/Documents/Projects/Plans | rofi -dmenu -i -p 'Plans' | awk '{print $NF}' | xargs -I {} kitty -e nvim {}

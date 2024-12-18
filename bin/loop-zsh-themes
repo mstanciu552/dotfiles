@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+omz theme list | sed -e '1d' | awk 1 ORS='\n' | tee zsh-themes.txt
+

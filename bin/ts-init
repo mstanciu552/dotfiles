@@ -1,0 +1,40 @@
+#!/bin/bash
+
+echo "{
+  \"compilerOptions\": {
+    \"target\": \"es5\",
+    \"module\": \"commonjs\",
+    \"rootDir\": \"./src\",
+    \"outDir\": \"./dist\",
+    \"esModuleInterop\": true,
+    \"forceConsistentCasingInFileNames\": true,
+    \"strict\": true,
+    \"skipLibCheck\": true
+  }
+}" >$(pwd)/tsconfig.json
+
+if [ -d ./src ]; then
+	read -p "File already exists. Do you want to delete and replace it?[Y/n]" permission
+	echo $permission
+	if [[ $permission == 'Y' || $permission == 'y' || -z $permission ]]; then
+		rm -rf ./src
+	else
+		echo "Stopping script..."
+		exit
+	fi
+else
+	mkdir ./src
+fi
+
+if [ -d ./dist ]; then
+	read -p "File already exists. Do you want to delete and replace it?[Y/n]" permission
+	echo $permission
+	if [[ $permission == 'Y' || $permission == 'y' || -z $permission ]]; then
+		rm -rf ./dist
+	else
+		echo "Stopping script..."
+		exit
+	fi
+else
+	mkdir ./dist
+fi
