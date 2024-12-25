@@ -1,5 +1,3 @@
-#!/bin/bash
-
 next_aux=$(i3-msg -t get_workspaces | jq -r '.[]| select(.focused).num + 1')
 prev_aux=$(i3-msg -t get_workspaces | jq -r '.[]| select(.focused).num - 1')
 

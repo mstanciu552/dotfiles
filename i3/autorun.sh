@@ -1,5 +1,3 @@
-#!/bin/bash
-
 killall -q polybar
 polybar i3 &
 dunst &
