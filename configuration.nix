@@ -109,8 +109,14 @@
   };
 
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "sc0p3";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "sc0p3";
+
+  # Specify backup file extension
+  home-manager.backupFileExtension = ".bak";
+
+  # Enable picom as a service
+  services.picom.enable = true;
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -142,6 +148,7 @@
    wmctrl
    stow
    feh
+   picom
    # Programming
    ## C/C++
    libgcc

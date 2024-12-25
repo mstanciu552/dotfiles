@@ -1,12 +1,5 @@
 { config, lib, pkgs, ... }:
 let 
-  # TODO fix - this does not work
-  dotfiles = pkgs.fetchgit {
-    url = "https://github.com/mstanciu552/dotfiles.git";
-    rev = "main";
-  # sha256 = "0dcy7bv2bdg36dpa6x3saaakgijrw9k0j19nik7b8m7avh1ayxiq";
-    sha256 = "0v740zq57v6d0azcs51n0d6pyrk4f7hkqf2f28118ljs04ax5q1k";
-  };
   wallpapers = pkgs.fetchgit {
     url = "https://github.com/mstanciu552/wallpapers.git";
     rev = "309276b";
@@ -21,7 +14,7 @@ in
   home.homeDirectory = "/home/sc0p3";
 
   # Put everything from dotfiles into ~/.config
-  # home.file.".config".source = dotfiles;
+  home.file.".config/i3".source = ./i3;
 
   # Place wallpapers in ~/Pictures/wallpapers
   home.file."Pictures/wallpapers".source = wallpapers;
