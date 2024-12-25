@@ -1,24 +1,33 @@
 { config, lib, pkgs, ... }:
 let 
-# TODO fix - this does not work
-dotfiles = pkgs.fetchgit {
-  url = "https://github.com/mstanciu552/dotfiles.git";
-  rev = "main";
-# sha256 = "0dcy7bv2bdg36dpa6x3saaakgijrw9k0j19nik7b8m7avh1ayxiq";
-  sha256 = "0v740zq57v6d0azcs51n0d6pyrk4f7hkqf2f28118ljs04ax5q1k";
-};
-mod = "Mod4";
+  # TODO fix - this does not work
+  dotfiles = pkgs.fetchgit {
+    url = "https://github.com/mstanciu552/dotfiles.git";
+    rev = "main";
+  # sha256 = "0dcy7bv2bdg36dpa6x3saaakgijrw9k0j19nik7b8m7avh1ayxiq";
+    sha256 = "0v740zq57v6d0azcs51n0d6pyrk4f7hkqf2f28118ljs04ax5q1k";
+  };
+  wallpapers = pkgs.fetchgit {
+    url = "https://github.com/mstanciu552/wallpapers.git";
+    rev = "309276b";
+    sha256 = "HMJHAOxoNBqoMbWvUPArOdPYIv9lwI0PA8FU2iv9ias=";
+  };
+  mod = "Mod4";
 in
 {
 
-# Set user home directory
+  # Set user home directory
   home.username = "sc0p3";
   home.homeDirectory = "/home/sc0p3";
 
-# Put everything from dotfiles into ~/.config
-# home.file.".config".source = dotfiles;
+  # Put everything from dotfiles into ~/.config
+  # home.file.".config".source = dotfiles;
 
-# Home user - needed packages
+  # Place wallpapers in ~/Pictures/wallpapers
+  home.file."Pictures/wallpapers".source = wallpapers;
+  home.file."Pictures/wallpapers".target = "Pictures/wallpapers";
+
+  # Home user - needed packages
   home.packages = with pkgs; [
     i3
     i3status
@@ -31,36 +40,36 @@ in
     eza
   ];
 
-# basic configuration for using git
+  # basic configuration for using git
   programs.git = {
     enable = true;
     userName = "Mihai Stanciu";
     userEmail = "mstanciu552@gmail.com";
   };
 
-# basic bash configuration
+  # basic bash configuration
   programs.bash = {
     enable = true;
     enableCompletion = true;
-# custom bashrc
+    # custom bashrc
     bashrcExtra = ''
       export PATH="$PATH:$HOME/bin"
       '';
 
-# shell aliases
+    # shell aliases
     shellAliases = {
       ll = "eza -al";
     };
   };
 
-# basic zsh configuration
+  # basic zsh configuration
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-# use oh-my-zsh as the plugin manager
+    # use oh-my-zsh as the plugin manager
     oh-my-zsh = {
       enable = true;
       plugins = [
@@ -73,7 +82,7 @@ in
     };
   };
 
-# basic kitty configuration
+  # basic kitty configuration
   programs.kitty = {
     enable = true;
     settings = {
@@ -207,9 +216,9 @@ in
     '';
   };
 
-# set channel version for home-manager
+  # set channel version for home-manager
   home.stateVersion = "24.11";
 
-# allow home-manager to self-manage
+  # allow home-manager to self-manage
   programs.home-manager.enable = true;
 }

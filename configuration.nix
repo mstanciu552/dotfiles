@@ -141,6 +141,7 @@
    i3status
    wmctrl
    stow
+   feh
    # Programming
    ## C/C++
    libgcc
