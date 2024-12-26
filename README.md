@@ -26,7 +26,7 @@ I want to keep developing it to allow everything I will ever need to be slapped 
 
 Future goals - TODOs:
 
-- [ ] Nerd Fonts to install: Iosevka, UbuntuMono, FiraCode
+- [x] Nerd Fonts to install: Iosevka, UbuntuMono, FiraCode
 - [ ] open RDP for usability
 - [ ] basic vim config for lightweight usability
 - [ ] display resolution and fps management

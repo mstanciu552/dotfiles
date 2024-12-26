@@ -175,6 +175,17 @@ in
     '';
   };
 
+  # Basic vim configuration
+  programs.vim = {
+    enable = true;
+    plugins = with pkgs.vimPlugins; [
+      vim-airline
+    ];
+    settings = {
+      ignorecase = true;
+    };
+  };
+
   # set channel version for home-manager
   home.stateVersion = "24.11";
 
