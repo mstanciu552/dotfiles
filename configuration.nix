@@ -44,6 +44,11 @@
     LC_TIME = "ro_RO.UTF-8";
   };
 
+  # Fonts
+  fonts.packages = with pkgs; [
+    nerdfonts
+  ];
+
   # Make it so that i3blocks works
   environment.pathsToLink = [ "/libexec" ];
 
@@ -142,6 +147,10 @@
    neovim
    lunarvim
    kitty
+   # Browser
+   brave
+   # File Manager
+   xfce.thunar
    # Window manager
    ## i3
    i3
@@ -151,6 +160,7 @@
    stow
    feh
    picom
+   flameshot
    # Programming
    ## C/C++
    libgcc

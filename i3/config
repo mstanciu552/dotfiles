@@ -45,7 +45,7 @@ for_window [class="PacketTracer"] floating enable
 
 # Personal config
 # Browser
-bindsym $mod+b exec opera
+bindsym $mod+b exec brave
 
 # Calendar
 bindsym $mod+x exec kitty -e calcurse
@@ -74,11 +74,11 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec kitty
 
-# start dolphin (file manager)
-bindsym $mod+e exec dolphin
+# start thunar (file manager)
+bindsym $mod+e exec thunar
 
 # start spectacle (snipping tool)
-bindsym $mod+s exec spectacle
+bindsym $mod+s exec flameshot gui
 
 # kill focused window
 bindsym $mod+c kill
