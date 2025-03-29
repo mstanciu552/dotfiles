@@ -5,6 +5,11 @@ let
     rev = "309276b";
     sha256 = "HMJHAOxoNBqoMbWvUPArOdPYIv9lwI0PA8FU2iv9ias=";
   };
+  scripts = pkgs.fetchgit {
+    url = "https://github.com/mstanciu552/scripts.git";
+    rev = "1c9a373";
+    sha256 = "47tsZsHNw829Av67ZfEdrGbZ/sXQpvuSJR2xam/uM+U=";
+  };
   mod = "Mod4";
 in
 {
@@ -12,6 +17,9 @@ in
   # Set user home directory
   home.username = "sc0p3";
   home.homeDirectory = "/home/sc0p3";
+
+  # Set user session path
+  home.sessionPath = [ "$HOME/bin" ];
 
   # Place i3 config into it's directory in .config
   home.file.".config/i3".source = ./i3;
@@ -22,6 +30,10 @@ in
   # Place wallpapers in ~/Pictures/wallpapers
   home.file."Pictures/wallpapers".source = wallpapers;
   home.file."Pictures/wallpapers".target = "Pictures/wallpapers";
+
+  # Place scripts in ~/bin
+  home.file."bin".source = scripts;
+  home.file."bin".target = "bin";
 
   # Home user - needed packages
   home.packages = with pkgs; [

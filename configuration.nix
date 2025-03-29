@@ -16,7 +16,7 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "erdtree"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -68,7 +68,7 @@
   };
 
   # Enable the XFCE Desktop Environment.
-  # services.xserver.desktopManager.xfce.enable = true;
+  services.xserver.desktopManager.xfce.enable = true;
 
 
   # Enable CUPS to print documents.
@@ -116,7 +116,7 @@
   };
 
   # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.enable = false;
   services.displayManager.autoLogin.user = "sc0p3";
 
   # Specify backup file extension
@@ -147,8 +147,12 @@
    neovim
    lunarvim
    kitty
+   btop
+   htop
    # Browser
    brave
+   # Desktop Environment
+   # xfce
    # File Manager
    xfce.thunar
    # Window manager
@@ -172,8 +176,8 @@
    tshark
    nmap
    dig
-   # Gaming
-   steam
+   # Work
+   anydesk
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
